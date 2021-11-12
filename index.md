@@ -17,14 +17,18 @@ pagetitle: Albin Eldstål-Ahrens
 ### [strinvader](https://github.com/eldstal/strinvader)
 _Unicode denormalizer_
 
-Unicode is quite complex. Since there are many different ways to encode the same text,
-applications may use _normalization_ to preprocess text. Strinvader is a tool to
-find multiple text inputs which normalize to the same (given) text. This is useful in
-security research, because sometimes security features such as block lists are applied
-to text _before_ normalization. When attacking such an application, strinvader
-can generate a text encoding such as `www.exⓐmple.com` which will pass the blocklist
-and be normalized to `www.example.com` before being used. Interestingly, normalization
-rules vary slightly between implementations. Unicode normalization differs from python's `str.lower()` which differs from the URL parsing in node.js. For this reason, strinvader contains support for a number of different such normalization forms.
+Unicode is quite complex. Since there are many different ways to encode the
+same text, applications may use _normalization_ to preprocess it into a
+predictable form. Strinvader is a tool to find multiple text inputs which
+normalize to the same (given) text. This is useful in security research,
+because sometimes security features such as block lists are applied to text
+_before_ normalization. When attacking such an application, strinvader can
+generate a text encoding such as `www.exⓐmple.com` which will pass the block
+list and be normalized to `www.example.com` before being used. Interestingly,
+normalization rules vary slightly between implementations. Unicode
+normalization differs from python's `str.lower()` which differs from the URL
+parsing in node.js. For this reason, strinvader contains support for a number
+of different such normalization forms.
 
 ### [spike](https://github.com/eldstal/spike)
 _Power glitch generator_
@@ -167,8 +171,5 @@ International Conference on Embedded Computer Systems: Architectures, Modeling a
 Design, Automation and Test in Europe (DATE) 2021
 
 Computing Frontiers (CF) 2021
-
-
-
 
 
