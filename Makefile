@@ -1,11 +1,12 @@
 STATICS=$(patsubst static/%,site/%,$(wildcard static/*))
+PAGES=$(addprefix site/,$(patsubst %.md,%.html,$(wildcard *.md)))
 
 
-all: site/index.html $(STATICS)
+all: $(PAGES) $(STATICS)
 
-site/index.html: index.md header.html metadata.yaml Makefile
+site/%.html: %.md header.html Makefile
 	mkdir -p site
-	pandoc --self-contained -f markdown -t html5 -H header.html -o $@ $< metadata.yaml
+	pandoc --self-contained -f markdown -t html5 -H header.html -o $@ $<
 
 site/%: static/%
 	cp $< $@
