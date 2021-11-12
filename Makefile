@@ -4,9 +4,9 @@ PAGES=$(addprefix site/,$(patsubst %.md,%.html,$(wildcard *.md)))
 
 all: $(PAGES) $(STATICS)
 
-site/%.html: %.md header.html Makefile
+site/%.html: %.md header.html template.html Makefile
 	mkdir -p site
-	pandoc --self-contained -f markdown -t html5 -H header.html -o $@ $<
+	pandoc --self-contained -M date="$$(date '+%B %e, %Y')" -f markdown -t html5 --template template.html -H header.html -o $@ $<
 
 site/%: static/%
 	cp $< $@
