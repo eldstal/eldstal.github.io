@@ -5,9 +5,9 @@ pagetitle: Albin Eldstål-Ahrens
 
 
 # Links
-* [GitHub](https://github.com/eldstal)
-* [Luftens Hjältar](https://luftenshjaltar.info)
-* [Luftens Hjältar on CTFTime](https://ctftime.org/team/50600)
+[ [GitHub](https://github.com/eldstal) ] |
+[ [LuftensHjältar](https://luftenshjaltar.info) ] |
+[ [CTFTime](https://ctftime.org/team/50600) ]
 
 # Resumé
 [ [PDF](/cv.pdf) ]
@@ -22,10 +22,9 @@ applications may use _normalization_ to preprocess text. Strinvader is a tool to
 find multiple text inputs which normalize to the same (given) text. This is useful in
 security research, because sometimes security features such as block lists are applied
 to text _before_ normalization. When attacking such an application, strinvader
-can generate a text encoding such as `www.exAｍᵖ𝑙𝑒.com` which will pass the blocklist
+can generate a text encoding such as `www.exⓐmple.com` which will pass the blocklist
 and be normalized to `www.example.com` before being used. Interestingly, normalization
-rules vary slightly between implementations, so strinvader contains support for a
-number of different such normalization forms.
+rules vary slightly between implementations. Unicode normalization differs from python's `str.lower()` which differs from the URL parsing in node.js. For this reason, strinvader contains support for a number of different such normalization forms.
 
 ### [spike](https://github.com/eldstal/spike)
 _Power glitch generator_
@@ -121,7 +120,7 @@ IEEE 77th Vehicular Technology Conference, 2013
 
 
 [ [PDF](https://ltu.diva-portal.org/smash/get/diva2:1029175/FULLTEXT02.pdf) ]
-An LTE Random Access Channel Model for Wireless Sensor Network Applications
+An LTE Random Access Channel Model for Wireless Sensor Network Applications\
 Mikael Burakov, **Albin Eldstål-Damlin**\
 Master's Thesis, Luleå University of Technology, 2012
 
