@@ -3,6 +3,9 @@ pagetitle: Albin Eldstål-Ahrens
 
 ...
 
+# Albin Eldstål-Ahrens
+Ph.D. Candidate at Chalmers University of Technology, Gothenburg, Sweden.
+
 
 # Links
 [ [GitHub](https://github.com/eldstal) ] |
@@ -95,23 +98,23 @@ The LaTeX typesetting engine wasn't intended for this purpose.
 # Research and Education
 
 ## Publications
+<div class="nojust">
 
-
-L2C: Combining Lossy and Lossless Compression onMemory and I/O\
-**Albin Eldstål-Damlin**, Angelos Arelakis, Ioannis Sourdis\
+L2C: Combining Lossy and Lossless Compression on Memory and I/O\
+**Albin Eldstål-Ahrens**, Angelos Arelakis, Ioannis Sourdis\
 ACM Transactions on Embedded Computing Systems, 2021
 
 
 [ [PDF](https://research.chalmers.se/publication/521215/file/521215_Fulltext.pdf) ]
 [ [DOI](https://doi.org/10.1145/3424668) ]
 MemSZ: Squeezing Memory Traffic with Lossy Compression\
-**Albin Eldstål-Damlin**, Ioannis Sourdis\
+**Albin Eldstål-Ahrens**, Ioannis Sourdis\
 ACM Transactions on Architecture and Code Optimization (TACO), 2020
 
 
 [ [PDF](https://research.chalmers.se/publication/512096/file/512096_Fulltext.pdf) ]
 [ [DOI](https://doi.org/10.1145/3337821.3337824) ]
-AVR: Reducing memory traffic with approximate value reconstruction\
+AVR: Reducing Memory Traffic with Approximate Value Reconstruction\
 **Albin Eldstål-Damlin**, Pedro Trancoso, Ioannis Sourdis\
 International Conference on Parallel Processing (ICPP), 2019
 
@@ -134,7 +137,7 @@ A comparison of two modes for AEAD services in wireless sensor networks\
 **Albin Eldstål-Damlin**, Laurynas Riliskis\
 Technical Report, Luleå University of Technology, 2011
 
-
+</div>
 
 ## Supervision
 
