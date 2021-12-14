@@ -12,9 +12,6 @@ Ph.D. Candidate at Chalmers University of Technology, Gothenburg, Sweden.
 [ [LuftensHjältar](https://luftenshjaltar.info) ] |
 [ [CTFTime](https://ctftime.org/team/50600) ]
 
-# Resumé
-[ [PDF](/cv.pdf) ]
-
 # Projects
 ## Security
 ### ![strinvader](/strinvader.png) [strinvader](https://github.com/eldstal/strinvader)
