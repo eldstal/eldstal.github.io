@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="dcterms.date" content="2021-12-15">
+  <title>Albin Eldstål-Ahrens</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+  
+    body {
+      /* background-color: #FBFDFF; */
+      background-image: url('/background.png');
+    }
+  
+    h1 {
+      font-family: Georgia,"Bitstream Charter","Times New Roman",Times,serif;
+    }
+  
+    h2 {
+      font-family: Georgia,"Bitstream Charter","Times New Roman",Times,serif;
+    }
+  
+    h3 {
+      font-family: Helvetica, Arial, sans-serif;
+      margin-bottom: 0.5em;
+    }
+  
+    p {
+      margin-top: 0.5em;
+      margin-left: 1em;
+      margin-right: 1em;
+      hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      -webkit-hyphens: auto;
+      max-width: 50em;
+      font-family: Georgia,"Bitstream Charter","Times New Roman",Times,serif;
+      text-align: justify;
+    }
+  
+    h3 img {
+      height: 2.5em;
+      vertical-align: middle;
+    }
+  
+    .nojust p {
+      text-align: left;
+    }
+  
+    a {
+      color: #1030FF;
+    }
+  
+    a:visited {
+      color: #4060FF;
+    }
+  
+    code {
+      border-top: 1pt solid #AEAEAE;
+      border-bottom: 1pt solid #AEAEAE;
+      background-color: #F0F5FF;
+      padding-left: 0.2em;
+      padding-right: 0.2em;
+      font-family: monospace;
+    }
+  
+    .footer {
+      font-size: 80%;
+  
+    }
+  </style>
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+</head>
+<body lang="en">
+<h1 id="albin-eldstål-ahrens">Albin Eldstål-Ahrens</h1>
+<p>Ph.D. Candidate at Chalmers University of Technology, Gothenburg, Sweden.</p>
+<h1 id="links">Links</h1>
+<p>[ <a href="https://github.com/eldstal">GitHub</a> ] | [ <a href="https://luftenshjaltar.info">LuftensHjältar</a> ] | [ <a href="https://ctftime.org/team/50600">CTFTime</a> ]</p>
+<h1 id="resumé">Resumé</h1>
+<p>[ <a href="/cv.pdf">PDF</a> ]</p>
+<h1 id="projects">Projects</h1>
+<h2 id="security">Security</h2>
+<h3 id="strinvader-strinvader"><img src="/strinvader.png" alt="strinvader" /> <a href="https://github.com/eldstal/strinvader">strinvader</a></h3>
+<p><em>Unicode denormalizer</em></p>
+<p>Unicode is quite complex. Since there are many different ways to encode the same text, applications may use <em>normalization</em> to preprocess it into a predictable form. Strinvader is a tool to find multiple text inputs which normalize to the same (given) text. This is useful in security research, because sometimes security features such as block lists are applied to text <em>before</em> normalization. When attacking such an application, strinvader can generate a text encoding such as <code>www.exⓐmple.com</code> which will pass the block list and be normalized to <code>www.example.com</code> before being used. Interestingly, normalization rules vary slightly between implementations. Unicode normalization differs from python’s <code>str.lower()</code> which differs from the URL parsing in node.js. For this reason, strinvader contains support for a number of different such normalization forms.</p>
+<h3 id="spike-spike"><img src="/spike.png" alt="spike" /> <a href="https://github.com/eldstal/spike">spike</a></h3>
+<p><em>Power glitch generator</em></p>
+<p>Hardware devices with opaque or protected firmware may still be vulnerable to hardware faults. One such hardware fault is a <em>power glitch</em>, a transient drop in the power feed. This can have a variety of effects, ranging from device restarts to failure of individual executed instructions. Spike is a <a href="https://zephyrproject.org/">Zephyr</a> project for the Nordic Semiconductor <a href="https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dk">nRF52840 DK</a> development board, which is able to control a target device and perform power glitch attacks against it.</p>
+<h3 id="desynk-desynk"><img src="/desynk.png" alt="DESYNK" /> <a href="https://github.com/eldstal/desynk">DESYNK</a></h3>
+<p><em>Clock glitch generator</em></p>
+<p>Another hardware fault is caused by an unstable clock signal. Shortening individual clock cycles can have interesting effects on the instruction decoder/execution stages of a microprocessor, or adversely affect I/O. DESYNK is a work-in-progress project to exploire this. It is based on the <a href="https://1bitsquared.com/products/icebreaker">ICEbreaker</a> development board, powered by the Lattice iCE40UP5k FPGA. DESYNK controls the clock signal driving the target device, and probes for the proper time and duration of clock inconsistency, in order to cause interesting software failures.</p>
+<h3 id="ctf-notes-ctf-notes"><img src="/gitbook.png" alt="CTF Notes" /> <a href="https://luftenshjaltar.gitbook.io/ctf/">CTF Notes</a></h3>
+<p><em>It won’t be a surprise, the second time I see this.</em></p>
+<p>Running notes on CTF techniques, methodology, little tricks we’ve learned along the way.</p>
+<h2 id="other">Other</h2>
+<h3 id="cardcinogen-cardcinogen"><img src="/cardcinogen.png" alt="Cardcinogen" /> <a href="https://github.com/eldstal/cardcinogen">Cardcinogen</a></h3>
+<p><em>Deck generator for <a href="https://store.steampowered.com/app/286160/Tabletop_Simulator/">Tabletop Simulator</a></em></p>
+<p>Cardcinogen is a templating system which allows you to create styles for playing cards and populate those cards with content from your own data. This is useful to make expansions for card-based games such as Concept or Fluxx.</p>
+<h3 id="panel-of-doom-panel-of-doom"><img src="/pod.png" alt="Panel of Doom" /> <a href="https://github.com/eldstal/avr-pod">Panel of Doom</a></h3>
+<p><em>DIY USB joystick HID device</em></p>
+<p>POD uses low-cost commodity components (an AVR ATMEGA-328 microcontroller with no USB hardware support) to implement a standard joystick. This lets you, for example, build the custom control panel of your tractor simulation dreams. By using the standard USB HID interface, no extra drivers or bindings are required to use it in typical PC games. The software USB stack used in POD is kindly provided by the <a href="https://www.obdev.at/products/vusb/index.html">V-USB</a> library.</p>
+<h3 id="ctf-ctf-terminal-frontend"><img src="ctf.png" alt="CTF" /> <a href="https://github.com/eldstal/CTF">CTF Terminal Frontend</a></h3>
+<p><em>Capture-The-Flag scoreboard visualization</em></p>
+<p>This program queries a live CTF scoreboard and presents the data in your terminal. Some fun animations are implemented, for example when a team grabs the <em>first blood</em> of one of the challenges. Several popular serverside systems are supported, and the design is modular to allow for easy addition of new backends (i.e. support for new online CTF scoreboard systems such as <a href="https://ctfd.io/">CTFd</a>).</p>
+<h3 id="teksh-teksh"><img src="/teksh.png" alt="Teksh" /> <a href="https://github.com/eldstal/teksh">Teksh</a></h3>
+<p><em>Command shell implemented in LaTeX</em></p>
+<p>The LaTeX typesetting engine wasn’t intended for this purpose.</p>
+<h1 id="research-and-education">Research and Education</h1>
+<h2 id="publications">Publications</h2>
+<div class="nojust">
+<p>[ <a href="https://doi.org/10.1145/3481641">DOI</a> ] L2C: Combining Lossy and Lossless Compression on Memory and I/O<br />
+<strong>Albin Eldstål-Ahrens</strong>, Angelos Arelakis, Ioannis Sourdis<br />
+ACM Transactions on Embedded Computing Systems (TECS), 2022</p>
+<p>[ <a href="https://research.chalmers.se/publication/517203/file/517203_Fulltext.pdf">PDF</a> ] [ <a href="https://research.chalmers.se/publication/517203">URL</a> ] Reducing Memory Traffic with Approximate Compression<br />
+<strong>Albin Eldstål-Ahrens</strong><br />
+Licentiate Thesis, Chalmers University of Technology, 2020</p>
+<p>[ <a href="https://research.chalmers.se/publication/521215/file/521215_Fulltext.pdf">PDF</a> ] [ <a href="https://doi.org/10.1145/3424668">DOI</a> ] MemSZ: Squeezing Memory Traffic with Lossy Compression<br />
+<strong>Albin Eldstål-Ahrens</strong>, Ioannis Sourdis<br />
+ACM Transactions on Architecture and Code Optimization (TACO), 2020</p>
+<p>[ <a href="https://research.chalmers.se/publication/512096/file/512096_Fulltext.pdf">PDF</a> ] [ <a href="https://doi.org/10.1145/3337821.3337824">DOI</a> ] AVR: Reducing Memory Traffic with Approximate Value Reconstruction<br />
+<strong>Albin Eldstål-Damlin</strong>, Pedro Trancoso, Ioannis Sourdis<br />
+International Conference on Parallel Processing (ICPP), 2019</p>
+<p>[ <a href="https://doi.org/10.1109/VTCSpring.2013.6691881">DOI</a> ] [ <a href="https://ieeexplore.ieee.org/document/6691881">IEEE</a> ] An Improved Model of LTE Random Access Channel<br />
+Evgeny Osipov, Laurynas Riliskis, <strong>Albin Eldstål-Damlin</strong>, Michael Burakov, Mats Nordberg, Min Wang<br />
+IEEE 77th Vehicular Technology Conference, 2013</p>
+<p>[ <a href="https://ltu.diva-portal.org/smash/get/diva2:1029175/FULLTEXT02.pdf">PDF</a> ] An LTE Random Access Channel Model for Wireless Sensor Network Applications<br />
+Mikael Burakov, <strong>Albin Eldstål-Damlin</strong><br />
+Master’s Thesis, Luleå University of Technology, 2012</p>
+<p>[ <a href="https://www.diva-portal.org/smash/get/diva2:1003393/FULLTEXT01.pdf">PDF</a> ] A comparison of two modes for AEAD services in wireless sensor networks<br />
+<strong>Albin Eldstål-Damlin</strong>, Laurynas Riliskis<br />
+Technical Report, Luleå University of Technology, 2011</p>
+</div>
+<h2 id="supervision">Supervision</h2>
+<p>[ <a href="https://odr.chalmers.se/bitstream/20.500.12380/300034/1/CSE%2019-09%20CPL%20Yngvesson%20Magnusson.pdf">PDF</a> ] [ <a href="https://hdl.handle.net/20.500.12380/300034">URL</a> ] Augmented Reality<br />
+Johan Yngvesson, Johannes Magnusson<br />
+Bachelor’s Thesis, Chalmers University of Technology, 2019</p>
+<h2 id="peer-review">Peer Review</h2>
+<p>Computing Frontiers (CF) 2021</p>
+<p>Design, Automation and Test in Europe (DATE) 2021</p>
+<p>International Conference on Embedded Computer Systems: Architectures, Modeling and Simulation (SAMOS) 2021</p>
+<p>Design, Automation and Test in Europe (DATE) 2020</p>
+<p>Defect and Fault Tolerance in VLSI and Nanotechnology Systems (DFTS) 2020</p>
+<p>Latin American Symposium on Circuits and Systems (LASCAS) 2020</p>
+<p>Design, Automation and Test in Europe (DATE) 2019</p>
+<p>Transactions on Architecture and Code Optimization (TACO) 2018</p>
+<p>Field-Programmable Logic and Applications (FPL) 2017</p>
+<p>International Symposium on Computer Architecture (ISCA) 2016</p>
+<p>Highly Efficient Accelerators and Reconfigurable Technologies (HEART) 2016</p>
+<p>Design, Automation and Test in Europe (DATE) 2016</p>
+<hr>
+<div class="footer">
+<p>Generated on December 15, 2021 using <a href="https://pandoc.org">Pandoc</a>. View the <a href="https://github.com/eldstal/eldstal.se">source</a> if you'd like!</p>
+</div>
+
+</body>
+</html>
