@@ -47,7 +47,7 @@ _Clock glitch generator_
 Another hardware fault is caused by an unstable clock signal. Shortening individual
 clock cycles can have interesting effects on the instruction decoder/execution stages
 of a microprocessor, or adversely affect I/O. DESYNK is a work-in-progress project to
-exploire this. It is based on the [ICEbreaker](https://1bitsquared.com/products/icebreaker)
+explore this. It is based on the [ICEbreaker](https://1bitsquared.com/products/icebreaker)
 development board, powered by the Lattice iCE40UP5k FPGA. DESYNK controls the clock signal
 driving the target device, and probes for the proper time and duration of clock inconsistency,
 in order to cause interesting software failures.
