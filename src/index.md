@@ -91,6 +91,20 @@ _Command shell implemented in LaTeX_
 
 The LaTeX typesetting engine wasn't intended for this purpose.
 
+<!--
+
+# Security
+## CVEs
+<div class="nojust">
+
+[ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ]
+[ [Report](https://github.com/libsixel/libsixel/issues/51) ]
+(CVSS 0.0)
+NULL-pointer dereference in libSIXEL
+
+</div>
+
+-->
 
 # Research and Education
 
