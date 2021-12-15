@@ -99,6 +99,7 @@ The LaTeX typesetting engine wasn't intended for this purpose.
 
 [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ]
 [ [Report](https://github.com/libsixel/libsixel/issues/51) ]
+[ [Report](https://github.com/saitoha/libsixel/issues/160) ]
 (CVSS 0.0)
 NULL-pointer dereference in libSIXEL
 
