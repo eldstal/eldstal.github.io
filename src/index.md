@@ -95,12 +95,25 @@ The LaTeX typesetting engine wasn't intended for this purpose.
 
 # Security
 ## CVEs
+I've found and reported the following vulnerabilities in software projects:
+
+
 <div class="nojust">
+
+[ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ]
+[ [Report](https://github.com/LibreCAD/LibreCAD/issues/1464) ]
+([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
+RCE in LibreCAD (CDataMoji)
+
+[ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ]
+[ [Report](https://github.com/LibreCAD/LibreCAD/issues/1462) ]
+([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
+RCE in LibreCAD (CDataMoji)
 
 [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ]
 [ [Report](https://github.com/libsixel/libsixel/issues/51) ]
 [ [Report](https://github.com/saitoha/libsixel/issues/160) ]
-(CVSS 0.0)
+([CVSS 3.9](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
 NULL-pointer dereference in libSIXEL
 
 </div>
@@ -110,6 +123,8 @@ NULL-pointer dereference in libSIXEL
 # Research and Education
 
 ## Publications
+The following is a list of my academic publications, to date:
+
 <div class="nojust">
 
 [ [DOI](https://doi.org/10.1145/3481641) ]
@@ -158,6 +173,7 @@ Technical Report, Luleå University of Technology, 2011
 </div>
 
 ## Supervision
+I've had the pleasure of being the advisor for the following Bacherlor's thesis work:
 
 [ [PDF](https://odr.chalmers.se/bitstream/20.500.12380/300034/1/CSE%2019-09%20CPL%20Yngvesson%20Magnusson.pdf) ]
 [ [URL](https://hdl.handle.net/20.500.12380/300034) ]
@@ -168,6 +184,7 @@ Bachelor's Thesis, Chalmers University of Technology, 2019
 
 
 ## Peer Review
+I've served as a reviewer for paper(s) for the following venues:
 
 Computing Frontiers (CF) 2021
 
