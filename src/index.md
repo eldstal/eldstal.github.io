@@ -101,14 +101,19 @@ I've found and reported the following vulnerabilities in software projects:
 <div class="nojust">
 
 [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ]
+[ [Report](https://github.com/LibreCAD/LibreCAD/issues/1468) ]
+([CVSS 3.9](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
+NULL-pointer dereference (DXF HATCH 93) in LibreCAD
+
+[ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ]
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1464) ]
 ([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
-RCE in LibreCAD (CDataMoji)
+RCE in LibreCAD (JWW CDataList)
 
 [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ]
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1462) ]
 ([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
-RCE in LibreCAD (CDataMoji)
+RCE in LibreCAD (JWW CDataMoji)
 
 [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ]
 [ [Report](https://github.com/libsixel/libsixel/issues/51) ]
