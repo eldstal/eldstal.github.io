@@ -117,7 +117,7 @@ RCE in FreeCAD (ODA DWG import)
 <!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1468) ]
 ([CVSS 3.9](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
-NULL-pointer dereference (DXF HATCH 93) in LibreCAD
+NULL-pointer dereference in LibreCAD (DXF HATCH 93)
 
 <!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1464) ]
