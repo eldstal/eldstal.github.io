@@ -100,7 +100,7 @@ I've found and reported the following vulnerabilities in software projects:
 
 <!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
 [ [Report](https://github.com/slic3r/Slic3r/issues/5117) ]
-([CVSS 3.9](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
+([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
 NULL-pointer dereference in Slic3r (AMF XML)
 
 <!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
@@ -115,7 +115,7 @@ RCE in FreeCAD (ODA DWG import)
 
 <!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1468) ]
-([CVSS 3.9](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
+([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
 NULL-pointer dereference in LibreCAD (DXF HATCH 93)
 
 <!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
@@ -131,7 +131,7 @@ RCE in LibreCAD (JWW CDataMoji)
 <!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
 [ [Report](https://github.com/libsixel/libsixel/issues/51) ]
 [ [Report](https://github.com/saitoha/libsixel/issues/160) ]
-([CVSS 3.9](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
+([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
 NULL-pointer dereference in libSIXEL
 
 </div>
