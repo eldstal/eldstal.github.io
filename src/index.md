@@ -93,7 +93,6 @@ The LaTeX typesetting engine wasn't intended for this purpose.
 
 
 # Security
-## CVEs
 I've found and reported the following vulnerabilities in software projects:
 
 
