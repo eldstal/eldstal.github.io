@@ -99,6 +99,13 @@ I've found and reported the following vulnerabilities in software projects:
 <div class="nojust">
 
 <!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
+[ [Report](https://github.com/slic3r/Slic3r/issues/5118) ]
+[ [Report](https://github.com/slic3r/Slic3r/issues/5119) ]
+[ [Report](https://github.com/slic3r/Slic3r/issues/5120) ]
+([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
+Multiple NULL-pointer dereferences in Slic3r (3MF XML)
+
+<!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
 [ [Report](https://github.com/slic3r/Slic3r/issues/5117) ]
 ([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
 NULL-pointer dereference in Slic3r (AMF XML)
