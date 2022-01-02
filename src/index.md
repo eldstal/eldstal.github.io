@@ -99,6 +99,11 @@ I've found and reported the following vulnerabilities in software projects:
 <div class="nojust">
 
 <!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
+[ [Report](https://developer.blender.org/T94572) ]
+([CVSS 5.4](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L/E:U/RL:U/RC:R/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:L/MA:L&version=3.1))
+Out-of-bounds read/write in Blender (HDR loader)
+
+<!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
 [ [Report](https://github.com/OSGeo/shapelib/issues/39) ]
 ([CVSS 6.0](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:U/RL:U/RC:R/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:N/MS:C/MC:L/MI:L/MA:L&version=3.1))
 Double-Free in shapelib (contrib/shpsort)
