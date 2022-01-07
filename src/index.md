@@ -89,7 +89,7 @@ design is modular to allow for easy addition of new backends
 ### ![Teksh](/teksh.png) [Teksh](https://github.com/eldstal/teksh)
 _Command shell implemented in LaTeX_
 
-The LaTeX typesetting engine wasn't intended for this purpose.
+The LaTeX typesetting engine wasn't intended for this.
 
 
 # Security
@@ -97,6 +97,11 @@ I've found and reported the following vulnerabilities in software projects:
 
 
 <div class="nojust">
+
+<!-- [ [CVE-2022-XXXXX](https://www.cvedetails.com/cve/CVE-2022-XXXXX) ] -->
+[ [Report](https://github.com/openscad/openscad/issues/4037) ]
+([CVSS 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
+Out-of-bounds read in OpenSCAD (DXF path)
 
 <!-- [ [CVE-2022-XXXXX](https://www.cvedetails.com/cve/CVE-2022-XXXXX) ] -->
 [ [Report](https://developer.blender.org/T94661) ]
