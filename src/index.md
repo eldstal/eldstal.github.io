@@ -6,6 +6,8 @@ pagetitle: Albin Eldstål-Ahrens
 # Albin Eldstål-Ahrens
 Ph.D. Candidate at Chalmers University of Technology, Gothenburg, Sweden.
 
+[Doctoral Defense](/phd)
+
 
 # Links
 [ [GitHub](https://github.com/eldstal) ] |
