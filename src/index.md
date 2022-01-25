@@ -188,6 +188,12 @@ The following is a list of my academic publications, to date:
 
 <div class="nojust">
 
+<!-- [ [PDF](https://research.chalmers.se/publication/517203/file/517203_Fulltext.pdf) ] -->
+[ [URL](https://research.chalmers.se/publication/528343) ]
+Lossy and Lossless Compression Techniques to Improve the Utilization of Memory Bandwidth and Capacity\
+**Albin Eldstål-Ahrens**\
+Doctoral Thesis, Chalmers University of Technology, 2022
+
 [ [PDF](https://research.chalmers.se/publication/528250/file/528250_Fulltext.pdf) ]
 [ [DOI](https://doi.org/10.1145/3481641) ]
 L2C: Combining Lossy and Lossless Compression on Memory and I/O\
