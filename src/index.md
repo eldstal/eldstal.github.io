@@ -135,19 +135,19 @@ Double-Free in shapelib (contrib/shpsort)
 ([CVSS 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
 Out-of-bounds read in LibreCAD (importshp DBF parser)
 
-<!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
+[ [CVE-2021-54847](https://www.cvedetails.com/cve/CVE-2021-54847) ]
 [ [Report](https://github.com/slic3r/Slic3r/issues/5118) ]
 [ [Report](https://github.com/slic3r/Slic3r/issues/5119) ]
 [ [Report](https://github.com/slic3r/Slic3r/issues/5120) ]
 ([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
 Multiple NULL-pointer dereferences in Slic3r (3MF XML)
 
-<!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
+[ [CVE-2021-45846](https://www.cvedetails.com/cve/CVE-2021-45846) ]
 [ [Report](https://github.com/slic3r/Slic3r/issues/5117) ]
 ([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
 NULL-pointer dereference in Slic3r (AMF XML)
 
-<!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
+[ [CVE-2021-45845](https://www.cvedetails.com/cve/CVE-2021-45845) ]
 [ [Report](https://tracker.freecad.org/view.php?id=4810) ]
 ([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
 RCE in FreeCAD (Path Sanity Check script)
@@ -162,7 +162,7 @@ RCE in FreeCAD (ODA DWG import)
 ([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
 NULL-pointer dereference in LibreCAD (DXF HATCH 93)
 
-[ [CVE-2021-45342](https://www.cvedetails.com/cve/CVE-2021-45342) ] -->
+[ [CVE-2021-45342](https://www.cvedetails.com/cve/CVE-2021-45342) ]
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1464) ]
 ([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
 RCE in LibreCAD (JWW CDataList)
