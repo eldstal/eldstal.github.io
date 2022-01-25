@@ -136,9 +136,9 @@ Double-Free in shapelib (contrib/shpsort)
 Out-of-bounds read in LibreCAD (importshp DBF parser)
 
 [ [CVE-2021-54847](https://www.cvedetails.com/cve/CVE-2021-54847) ]
-[ [Report](https://github.com/slic3r/Slic3r/issues/5118) ]
-[ [Report](https://github.com/slic3r/Slic3r/issues/5119) ]
-[ [Report](https://github.com/slic3r/Slic3r/issues/5120) ]
+[ Report [1](https://github.com/slic3r/Slic3r/issues/5118)
+  [2](https://github.com/slic3r/Slic3r/issues/5119)
+  [3](https://github.com/slic3r/Slic3r/issues/5120) ]
 ([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
 Multiple NULL-pointer dereferences in Slic3r (3MF XML)
 
@@ -173,8 +173,8 @@ RCE in LibreCAD (JWW CDataList)
 RCE in LibreCAD (JWW CDataMoji)
 
 [ [CVE-2021-45340](https://www.cvedetails.com/cve/CVE-2021-45340) ]
-[ [Report](https://github.com/libsixel/libsixel/issues/51) ]
-[ [Report](https://github.com/saitoha/libsixel/issues/160) ]
+[ Report [1](https://github.com/libsixel/libsixel/issues/51)
+  [2](https://github.com/saitoha/libsixel/issues/160) ]
 ([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
 NULL-pointer dereference in libSIXEL
 
