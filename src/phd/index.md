@@ -23,7 +23,7 @@ Albin Eldstål-Ahrens
 <p>
 <b>Online Presentation:</b><br />
 February 22nd, 2022, 14:00 CET<br />
-Zoom link <b>HERE</b> shortly.
+Zoom link <a href="https://research.chalmers.se/en/publication/528343">HERE</a>.
 </p>
 
 <p>
@@ -48,7 +48,7 @@ Delft Technical University, IBM
 
 <p>
 <b>Thesis is available:</b><br />
-PDF link <b>HERE</b> shortly.<br />
+PDF <a href="https://research.chalmers.se/en/publication/528343">HERE</a>.
 Department of Computer Science & Engineering<br />
 Chalmers University of Technology<br />
 Gothenburg, Sweden, 2022
