@@ -152,27 +152,27 @@ NULL-pointer dereference in Slic3r (AMF XML)
 ([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
 RCE in FreeCAD (Path Sanity Check script)
 
-<!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
+[ [CVE-2021-45844](https://www.cvedetails.com/cve/CVE-2021-45844) ]
 [ [Report](https://tracker.freecad.org/view.php?id=4809) ]
 ([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
 RCE in FreeCAD (ODA DWG import)
 
-<!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
+[ [CVE-2021-45343](https://www.cvedetails.com/cve/CVE-2021-45343) ]
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1468) ]
 ([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
 NULL-pointer dereference in LibreCAD (DXF HATCH 93)
 
-<!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
+[ [CVE-2021-45342](https://www.cvedetails.com/cve/CVE-2021-45342) ] -->
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1464) ]
 ([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
 RCE in LibreCAD (JWW CDataList)
 
-<!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
+[ [CVE-2021-45341](https://www.cvedetails.com/cve/CVE-2021-45341) ]
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1462) ]
 ([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
 RCE in LibreCAD (JWW CDataMoji)
 
-<!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
+[ [CVE-2021-45340](https://www.cvedetails.com/cve/CVE-2021-45340) ]
 [ [Report](https://github.com/libsixel/libsixel/issues/51) ]
 [ [Report](https://github.com/saitoha/libsixel/issues/160) ]
 ([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
