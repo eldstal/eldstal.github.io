@@ -24,7 +24,7 @@ Albin Eldstål-Ahrens
 <b>Online Presentation:</b><br />
 February 22nd, 2022, 14:00 CET<br />
 Zoom link <a href="https://research.chalmers.se/en/publication/528343">HERE</a>.<br />
-Presentation with annotations<a href="phd_handout.pdf">HERE</a> shortly.
+Presentation with annotations <a href="phd_handout.pdf">HERE</a> shortly.
 </p>
 
 <p>
