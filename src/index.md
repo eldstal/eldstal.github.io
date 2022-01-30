@@ -102,80 +102,82 @@ I've found and reported the following vulnerabilities in software projects:
 
 <!-- [ [CVE-2022-XXXXX](https://www.cvedetails.com/cve/CVE-2022-XXXXX) ] -->
 [ [Report](https://github.com/openscad/openscad/issues/4043) ]
-([CVSS 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
+([CVSS3 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
 Out-of-bounds read in OpenSCAD (Comment parser)
 
 <!-- [ [CVE-2022-XXXXX](https://www.cvedetails.com/cve/CVE-2022-XXXXX) ] -->
 [ [Report](https://github.com/openscad/openscad/issues/4037) ]
-([CVSS 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
+([CVSS3 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
 Out-of-bounds read in OpenSCAD (DXF path)
 
 <!-- [ [CVE-2022-XXXXX](https://www.cvedetails.com/cve/CVE-2022-XXXXX) ] -->
 [ [Report](https://developer.blender.org/T94661) ]
-([CVSS 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
+([CVSS3 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
 Out-of-bounds read in Blender (DDS loader)
 
 <!-- [ [CVE-2022-XXXXX](https://www.cvedetails.com/cve/CVE-2022-XXXXX) ] -->
 [ [Report](https://developer.blender.org/T94629) ]
-([CVSS 7.1](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:L/A:L/E:U/RL:U/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:L/MA:L&version=3.1))
+([CVSS3 7.1](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:L/A:L/E:U/RL:U/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:L/MA:L&version=3.1))
 Controlled out-of-bounds read/write in Blender (IMB_flipy)
 
 <!-- [ [CVE-2022-XXXXX](https://www.cvedetails.com/cve/CVE-2022-XXXXX) ] -->
 [ [Report](https://developer.blender.org/T94572) ]
-([CVSS 5.4](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L/E:U/RL:U/RC:R/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:L/MA:L&version=3.1))
+([CVSS3 5.4](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L/E:U/RL:U/RC:R/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:L/MA:L&version=3.1))
 Multiple Out-of-bounds reads/writes in Blender (HDR loader)
 
 <!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
 [ [Report](https://github.com/OSGeo/shapelib/issues/39) ]
-([CVSS 6.0](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:U/RL:U/RC:R/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:N/MS:C/MC:L/MI:L/MA:L&version=3.1))
+([CVSS3 6.0](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:U/RL:U/RC:R/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:N/MS:C/MC:L/MI:L/MA:L&version=3.1))
 Double-Free in shapelib (contrib/shpsort)
 
 <!-- Not yet reported to CVE program, pending confirmation from developer -->
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1481) ]
-([CVSS 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
+([CVSS3 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
 Out-of-bounds read in LibreCAD (importshp DBF parser)
 
 [ [CVE-2021-45847](https://www.cvedetails.com/cve/CVE-2021-45847) ]
-[ Report [1](https://github.com/slic3r/Slic3r/issues/5118)
+[ Report
+  [1](https://github.com/slic3r/Slic3r/issues/5118)
   [2](https://github.com/slic3r/Slic3r/issues/5119)
   [3](https://github.com/slic3r/Slic3r/issues/5120) ]
-([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
+([CVSS3 5.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:H/RL:U/RC:C&version=3.1))
 Multiple NULL-pointer dereferences in Slic3r (3MF XML)
 
 [ [CVE-2021-45846](https://www.cvedetails.com/cve/CVE-2021-45846) ]
 [ [Report](https://github.com/slic3r/Slic3r/issues/5117) ]
-([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
+([CVSS3 5.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:H/RL:U/RC:C&version=3.1))
 NULL-pointer dereference in Slic3r (AMF XML)
 
 [ [CVE-2021-45845](https://www.cvedetails.com/cve/CVE-2021-45845) ]
 [ [Report](https://tracker.freecad.org/view.php?id=4810) ]
-([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
+([CVSS3 7.5](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C&version=3.1))
 RCE in FreeCAD (Path Sanity Check script)
 
 [ [CVE-2021-45844](https://www.cvedetails.com/cve/CVE-2021-45844) ]
 [ [Report](https://tracker.freecad.org/view.php?id=4809) ]
-([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
+([CVSS3 7.5](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C&version=3.1))
 RCE in FreeCAD (ODA DWG import)
 
 [ [CVE-2021-45343](https://www.cvedetails.com/cve/CVE-2021-45343) ]
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1468) ]
-([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
+([CVSS3 5.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:X/RL:O/RC:C&version=3.1))
 NULL-pointer dereference in LibreCAD (DXF HATCH 93)
 
 [ [CVE-2021-45342](https://www.cvedetails.com/cve/CVE-2021-45342) ]
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1464) ]
-([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
+([CVSS3 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
 RCE in LibreCAD (JWW CDataList)
 
 [ [CVE-2021-45341](https://www.cvedetails.com/cve/CVE-2021-45341) ]
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1462) ]
-([CVSS 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:L/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
+([CVSS3 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
 RCE in LibreCAD (JWW CDataMoji)
 
 [ [CVE-2021-45340](https://www.cvedetails.com/cve/CVE-2021-45340) ]
-[ Report [1](https://github.com/libsixel/libsixel/issues/51)
+[ Report
+  [1](https://github.com/libsixel/libsixel/issues/51)
   [2](https://github.com/saitoha/libsixel/issues/160) ]
-([CVSS 3.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:N/MI:N/MA:L&version=3.1))
+([CVSS3 5.7](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C&version=3.1))
 NULL-pointer dereference in libSIXEL
 
 </div>
