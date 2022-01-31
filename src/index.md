@@ -170,7 +170,7 @@ RCE in LibreCAD (JWW CDataList)
 
 [ [CVE-2021-45341](https://www.cvedetails.com/cve/CVE-2021-45341) ]
 [ [Report](https://github.com/LibreCAD/LibreCAD/issues/1462) ]
-([CVSS3 7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&version=3.1))
+([CVSS3 8.4](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C&version=3.1))
 RCE in LibreCAD (JWW CDataMoji)
 
 [ [CVE-2021-45340](https://www.cvedetails.com/cve/CVE-2021-45340) ]
