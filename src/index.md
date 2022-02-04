@@ -100,12 +100,12 @@ I've found and reported the following vulnerabilities in software projects:
 
 <div class="nojust">
 
-<!-- [ [CVE-2022-XXXXX](https://www.cvedetails.com/cve/CVE-2022-XXXXX) ] -->
+[ [CVE-2022-0497](https://www.cvedetails.com/cve/CVE-2022-0497]
 [ [Report](https://github.com/openscad/openscad/issues/4043) ]
 ([CVSS3 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
 Out-of-bounds read in OpenSCAD (Comment parser)
 
-<!-- [ [CVE-2022-XXXXX](https://www.cvedetails.com/cve/CVE-2022-XXXXX) ] -->
+[ [CVE-2022-0496](https://www.cvedetails.com/cve/CVE-2022-0496) ]
 [ [Report](https://github.com/openscad/openscad/issues/4037) ]
 ([CVSS3 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
 Out-of-bounds read in OpenSCAD (DXF path)
@@ -190,7 +190,7 @@ The following is a list of my academic publications, to date:
 
 <div class="nojust">
 
-<!-- [ [PDF](https://research.chalmers.se/publication/517203/file/517203_Fulltext.pdf) ] -->
+[ [PDF](https://research.chalmers.se/publication/528343/file/528343_fulltext.pdf) ]
 [ [URL](https://research.chalmers.se/publication/528343) ]
 Lossy and Lossless Compression Techniques to Improve the Utilization of Memory Bandwidth and Capacity\
 **Albin Eldstål-Ahrens**\
