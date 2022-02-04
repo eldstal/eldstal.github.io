@@ -100,7 +100,7 @@ I've found and reported the following vulnerabilities in software projects:
 
 <div class="nojust">
 
-[ [CVE-2022-0497](https://www.cvedetails.com/cve/CVE-2022-0497]
+[ [CVE-2022-0497](https://www.cvedetails.com/cve/CVE-2022-0497) ]
 [ [Report](https://github.com/openscad/openscad/issues/4043) ]
 ([CVSS3 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
 Out-of-bounds read in OpenSCAD (Comment parser)
