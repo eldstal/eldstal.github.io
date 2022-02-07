@@ -4,11 +4,11 @@ hidefooter: true
 header-metas:
   <meta property="og:title" content="Doctoral Defense of Albin Eldstål-Ahrens" />
   <meta property="og:description" content="Feb. 22nd, 2022, 14:00 CET" />
-  <meta property="og:image" content="/def_social.png" />
+  <meta property="og:image" content="https://eldstal.se/def_social.png" />
   <meta property="twitter:title" content="Doctoral Defense of Albin Eldstål-Ahrens" />
   <meta property="twitter:description" content="Feb. 22nd, 2022, 14:00 CET" />
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:image" content="/def_social.png" />
+  <meta property="twitter:image" content="https://eldstal.se/def_social.png" />
 ...
 
 <div class="thesis">
