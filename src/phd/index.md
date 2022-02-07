@@ -2,6 +2,8 @@
 pagetitle: Doctoral Defense of Albin Eldstål-Ahrens
 hidefooter: true
 header-metas:
+  <meta property="og:url" content="https://eldstal.se/phd" />
+  <meta property="og:type" content="website" />
   <meta property="og:title" content="Doctoral Defense of Albin Eldstål-Ahrens" />
   <meta property="og:description" content="Online, Feb. 22nd, 2022, 14:00 CET" />
   <meta property="og:image" content="https://eldstal.se/def_social.png" />
