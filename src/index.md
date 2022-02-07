@@ -243,7 +243,7 @@ Technical Report, Luleå University of Technology, 2011
 </div>
 
 ## Supervision
-I've had the pleasure of being the advisor for the following Bacherlor's thesis work:
+I've had the pleasure of being the advisor for the following Bachelor's thesis work:
 
 [ [PDF](https://odr.chalmers.se/bitstream/20.500.12380/300034/1/CSE%2019-09%20CPL%20Yngvesson%20Magnusson.pdf) ]
 [ [URL](https://hdl.handle.net/20.500.12380/300034) ]
