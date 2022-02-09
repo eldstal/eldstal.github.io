@@ -110,20 +110,20 @@ Out-of-bounds read in OpenSCAD (Comment parser)
 ([CVSS3 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
 Out-of-bounds read in OpenSCAD (DXF path)
 
-<!-- [ [CVE-2022-XXXXX](https://www.cvedetails.com/cve/CVE-2022-XXXXX) ] -->
-[ [Report](https://developer.blender.org/T94661) ]
-([CVSS3 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
-Out-of-bounds read in Blender (DDS loader)
+[ [CVE-2022-0546](https://www.cvedetails.com/cve/CVE-2022-0546) ]
+[ [Report](https://developer.blender.org/T94572) ]
+([CVSS3 5.4](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L/E:U/RL:U/RC:R/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:L/MA:L&version=3.1))
+Multiple Out-of-bounds reads/writes in Blender (HDR loader)
 
-<!-- [ [CVE-2022-XXXXX](https://www.cvedetails.com/cve/CVE-2022-XXXXX) ] -->
+[ [CVE-2022-0545](https://www.cvedetails.com/cve/CVE-2022-0545) ]
 [ [Report](https://developer.blender.org/T94629) ]
 ([CVSS3 7.1](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:L/A:L/E:U/RL:U/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:L/MA:L&version=3.1))
 Controlled out-of-bounds read/write in Blender (IMB_flipy)
 
-<!-- [ [CVE-2022-XXXXX](https://www.cvedetails.com/cve/CVE-2022-XXXXX) ] -->
-[ [Report](https://developer.blender.org/T94572) ]
-([CVSS3 5.4](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L/E:U/RL:U/RC:R/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:L/MA:L&version=3.1))
-Multiple Out-of-bounds reads/writes in Blender (HDR loader)
+[ [CVE-2022-0544](https://www.cvedetails.com/cve/CVE-2022-0544) ]
+[ [Report](https://developer.blender.org/T94661) ]
+([CVSS3 4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&version=3.1))
+Out-of-bounds read in Blender (DDS loader)
 
 <!-- [ [CVE-2021-XXXXX](https://www.cvedetails.com/cve/CVE-2021-XXXXX) ] -->
 [ [Report](https://github.com/OSGeo/shapelib/issues/39) ]
