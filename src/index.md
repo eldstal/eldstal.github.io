@@ -54,6 +54,9 @@ development board, powered by the Lattice iCE40UP5k FPGA. DESYNK controls the cl
 driving the target device, and probes for the proper time and duration of clock inconsistency,
 in order to cause interesting software failures.
 
+### ![elnino](/elnino.png) [elnino](https://github.com/eldstal/elnino)
+_Scripts for [https://binary.ninja](binary ninja)_
+
 ### ![CTF Notes](/gitbook.png) [CTF Notes](https://luftenshjaltar.gitbook.io/ctf/)
 _It won't be a surprise, the second time I see this._
 
