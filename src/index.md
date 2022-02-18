@@ -55,7 +55,9 @@ driving the target device, and probes for the proper time and duration of clock 
 in order to cause interesting software failures.
 
 ### ![elnino](/elnino.png) [elnino](https://github.com/eldstal/elnino)
-_Scripts for [https://binary.ninja](binary ninja)_
+_Scripts for [binary ninja](https://binary.ninja)_
+
+A collection of utilities for the binja reverse engineering tool.
 
 ### ![CTF Notes](/gitbook.png) [CTF Notes](https://luftenshjaltar.gitbook.io/ctf/)
 _It won't be a surprise, the second time I see this._
