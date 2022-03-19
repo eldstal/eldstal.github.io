@@ -57,6 +57,12 @@ _Scripts for [binary ninja](https://binary.ninja)_
 
 A collection of utilities for the binja reverse engineering tool.
 
+### ![mediafuzz](/mediafuzz.png) [mediafuzz](https://github.com/eldstal/mediafuzz)
+_Fuzzer for the media metadata display of your car_
+
+A small web application which fuzzes the artist/title/album information of your "currently playing"
+notification. Run it on your phone and stream the audio by bluetooth to your target device.
+
 ### ![CTF Notes](/gitbook.png) [CTF Notes](https://luftenshjaltar.gitbook.io/ctf/)
 _It won't be a surprise, the second time I see this._
 
