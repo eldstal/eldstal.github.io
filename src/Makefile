@@ -5,10 +5,14 @@ PAGES=$(addprefix $(DEST)/,$(patsubst %.md,%.html,$(wildcard *.md */*.md)))
 
 all: $(PAGES) $(STATICS)
 
-$(DEST)/%.html: %.md header.html template.html Makefile
+$(DEST)/%.html: %.md cve.md header.html template.html Makefile
 	mkdir -p $$(dirname $@)
-	pandoc -M date="$$(date '+%B %e, %Y')" -f markdown -t html5 --template template.html -H header.html -o $@ $<
+	gpp $< > /tmp/preproc.md
+	pandoc -M date="$$(date '+%B %e, %Y')" -f markdown -t html5 --template template.html -H header.html -o $@ /tmp/preproc.md
 
+
+cve.md: tools/gen_cve.py cve.json
+	tools/gen_cve.py cve.json > $@
 
 $(DEST)/%: static/%
 	cp $< $@

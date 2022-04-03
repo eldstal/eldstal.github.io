@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="dcterms.date" content="2022-03-19">
+  <meta name="dcterms.date" content="2022-04-03">
   <title>Albin Eldstål-Ahrens</title>
   <style type="text/css">code{white-space: pre;}</style>
   <!--[if lt IE 9]>
@@ -50,6 +50,30 @@
   
     .nojust p {
       text-align: left;
+    }
+  
+    tr:nth-child(even) {
+      background: #F0F5FF;
+    }
+  
+    tr:nth-child(odd) {
+      /*background: #ffffff;*/
+    }
+  
+    table, tr, td, th {
+      border-collapse: collapse;
+      margin-left: 1em;
+    }
+  
+    th {
+      border-bottom: 1pt solid #AEAEAE;
+    }
+  
+    td,th {
+      padding-top: 4pt;
+      padding-bottom: 4pt;
+      padding-left: 8pt;
+      padding-right: 8pt;
     }
   
     a {
@@ -152,58 +176,251 @@
 <p>The LaTeX typesetting engine wasn’t intended for this.</p>
 <h1 id="security-1">Security</h1>
 <p>I’ve found and reported the following vulnerabilities in software projects:</p>
-<div class="nojust">
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2022-0546">CVE-2022-0546</a> ] [ <a href="https://developer.blender.org/T94572">Report</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L/E:U/RL:U/RC:R/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:L/MA:L&amp;version=3.1">CVSS3 5.4</a>) Multiple Out-of-bounds reads/writes in Blender (HDR loader)</p>
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2022-0545">CVE-2022-0545</a> ] [ <a href="https://developer.blender.org/T94629">Report</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:L/A:L/E:U/RL:U/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:L/MA:L&amp;version=3.1">CVSS3 7.1</a>) Controlled out-of-bounds read/write in Blender (IMB_flipy)</p>
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2022-0544">CVE-2022-0544</a> ] [ <a href="https://developer.blender.org/T94661">Report</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1">CVSS3 4.6</a>) Out-of-bounds read in Blender (DDS loader)</p>
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2022-0497">CVE-2022-0497</a> ] [ <a href="https://github.com/openscad/openscad/issues/4043">Report</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1">CVSS3 4.6</a>) Out-of-bounds read in OpenSCAD (Comment parser)</p>
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2022-0496">CVE-2022-0496</a> ] [ <a href="https://github.com/openscad/openscad/issues/4037">Report</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1">CVSS3 4.6</a>) Out-of-bounds read in OpenSCAD (DXF path)</p>
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2022-0699">CVE-2022-0699</a> ] [ <a href="https://github.com/OSGeo/shapelib/issues/39">Report</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L/E:U/RL:U/RC:R/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:N/MS:C/MC:L/MI:L/MA:L&amp;version=3.1">CVSS3 6.0</a>) Double-Free in shapelib (contrib/shpsort)</p>
-<!-- Not yet reported to CVE program, pending confirmation from developer -->
-<p>[ <a href="https://github.com/LibreCAD/LibreCAD/issues/1481">Report</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1">CVSS3 4.6</a>) Out-of-bounds read in LibreCAD (importshp DBF parser)</p>
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2021-45847">CVE-2021-45847</a> ] [ Report <a href="https://github.com/slic3r/Slic3r/issues/5118">1</a> <a href="https://github.com/slic3r/Slic3r/issues/5119">2</a> <a href="https://github.com/slic3r/Slic3r/issues/5120">3</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:H/RL:U/RC:C&amp;version=3.1">CVSS3 5.3</a>) Multiple NULL-pointer dereferences in Slic3r (3MF XML)</p>
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2021-45846">CVE-2021-45846</a> ] [ <a href="https://github.com/slic3r/Slic3r/issues/5117">Report</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:H/RL:U/RC:C&amp;version=3.1">CVSS3 5.3</a>) NULL-pointer dereference in Slic3r (AMF XML)</p>
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2021-45845">CVE-2021-45845</a> ] [ <a href="https://tracker.freecad.org/view.php?id=4810">Report</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C&amp;version=3.1">CVSS3 7.5</a>) RCE in FreeCAD (Path Sanity Check script)</p>
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2021-45844">CVE-2021-45844</a> ] [ <a href="https://tracker.freecad.org/view.php?id=4809">Report</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C&amp;version=3.1">CVSS3 7.5</a>) RCE in FreeCAD (ODA DWG import)</p>
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2021-45343">CVE-2021-45343</a> ] [ <a href="https://github.com/LibreCAD/LibreCAD/issues/1468">Report</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:X/RL:O/RC:C&amp;version=3.1">CVSS3 5.3</a>) NULL-pointer dereference in LibreCAD (DXF HATCH 93)</p>
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2021-45342">CVE-2021-45342</a> ] [ <a href="https://github.com/LibreCAD/LibreCAD/issues/1464">Report</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&amp;version=3.1">CVSS3 7.8</a>) RCE in LibreCAD (JWW CDataList)</p>
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2021-45341">CVE-2021-45341</a> ] [ <a href="https://github.com/LibreCAD/LibreCAD/issues/1462">Report</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C&amp;version=3.1">CVSS3 8.4</a>) RCE in LibreCAD (JWW CDataMoji)</p>
-<p>[ <a href="https://www.cvedetails.com/cve/CVE-2021-45340">CVE-2021-45340</a> ] [ Report <a href="https://github.com/libsixel/libsixel/issues/51">1</a> <a href="https://github.com/saitoha/libsixel/issues/160">2</a> ] (<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C&amp;version=3.1">CVSS3 5.7</a>) NULL-pointer dereference in libSIXEL</p>
-</div>
+<table>
+<thead>
+<tr>
+<th>
+Reference
+</th>
+<th>
+Report
+</th>
+<th>
+CVSS3
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2022-0546">CVE-2022-0546</a>
+</td>
+<td>
+<a href="https://developer.blender.org/T94572">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L/E:U/RL:U/RC:R/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:L/MA:L&amp;version=3.1">5.4</a>
+</td>
+<td>
+Multiple Out-of-bounds reads/writes in Blender (HDR loader)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2022-0545">CVE-2022-0545</a>
+</td>
+<td>
+<a href="https://developer.blender.org/T94629">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:L/A:L/E:U/RL:U/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:L/MA:L&amp;version=3.1">7.1</a>
+</td>
+<td>
+Controlled out-of-bounds read/write in Blender (IMB_flipy)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2022-0544">CVE-2022-0544</a>
+</td>
+<td>
+<a href="https://developer.blender.org/T94661">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1">4.6</a>
+</td>
+<td>
+Out-of-bounds read in Blender (DDS loader)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2022-0497">CVE-2022-0497</a>
+</td>
+<td>
+<a href="https://github.com/openscad/openscad/issues/4043">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1">4.6</a>
+</td>
+<td>
+Out-of-bounds read in OpenSCAD (Comment parser)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2022-0496">CVE-2022-0496</a>
+</td>
+<td>
+<a href="https://github.com/openscad/openscad/issues/4037">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1">4.6</a>
+</td>
+<td>
+Out-of-bounds read in OpenSCAD (DXF path)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2022-0699">CVE-2022-0699</a>
+</td>
+<td>
+<a href="https://github.com/OSGeo/shapelib/issues/39">1</a>
+</td>
+<td>
+</td>
+<td>
+Double-Free in shapelib (contrib/shpsort)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/"></a>
+</td>
+<td>
+<a href="https://github.com/LibreCAD/LibreCAD/issues/1481">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1">4.6</a>
+</td>
+<td>
+Out-of-bounds read in LibreCAD (importshp DBF parser)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45847">CVE-2021-45847</a>
+</td>
+<td>
+<a href="https://github.com/slic3r/Slic3r/issues/5118">1</a> <a href="https://github.com/slic3r/Slic3r/issues/5119">2</a> <a href="https://github.com/slic3r/Slic3r/issues/5120">3</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:H/RL:U/RC:C&amp;version=3.1">5.3</a>
+</td>
+<td>
+Multiple NULL-pointer dereferences in Slic3r (3MF XML)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45846">CVE-2021-45846</a>
+</td>
+<td>
+<a href="https://github.com/slic3r/Slic3r/issues/5117">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:H/RL:U/RC:C&amp;version=3.1">5.3</a>
+</td>
+<td>
+NULL-pointer dereference in Slic3r (AMF XML)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45845">CVE-2021-45845</a>
+</td>
+<td>
+<a href="https://tracker.freecad.org/view.php?id=4810">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C&amp;version=3.1">7.5</a>
+</td>
+<td>
+RCE in FreeCAD (Path Sanity Check script)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45844">CVE-2021-45844</a>
+</td>
+<td>
+<a href="https://tracker.freecad.org/view.php?id=4809">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C&amp;version=3.1">7.5</a>
+</td>
+<td>
+RCE in FreeCAD (ODA DWG import)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45343">CVE-2021-45343</a>
+</td>
+<td>
+<a href="https://github.com/LibreCAD/LibreCAD/issues/1468">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:X/RL:O/RC:C&amp;version=3.1">5.3</a>
+</td>
+<td>
+NULL-pointer dereference in LibreCAD (DXF HATCH 93)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45342">CVE-2021-45342</a>
+</td>
+<td>
+<a href="https://github.com/LibreCAD/LibreCAD/issues/1464">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&amp;version=3.1">7.8</a>
+</td>
+<td>
+RCE in LibreCAD (JWW CDataList)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45341">CVE-2021-45341</a>
+</td>
+<td>
+<a href="https://github.com/LibreCAD/LibreCAD/issues/1462">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C&amp;version=3.1">8.4</a>
+</td>
+<td>
+RCE in LibreCAD (JWW CDataMoji)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45340">CVE-2021-45340</a>
+</td>
+<td>
+<a href="https://github.com/libsixel/libsixel/issues/51">1</a> <a href="https://github.com/saitoha/libsixel/issues/160">2</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C&amp;version=3.1">5.7</a>
+</td>
+<td>
+NULL-pointer dereference in libSIXEL
+</td>
+</tr>
+</tbody>
+</table>
 <h1 id="research-and-education">Research and Education</h1>
 <h2 id="publications">Publications</h2>
 <p>The following is a list of my academic publications, to date:</p>
 <div class="nojust">
-<p>[ <a href="https://research.chalmers.se/publication/528343/file/528343_fulltext.pdf">PDF</a> ] [ <a href="https://research.chalmers.se/publication/528343">URL</a> ] Lossy and Lossless Compression Techniques to Improve the Utilization of Memory Bandwidth and Capacity<br />
-<strong>Albin Eldstål-Ahrens</strong><br />
-Doctoral Thesis, Chalmers University of Technology, 2022</p>
-<p>[ <a href="https://research.chalmers.se/publication/528250/file/528250_Fulltext.pdf">PDF</a> ] [ <a href="https://doi.org/10.1145/3481641">DOI</a> ] L2C: Combining Lossy and Lossless Compression on Memory and I/O<br />
-<strong>Albin Eldstål-Ahrens</strong>, Angelos Arelakis, Ioannis Sourdis<br />
-ACM Transactions on Embedded Computing Systems (TECS), 2022</p>
-<p>[ <a href="https://research.chalmers.se/publication/517203/file/517203_Fulltext.pdf">PDF</a> ] [ <a href="https://research.chalmers.se/publication/517203">URL</a> ] Reducing Memory Traffic with Approximate Compression<br />
-<strong>Albin Eldstål-Ahrens</strong><br />
-Licentiate Thesis, Chalmers University of Technology, 2020</p>
-<p>[ <a href="https://research.chalmers.se/publication/521215/file/521215_Fulltext.pdf">PDF</a> ] [ <a href="https://doi.org/10.1145/3424668">DOI</a> ] MemSZ: Squeezing Memory Traffic with Lossy Compression<br />
-<strong>Albin Eldstål-Ahrens</strong>, Ioannis Sourdis<br />
-ACM Transactions on Architecture and Code Optimization (TACO), 2020</p>
-<p>[ <a href="https://research.chalmers.se/publication/512096/file/512096_Fulltext.pdf">PDF</a> ] [ <a href="https://doi.org/10.1145/3337821.3337824">DOI</a> ] AVR: Reducing Memory Traffic with Approximate Value Reconstruction<br />
-<strong>Albin Eldstål-Damlin</strong>, Pedro Trancoso, Ioannis Sourdis<br />
-International Conference on Parallel Processing (ICPP), 2019</p>
-<p>[ <a href="https://doi.org/10.1109/VTCSpring.2013.6691881">DOI</a> ] [ <a href="https://ieeexplore.ieee.org/document/6691881">IEEE</a> ] An Improved Model of LTE Random Access Channel<br />
-Evgeny Osipov, Laurynas Riliskis, <strong>Albin Eldstål-Damlin</strong>, Michael Burakov, Mats Nordberg, Min Wang<br />
-IEEE 77th Vehicular Technology Conference, 2013</p>
-<p>[ <a href="https://ltu.diva-portal.org/smash/get/diva2:1029175/FULLTEXT02.pdf">PDF</a> ] An LTE Random Access Channel Model for Wireless Sensor Network Applications<br />
-Mikael Burakov, <strong>Albin Eldstål-Damlin</strong><br />
-Master’s Thesis, Luleå University of Technology, 2012</p>
-<p>[ <a href="https://www.diva-portal.org/smash/get/diva2:1003393/FULLTEXT01.pdf">PDF</a> ] A comparison of two modes for AEAD services in wireless sensor networks<br />
-<strong>Albin Eldstål-Damlin</strong>, Laurynas Riliskis<br />
-Technical Report, Luleå University of Technology, 2011</p>
+<p>[ <a href="https://research.chalmers.se/publication/528343/file/528343_fulltext.pdf">PDF</a> ] [ <a href="https://research.chalmers.se/publication/528343">URL</a> ] Lossy and Lossless Compression Techniques to Improve the Utilization of Memory Bandwidth and Capacity <strong>Albin Eldstål-Ahrens</strong> Doctoral Thesis, Chalmers University of Technology, 2022</p>
+<p>[ <a href="https://research.chalmers.se/publication/528250/file/528250_Fulltext.pdf">PDF</a> ] [ <a href="https://doi.org/10.1145/3481641">DOI</a> ] L2C: Combining Lossy and Lossless Compression on Memory and I/O <strong>Albin Eldstål-Ahrens</strong>, Angelos Arelakis, Ioannis Sourdis ACM Transactions on Embedded Computing Systems (TECS), 2022</p>
+<p>[ <a href="https://research.chalmers.se/publication/517203/file/517203_Fulltext.pdf">PDF</a> ] [ <a href="https://research.chalmers.se/publication/517203">URL</a> ] Reducing Memory Traffic with Approximate Compression <strong>Albin Eldstål-Ahrens</strong> Licentiate Thesis, Chalmers University of Technology, 2020</p>
+<p>[ <a href="https://research.chalmers.se/publication/521215/file/521215_Fulltext.pdf">PDF</a> ] [ <a href="https://doi.org/10.1145/3424668">DOI</a> ] MemSZ: Squeezing Memory Traffic with Lossy Compression <strong>Albin Eldstål-Ahrens</strong>, Ioannis Sourdis ACM Transactions on Architecture and Code Optimization (TACO), 2020</p>
+<p>[ <a href="https://research.chalmers.se/publication/512096/file/512096_Fulltext.pdf">PDF</a> ] [ <a href="https://doi.org/10.1145/3337821.3337824">DOI</a> ] AVR: Reducing Memory Traffic with Approximate Value Reconstruction <strong>Albin Eldstål-Damlin</strong>, Pedro Trancoso, Ioannis Sourdis International Conference on Parallel Processing (ICPP), 2019</p>
+<p>[ <a href="https://doi.org/10.1109/VTCSpring.2013.6691881">DOI</a> ] [ <a href="https://ieeexplore.ieee.org/document/6691881">IEEE</a> ] An Improved Model of LTE Random Access Channel Evgeny Osipov, Laurynas Riliskis, <strong>Albin Eldstål-Damlin</strong>, Michael Burakov, Mats Nordberg, Min Wang IEEE 77th Vehicular Technology Conference, 2013</p>
+<p>[ <a href="https://ltu.diva-portal.org/smash/get/diva2:1029175/FULLTEXT02.pdf">PDF</a> ] An LTE Random Access Channel Model for Wireless Sensor Network Applications Mikael Burakov, <strong>Albin Eldstål-Damlin</strong> Master’s Thesis, Luleå University of Technology, 2012</p>
+<p>[ <a href="https://www.diva-portal.org/smash/get/diva2:1003393/FULLTEXT01.pdf">PDF</a> ] A comparison of two modes for AEAD services in wireless sensor networks <strong>Albin Eldstål-Damlin</strong>, Laurynas Riliskis Technical Report, Luleå University of Technology, 2011</p>
 </div>
 <h2 id="supervision">Supervision</h2>
 <p>I’ve had the pleasure of being the advisor for the following Bachelor’s thesis work:</p>
-<p>[ <a href="https://odr.chalmers.se/bitstream/20.500.12380/300034/1/CSE%2019-09%20CPL%20Yngvesson%20Magnusson.pdf">PDF</a> ] [ <a href="https://hdl.handle.net/20.500.12380/300034">URL</a> ] Augmented Reality<br />
-Johan Yngvesson, Johannes Magnusson<br />
-Bachelor’s Thesis, Chalmers University of Technology, 2019</p>
+<p>[ <a href="https://odr.chalmers.se/bitstream/20.500.12380/300034/1/CSE%2019-09%20CPL%20Yngvesson%20Magnusson.pdf">PDF</a> ] [ <a href="https://hdl.handle.net/20.500.12380/300034">URL</a> ] Augmented Reality Johan Yngvesson, Johannes Magnusson Bachelor’s Thesis, Chalmers University of Technology, 2019</p>
 <h2 id="peer-review">Peer Review</h2>
 <p>I’ve served as a reviewer for paper(s) for the following venues:</p>
 <p>Computing Frontiers (CF) 2021</p>
@@ -220,7 +437,7 @@ Bachelor’s Thesis, Chalmers University of Technology, 2019</p>
 <p>Design, Automation and Test in Europe (DATE) 2016</p>
 <hr>
 <div class="footer">
-<p>Generated on March 19, 2022 using <a href="https://pandoc.org">Pandoc</a>. View the <a href="https://github.com/eldstal/eldstal.github.io">source</a> if you'd like!</p>
+<p>Generated on April 3, 2022 using <a href="https://pandoc.org">Pandoc</a>. View the <a href="https://github.com/eldstal/eldstal.github.io">source</a> if you'd like!</p>
 <p>Generously hosted by <a href="https://docs.github.com/en/pages">GitHub Pages</p>
 </div>
 
