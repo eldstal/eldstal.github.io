@@ -107,7 +107,7 @@ The LaTeX typesetting engine wasn't intended for this.
 I've found and reported the following vulnerabilities in software projects:
 
 
-#include "cve.md"
+$(include "cve.md")
 
 
 # Research and Education

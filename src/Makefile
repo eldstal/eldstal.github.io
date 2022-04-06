@@ -7,7 +7,8 @@ all: $(PAGES) $(STATICS)
 
 $(DEST)/%.html: %.md cve.md header.html template.html Makefile
 	mkdir -p $$(dirname $@)
-	gpp $< > /tmp/preproc.md
+	# Preprocessor from http://christophe.delord.free.fr/upp/
+	upp $< > /tmp/preproc.md
 	pandoc -M date="$$(date '+%B %e, %Y')" -f markdown -t html5 --template template.html -H header.html -o $@ /tmp/preproc.md
 
 
