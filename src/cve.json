@@ -1,6 +1,12 @@
 [
 
   {
+    "cve": "CVE-2022-1215",
+    "report": [ "https://gitlab.freedesktop.org/libinput/libinput/-/issues/752" ],
+    "cvss3": "7.1",
+    "cvss_vector": "AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C",
+    "descr":  "Format string vulnerability in freedesktop's libinput"
+  }, {
     "cve": "CVE-2022-0546",
     "report": [ "https://developer.blender.org/T94572" ],
     "cvss3": "5.4",
