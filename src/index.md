@@ -14,6 +14,17 @@ Ph.D. of Computer Science and Engineering, Chalmers University of Technology, Go
 
 # Projects
 ## Security
+
+### ![MacDongler](/macdongler.png) [MacDongler](https://github.com/eldstal/MacDongler)
+_USB Skeleton Key_
+
+Some devices (tablet kiosks, buses, cars, air planes, advertising displays, ...) expose
+a USB interface, either for user device charging or for development access or both. One
+way to lock these devices down is to limit the accepted USB devices, based on model or type
+or vendor ID. MacDongler is a scanner based on Linux USB Gadgets, which emulates a large
+number of USB devices and automatically determines which ones are accepted by a host. It
+can emulate network interfaces, serial ports, HID devices, and more!
+
 ### ![strinvader](/strinvader.png) [strinvader](https://github.com/eldstal/strinvader)
 _Unicode denormalizer_
 
