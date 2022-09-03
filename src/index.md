@@ -121,12 +121,22 @@ I've found and reported the following vulnerabilities in software projects:
 $(include "cve.md")
 
 
+# Bugs for Charity
+Via bug bounty programs, I've generated $500 for charity. By matching funds, Google VRP has generously
+provided an additional $500 of donations.
+
+These donations have been made to the [National Network of Abortion Funds](https://abortionfunds.org).
+
 # Research and Education
 
 ## Publications
 The following is a list of my academic publications, to date:
 
 <div class="nojust">
+
+FlatPack: Flexible Compaction of Compressed Memory\
+**Albin Eldstål-Ahrens**, Angelos Arelakis, Ioannis Sourdis\
+International Conference on Parallel Architectures and Compilation Techniques (PACT), 2022
 
 [ [PDF](https://research.chalmers.se/publication/528343/file/528343_fulltext.pdf) ]
 [ [URL](https://research.chalmers.se/publication/528343) ]
@@ -192,7 +202,7 @@ Bachelor's Thesis, Chalmers University of Technology, 2019
 
 
 ## Peer Review
-I've served as a reviewer for paper(s) for the following venues:
+I've served as a reviewer for paper(s) for the following publications and conferences:
 
 Computing Frontiers (CF) 2021
 
