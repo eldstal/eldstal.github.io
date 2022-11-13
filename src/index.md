@@ -10,7 +10,8 @@ Ph.D. of Computer Science and Engineering, Chalmers University of Technology, Go
 # Links
 [ [GitHub](https://github.com/eldstal) ] |
 [ [LuftensHjältar](https://luftenshjaltar.info) ] |
-[ [CTFTime](https://ctftime.org/team/50600) ]
+[ [CTFTime](https://ctftime.org/team/50600) ] |
+[ <a rel="me" href="https://kolektiva.social/@albin">Mastodon</a> ]
 
 # Projects
 ## Security
