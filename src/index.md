@@ -4,7 +4,9 @@ pagetitle: Albin Eldstål-Ahrens
 ...
 
 # Albin Eldstål-Ahrens
+Offensive Security Certified Professional (OSCP)\
 Ph.D. of Computer Science and Engineering, Chalmers University of Technology, Gothenburg, Sweden.
+
 
 
 # Links
@@ -116,6 +118,9 @@ The LaTeX typesetting engine wasn't intended for this.
 
 
 # Security
+I am the holder of an [Offensive Security Certified Professional (OSCP)](https://www.credential.net/43d80588-74b1-4d6b-b25e-45078ae452c8) certification.
+
+
 I've found and reported the following vulnerabilities in software projects:
 
 
