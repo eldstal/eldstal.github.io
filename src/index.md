@@ -140,6 +140,8 @@ The following is a list of my academic publications, to date:
 
 <div class="nojust">
 
+[ [PDF](https://dl.acm.org/doi/pdf/10.1145/3559009.3569653) ]
+[ [DOI](https://doi.org/10.1145/3559009.3569653) ]
 FlatPack: Flexible Compaction of Compressed Memory\
 **Albin Eldstål-Ahrens**, Angelos Arelakis, Ioannis Sourdis\
 International Conference on Parallel Architectures and Compilation Techniques (PACT), 2022
@@ -168,13 +170,11 @@ MemSZ: Squeezing Memory Traffic with Lossy Compression\
 **Albin Eldstål-Ahrens**, Ioannis Sourdis\
 ACM Transactions on Architecture and Code Optimization (TACO), 2020
 
-
 [ [PDF](https://research.chalmers.se/publication/512096/file/512096_Fulltext.pdf) ]
 [ [DOI](https://doi.org/10.1145/3337821.3337824) ]
 AVR: Reducing Memory Traffic with Approximate Value Reconstruction\
 **Albin Eldstål-Damlin**, Pedro Trancoso, Ioannis Sourdis\
 International Conference on Parallel Processing (ICPP), 2019
-
 
 [ [DOI](https://doi.org/10.1109/VTCSpring.2013.6691881) ]
 [ [IEEE](https://ieeexplore.ieee.org/document/6691881) ]
@@ -182,12 +182,10 @@ An Improved Model of LTE Random Access Channel\
 Evgeny Osipov, Laurynas Riliskis, **Albin Eldstål-Damlin**, Michael Burakov, Mats Nordberg, Min Wang\
 IEEE 77th Vehicular Technology Conference, 2013
 
-
 [ [PDF](https://ltu.diva-portal.org/smash/get/diva2:1029175/FULLTEXT02.pdf) ]
 An LTE Random Access Channel Model for Wireless Sensor Network Applications\
 Mikael Burakov, **Albin Eldstål-Damlin**\
 Master's Thesis, Luleå University of Technology, 2012
-
 
 [ [PDF](https://www.diva-portal.org/smash/get/diva2:1003393/FULLTEXT01.pdf) ]
 A comparison of two modes for AEAD services in wireless sensor networks\
