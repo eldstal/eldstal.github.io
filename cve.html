@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="dcterms.date" content="2023-03-28">
+  <title>preproc</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+  
+    body {
+      /* background-color: #FBFDFF; */
+      background-image: url('/background.png');
+    }
+  
+    h1 {
+      font-family: Georgia,"Bitstream Charter","Times New Roman",Times,serif;
+    }
+  
+    h2 {
+      font-family: Georgia,"Bitstream Charter","Times New Roman",Times,serif;
+    }
+  
+    h3 {
+      font-family: Helvetica, Arial, sans-serif;
+      margin-bottom: 0.5em;
+    }
+  
+    p {
+      margin-top: 0.5em;
+      margin-left: 1em;
+      margin-right: 1em;
+      hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      -webkit-hyphens: auto;
+      max-width: 50em;
+      font-family: Georgia,"Bitstream Charter","Times New Roman",Times,serif;
+      text-align: justify;
+    }
+  
+    h3 img {
+      height: 2.5em;
+      vertical-align: middle;
+    }
+  
+    .nojust p {
+      text-align: left;
+    }
+  
+    tr:nth-child(even) {
+      background: #F0F5FF;
+    }
+  
+    tr:nth-child(odd) {
+      /*background: #ffffff;*/
+    }
+  
+    table, tr, td, th {
+      border-collapse: collapse;
+      margin-left: 1em;
+    }
+  
+    th {
+      border-bottom: 1pt solid #AEAEAE;
+    }
+  
+    td,th {
+      padding-top: 4pt;
+      padding-bottom: 4pt;
+      padding-left: 8pt;
+      padding-right: 8pt;
+    }
+  
+    a {
+      color: #1030FF;
+    }
+  
+    a:visited {
+      color: #4060FF;
+    }
+  
+    code {
+      border-top: 1pt solid #AEAEAE;
+      border-bottom: 1pt solid #AEAEAE;
+      background-color: #F0F5FF;
+      padding-left: 0.2em;
+      padding-right: 0.2em;
+      font-family: monospace;
+    }
+  
+    .footer {
+      font-size: 80%;
+  
+    }
+  
+    .thesis {
+      font-family: Georgia serif;
+      align: center;
+      text-align: center;
+      font-size: 120%;
+    }
+  
+    .thesis h1 {
+      text-align: center;
+    }
+  
+    .thesis p {
+      text-align: center;
+      max-width: 100%;
+    }
+  
+    .thesis img {
+      max-width: 10em;
+      width: 80%;
+      text-align: center;
+    }
+  
+    .thesis .head {
+      font-variant: small-caps;
+      text-align: center;
+    }
+  
+    .thesis .author {
+      font-variant: small-caps;
+      text-align: center;
+      font-size: 130%;
+    }
+  
+  
+  </style>
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+</head>
+<body lang="en">
+<table>
+<thead>
+<tr>
+<th>
+Reference
+</th>
+<th>
+Report
+</th>
+<th>
+CVSS3
+</th>
+<th>
+Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/"></a>
+</td>
+<td>
+<a href="https://eldstal.se/advisories/230327-magnusbilling.html">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:H&amp;version=3.1">9.4</a>
+</td>
+<td>
+RCE in magnusbilling6 and magnusbilling7
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2022-1215">CVE-2022-1215</a>
+</td>
+<td>
+<a href="https://gitlab.freedesktop.org/libinput/libinput/-/issues/752">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C&amp;version=3.1">7.1</a>
+</td>
+<td>
+Format string vulnerability in freedesktop's libinput
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2022-0546">CVE-2022-0546</a>
+</td>
+<td>
+<a href="https://developer.blender.org/T94572">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L/E:U/RL:U/RC:R/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:L/MA:L&amp;version=3.1">5.4</a>
+</td>
+<td>
+Multiple Out-of-bounds reads/writes in Blender (HDR loader)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2022-0545">CVE-2022-0545</a>
+</td>
+<td>
+<a href="https://developer.blender.org/T94629">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:L/A:L/E:U/RL:U/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:L/MA:L&amp;version=3.1">7.1</a>
+</td>
+<td>
+Controlled out-of-bounds read/write in Blender (IMB_flipy)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2022-0544">CVE-2022-0544</a>
+</td>
+<td>
+<a href="https://developer.blender.org/T94661">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1">4.6</a>
+</td>
+<td>
+Out-of-bounds read in Blender (DDS loader)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2022-0497">CVE-2022-0497</a>
+</td>
+<td>
+<a href="https://github.com/openscad/openscad/issues/4043">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1">4.6</a>
+</td>
+<td>
+Out-of-bounds read in OpenSCAD (Comment parser)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2022-0496">CVE-2022-0496</a>
+</td>
+<td>
+<a href="https://github.com/openscad/openscad/issues/4037">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1">4.6</a>
+</td>
+<td>
+Out-of-bounds read in OpenSCAD (DXF path)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2022-0699">CVE-2022-0699</a>
+</td>
+<td>
+<a href="https://github.com/OSGeo/shapelib/issues/39">1</a>
+</td>
+<td>
+</td>
+<td>
+Double-Free in shapelib (contrib/shpsort)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/"></a>
+</td>
+<td>
+<a href="https://github.com/LibreCAD/LibreCAD/issues/1481">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1">4.6</a>
+</td>
+<td>
+Out-of-bounds read in LibreCAD (importshp DBF parser)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45847">CVE-2021-45847</a>
+</td>
+<td>
+<a href="https://github.com/slic3r/Slic3r/issues/5118">1</a> <a href="https://github.com/slic3r/Slic3r/issues/5119">2</a> <a href="https://github.com/slic3r/Slic3r/issues/5120">3</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:H/RL:U/RC:C&amp;version=3.1">5.3</a>
+</td>
+<td>
+Multiple NULL-pointer dereferences in Slic3r (3MF XML)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45846">CVE-2021-45846</a>
+</td>
+<td>
+<a href="https://github.com/slic3r/Slic3r/issues/5117">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:H/RL:U/RC:C&amp;version=3.1">5.3</a>
+</td>
+<td>
+NULL-pointer dereference in Slic3r (AMF XML)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45845">CVE-2021-45845</a>
+</td>
+<td>
+<a href="https://tracker.freecad.org/view.php?id=4810">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C&amp;version=3.1">7.5</a>
+</td>
+<td>
+RCE in FreeCAD (Path Sanity Check script)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45844">CVE-2021-45844</a>
+</td>
+<td>
+<a href="https://tracker.freecad.org/view.php?id=4809">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C&amp;version=3.1">7.5</a>
+</td>
+<td>
+RCE in FreeCAD (ODA DWG import)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45343">CVE-2021-45343</a>
+</td>
+<td>
+<a href="https://github.com/LibreCAD/LibreCAD/issues/1468">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:X/RL:O/RC:C&amp;version=3.1">5.3</a>
+</td>
+<td>
+NULL-pointer dereference in LibreCAD (DXF HATCH 93)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45342">CVE-2021-45342</a>
+</td>
+<td>
+<a href="https://github.com/LibreCAD/LibreCAD/issues/1464">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&amp;version=3.1">7.8</a>
+</td>
+<td>
+RCE in LibreCAD (JWW CDataList)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45341">CVE-2021-45341</a>
+</td>
+<td>
+<a href="https://github.com/LibreCAD/LibreCAD/issues/1462">1</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&amp;version=3.1">7.8</a>
+</td>
+<td>
+RCE in LibreCAD (JWW CDataMoji)
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://www.cvedetails.com/cve/CVE-2021-45340">CVE-2021-45340</a>
+</td>
+<td>
+<a href="https://github.com/libsixel/libsixel/issues/51">1</a> <a href="https://github.com/saitoha/libsixel/issues/160">2</a>
+</td>
+<td>
+<a href="https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C&amp;version=3.1">5.7</a>
+</td>
+<td>
+NULL-pointer dereference in libSIXEL
+</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="footer">
+<p>Generated on March 28, 2023 using <a href="https://pandoc.org">Pandoc</a>. View the <a href="https://github.com/eldstal/eldstal.github.io">source</a> if you'd like!</p>
+<p>Generously hosted by <a href="https://docs.github.com/en/pages">GitHub Pages</p>
+</div>
+
+</body>
+</html>

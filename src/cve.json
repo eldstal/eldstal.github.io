@@ -1,6 +1,12 @@
 [
 
   {
+    "cve": "",
+    "report": [ "https://eldstal.se/advisories/230327-magnusbilling.html" ],
+    "cvss3": "9.4",
+    "cvss_vector": "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:H",
+    "descr":  "RCE in magnusbilling6 and magnusbilling7"
+  }, {
     "cve": "CVE-2022-1215",
     "report": [ "https://gitlab.freedesktop.org/libinput/libinput/-/issues/752" ],
     "cvss3": "7.1",
