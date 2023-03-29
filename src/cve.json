@@ -5,7 +5,7 @@
     "report": [ "https://eldstal.se/advisories/230329-openwb.html" ],
     "cvss3": "10.0",
     "cvss_vector": "AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-    "descr":  "Unauthenticated root RCE in openWB"
+    "descr":  "Multiple unauthenticated root RCEs in openWB"
   }, {
     "cve": "",
     "report": [ "https://eldstal.se/advisories/230328-raspap.html" ],
