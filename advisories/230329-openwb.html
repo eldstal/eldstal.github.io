@@ -167,16 +167,19 @@
 <a href="/">../</a> advisories/
 </p>
 <h2 id="security-advisory">Security advisory</h2>
-<p>A command injection vulnerability exists in openWB version 1.7 and older. It allows an unauthenticated user to execute arbitrary OS commands on the host. In the default configuration of openWB, commands can be executed with root privileges.</p>
+<p>Multiple command injection vulnerabilities exist in openWB version 1.7 and older. Each allows an unauthenticated user to execute arbitrary OS commands on the host. In the default configuration of openWB, commands can be executed with root privileges.</p>
 <h3 id="affected-products">Affected products</h3>
-<p>Introduced in openWB version 1.6 (<a href="https://github.com/snaptec/openWB/commit/b5d545c81d78d1adee51e93664532d198a3b15d8">commit b5d545c</a>) Present in version 1.7 (<a href="https://github.com/snaptec/openWB/commit/5c445160403d80351ff3f7eed52fdef9662d8c6e">commit 5c44516</a>)</p>
+<ul>
+<li>Introduced in openWB version 1.6 (<a href="https://github.com/snaptec/openWB/commit/b5d545c81d78d1adee51e93664532d198a3b15d8">commit b5d545c</a>)</li>
+<li>Present in version 1.7 (<a href="https://github.com/snaptec/openWB/commit/5c445160403d80351ff3f7eed52fdef9662d8c6e">commit 5c44516</a>)</li>
+</ul>
 <h3 id="steps-to-reproduce">Steps to reproduce</h3>
 <ol type="1">
 <li>Visit <code>http://target/openWB/modules/soc_eq/callback_lp.php?code=1&amp;state=;uptime&gt;/tmp/hax;echo</code></li>
 <li>Observe that the file <code>/tmp/hax</code> has been created on the server, containing the output of <code>uptime</code>.</li>
 </ol>
 <h3 id="cause">Cause</h3>
-<p>Unsanitized user input is passed to <code>system()</code> at <a href="https://github.com/snaptec/openWB/blob/5c445160403d80351ff3f7eed52fdef9662d8c6e/modules/soc_eq/callback_lp.php#L4">callback_lp.php:4</a></p>
+<p>Unsanitized user input is passed to <code>system()</code> at <a href="https://github.com/snaptec/openWB/blob/5c445160403d80351ff3f7eed52fdef9662d8c6e/modules/soc_eq/callback_lp.php#L4">callback_lp.php:4</a>, <a href="https://github.com/snaptec/openWB/blob/5c445160403d80351ff3f7eed52fdef9662d8c6e/modules/soc_eq/callback_lp1.php#L4">callback_lp1.php:4</a> and <a href="https://github.com/snaptec/openWB/blob/5c445160403d80351ff3f7eed52fdef9662d8c6e/modules/soc_eq/callback_lp2.php#L4">callback_lp2.php:4</a>.</p>
 <h3 id="impact">Impact</h3>
 <p>An unauthorized user is able to execute arbitrary OS commands.</p>
 <p>In the default openWB configuration, the <code>www-data</code> user is given unconstrained sudo access. For this reason, any command can trivially be executed with root privileges.</p>
@@ -184,7 +187,7 @@
 <p>Sanitize the user input using a function such as <code>escapeshellargs()</code> before passing it to <code>system()</code>.</p>
 <h3 id="history">History</h3>
 <ul>
-<li>2023-03-29: Initial report filed</li>
+<li>2023-03-29: <a href="https://github.com/snaptec/openWB/issues/2672">Initial report</a> filed</li>
 </ul>
 
 </body>
