@@ -246,6 +246,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <h3 id="cause">Cause</h3>
 <p>There are two almost identical instances of the vulnerability, at <a href="https://github.com/RaspAP/raspap-webgui/blob/dda1fe6bbb92cffae7a53b516108650bfbb76cb2/includes/hostapd.php#L103">hostapd.php:103</a> and <a href="https://github.com/RaspAP/raspap-webgui/blob/dda1fe6bbb92cffae7a53b516108650bfbb76cb2/includes/hostapd.php#L108">hostapd.php:108</a>. In both instances, an unsanitized POST variable is fed into a command executed using <code>exec()</code>.</p>
+<p>A third instance exists at <a href="https://github.com/RaspAP/raspap-webgui/blob/592bce02bfee1169ca92e5e93ebded66bac42c6e/includes/configure_client.php#L20">configure_client.php:20</a>, exploitable in a similar manner.</p>
 <h3 id="impact">Impact</h3>
 <p>An authenticated user is able to execute arbitrary commands as <code>www-data</code>.</p>
 <p>In the default RaspAP configuration, this can be leveraged to gain root access by exploiting two of the configured <code>sudo</code> permissions; overwrite the openvpn client configuration to set the following:</p>
@@ -256,8 +257,9 @@ up /tmp/payload.sh</code></pre>
 <p>Apply sanitization to the <code>txpower</code> and <code>interface</code> parameters, and use the PHP built-in <code>escapeshellarg()</code> before passing them to <code>exec()</code>.</p>
 <h3 id="history">History</h3>
 <ul>
+<li>2023-03-29: Additional vulnerability added</li>
 <li>2023-03-29: Initial report removed</li>
-<li>2023-03-29: <a href="https://github.com/RaspAP/raspap-webgui/pull/1322">Fix</a> applied</li>
+<li>2023-03-29: <a href="https://github.com/RaspAP/raspap-webgui/pull/1322">Fix</a> applied and released as v2.8.9</li>
 <li>2023-03-28: Initial report filed</li>
 </ul>
 <hr>

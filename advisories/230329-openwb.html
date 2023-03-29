@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="dcterms.date" content="2023-03-29">
+  <title>Security advisory</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+  
+    body {
+      /* background-color: #FBFDFF; */
+      background-image: url('/background.png');
+    }
+  
+    h1 {
+      font-family: Georgia,"Bitstream Charter","Times New Roman",Times,serif;
+    }
+  
+    h2 {
+      font-family: Georgia,"Bitstream Charter","Times New Roman",Times,serif;
+    }
+  
+    h3 {
+      font-family: Helvetica, Arial, sans-serif;
+      margin-bottom: 0.5em;
+    }
+  
+    p {
+      margin-top: 0.5em;
+      margin-left: 1em;
+      margin-right: 1em;
+      hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      -webkit-hyphens: auto;
+      max-width: 50em;
+      font-family: Georgia,"Bitstream Charter","Times New Roman",Times,serif;
+      text-align: justify;
+    }
+  
+    h3 img {
+      height: 2.5em;
+      vertical-align: middle;
+    }
+  
+    .nojust p {
+      text-align: left;
+    }
+  
+    tr:nth-child(even) {
+      background: #F0F5FF;
+    }
+  
+    tr:nth-child(odd) {
+      /*background: #ffffff;*/
+    }
+  
+    table, tr, td, th {
+      border-collapse: collapse;
+      margin-left: 1em;
+    }
+  
+    th {
+      border-bottom: 1pt solid #AEAEAE;
+    }
+  
+    td,th {
+      padding-top: 4pt;
+      padding-bottom: 4pt;
+      padding-left: 8pt;
+      padding-right: 8pt;
+    }
+  
+    a {
+      color: #1030FF;
+    }
+  
+    a:visited {
+      color: #4060FF;
+    }
+  
+    code {
+      border-top: 1pt solid #AEAEAE;
+      border-bottom: 1pt solid #AEAEAE;
+      background-color: #F0F5FF;
+      padding-left: 0.2em;
+      padding-right: 0.2em;
+      font-family: monospace;
+    }
+  
+    .footer {
+      font-size: 80%;
+  
+    }
+  
+    .thesis {
+      font-family: Georgia serif;
+      align: center;
+      text-align: center;
+      font-size: 120%;
+    }
+  
+    .thesis h1 {
+      text-align: center;
+    }
+  
+    .thesis p {
+      text-align: center;
+      max-width: 100%;
+    }
+  
+    .thesis img {
+      max-width: 10em;
+      width: 80%;
+      text-align: center;
+    }
+  
+    .thesis .head {
+      font-variant: small-caps;
+      text-align: center;
+    }
+  
+    .thesis .author {
+      font-variant: small-caps;
+      text-align: center;
+      font-size: 130%;
+    }
+  
+  
+  </style>
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+</head>
+<body lang="en">
+<p>
+<a href="/">../</a> advisories/
+</p>
+<h2 id="security-advisory">Security advisory</h2>
+<p>A command injection vulnerability exists in openWB version 1.7 and older. It allows an unauthenticated user to execute arbitrary OS commands on the host. In the default configuration of openWB, commands can be executed with root privileges.</p>
+<h3 id="affected-products">Affected products</h3>
+<p>Introduced in openWB version 1.6 (<a href="https://github.com/snaptec/openWB/commit/b5d545c81d78d1adee51e93664532d198a3b15d8">commit b5d545c</a>) Present in version 1.7 (<a href="https://github.com/snaptec/openWB/commit/5c445160403d80351ff3f7eed52fdef9662d8c6e">commit 5c44516</a>)</p>
+<h3 id="steps-to-reproduce">Steps to reproduce</h3>
+<ol type="1">
+<li>Visit <code>http://target/openWB/modules/soc_eq/callback_lp.php?code=1&amp;state=;uptime&gt;/tmp/hax;echo</code></li>
+<li>Observe that the file <code>/tmp/hax</code> has been created on the server, containing the output of <code>uptime</code>.</li>
+</ol>
+<h3 id="cause">Cause</h3>
+<p>Unsanitized user input is passed to <code>system()</code> at <a href="https://github.com/snaptec/openWB/blob/5c445160403d80351ff3f7eed52fdef9662d8c6e/modules/soc_eq/callback_lp.php#L4">callback_lp.php:4</a></p>
+<h3 id="impact">Impact</h3>
+<p>An unauthorized user is able to execute arbitrary OS commands.</p>
+<p>In the default openWB configuration, the <code>www-data</code> user is given unconstrained sudo access. For this reason, any command can trivially be executed with root privileges.</p>
+<h3 id="proposed-mitigation">Proposed Mitigation</h3>
+<p>Sanitize the user input using a function such as <code>escapeshellargs()</code> before passing it to <code>system()</code>.</p>
+<h3 id="history">History</h3>
+<ul>
+<li>2023-03-29: Initial report filed</li>
+</ul>
+<hr>
+<div class="footer">
+<p>Generated on March 29, 2023 using <a href="https://pandoc.org">Pandoc</a>. View the <a href="https://github.com/eldstal/eldstal.github.io">source</a> if you'd like!</p>
+<p>Generously hosted by <a href="https://docs.github.com/en/pages">GitHub Pages</p>
+</div>
+
+</body>
+</html>
