@@ -5,7 +5,7 @@ PAGES=$(addprefix $(DEST)/,$(patsubst %.md,%.html,$(wildcard *.md */*.md)))
 
 all: $(PAGES) $(STATICS)
 
-$(DEST)/%.html: %.md cve.md header.html template.html Makefile
+$(DEST)/%.html: %.md header.html template.html Makefile
 	mkdir -p $$(dirname $@)
 	# Preprocessor from http://christophe.delord.free.fr/upp/
 	upp $< > /tmp/preproc.md
