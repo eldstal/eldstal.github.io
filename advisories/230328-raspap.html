@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="dcterms.date" content="2023-03-29">
+  <meta name="dcterms.date" content="2023-03-30">
   <title>Security advisory</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
@@ -230,9 +230,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a href="/">../</a> advisories/
 </p>
 <h2 id="security-advisory">Security advisory</h2>
-<p>Multiple command injection vulnerabilities are present in the RaspAP web interface. They allow an authenticated user to execute arbitrary OS commands with the privileges of the web server.</p>
+<p>Multiple command injection vulnerabilities are present in the RaspAP web interface. They allow an authenticated user to execute arbitrary OS commands with the privileges of the web server. Additional factors in the default configuration allow elevation to <code>root</code> privileges.</p>
 <h3 id="affected-products">Affected products</h3>
-<p>RaspAP v2.8.8 and older</p>
+<p>RaspAP v2.8.9 and older</p>
 <h3 id="steps-to-reproduce">Steps to reproduce</h3>
 <ol type="1">
 <li>Obtain credentials for RaspAP</li>
@@ -283,10 +283,12 @@ up /tmp/payload.sh</code></pre>
 <p>Apply sanitization to the <code>txpower</code> and <code>interface</code> parameters, and use the PHP built-in <code>escapeshellarg()</code> before passing them to <code>exec()</code>.</p>
 <h3 id="history">History</h3>
 <ul>
-<li>2023-03-29: Additional vulnerability added</li>
+<li>2023-03-30: <a href="https://github.com/RaspAP/raspap-webgui/pull/1326">Additional fix</a> submitted</li>
+<li>2023-03-30: <a href="https://github.com/RaspAP/raspap-webgui/issues/1325">Report</a> merged for all three vulnerabilities</li>
+<li>2023-03-29: Additional vulnerability reported (<code>configure_client.php</code>)</li>
 <li>2023-03-29: Initial report removed</li>
 <li>2023-03-29: <a href="https://github.com/RaspAP/raspap-webgui/pull/1322">Fix</a> applied and released as v2.8.9</li>
-<li>2023-03-28: Initial report filed</li>
+<li>2023-03-28: Initial report filed (<code>hostapd.php</code>)</li>
 </ul>
 
 </body>
