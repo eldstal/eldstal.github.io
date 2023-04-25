@@ -8,6 +8,12 @@
     "descr":  "Multiple unauthenticated root RCEs in openWB"
   }, {
     "cve": "",
+    "report": [ "https://eldstal.se/advisories/230328-mobro.html" ],
+    "cvss3": "9.4",
+    "cvss_vector": "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:H",
+    "descr":  "Unauthenticated RCE in ModBros mobro-raspberrypi"
+  }, {
+    "cve": "",
     "report": [ "https://eldstal.se/advisories/230328-raspap.html" ],
     "cvss3": "8.1",
     "cvss_vector": "AV:N/AC:L/PR:H/UI:N/S:C/C:N/I:H/A:H/E:F/RL:O/RC:C",

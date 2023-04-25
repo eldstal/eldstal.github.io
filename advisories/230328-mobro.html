@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="dcterms.date" content="2023-03-29">
+  <title>Security advisory</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+  
+    body {
+      /* background-color: #FBFDFF; */
+      background-image: url('/background.png');
+    }
+  
+    h1 {
+      font-family: Georgia,"Bitstream Charter","Times New Roman",Times,serif;
+    }
+  
+    h2 {
+      font-family: Georgia,"Bitstream Charter","Times New Roman",Times,serif;
+    }
+  
+    h3 {
+      font-family: Helvetica, Arial, sans-serif;
+      margin-bottom: 0.5em;
+    }
+  
+    p {
+      margin-top: 0.5em;
+      margin-left: 1em;
+      margin-right: 1em;
+      hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      -webkit-hyphens: auto;
+      max-width: 50em;
+      font-family: Georgia,"Bitstream Charter","Times New Roman",Times,serif;
+      text-align: justify;
+    }
+  
+    h3 img {
+      height: 2.5em;
+      vertical-align: middle;
+    }
+  
+    .nojust p {
+      text-align: left;
+    }
+  
+    tr:nth-child(even) {
+      background: #F0F5FF;
+    }
+  
+    tr:nth-child(odd) {
+      /*background: #ffffff;*/
+    }
+  
+    table, tr, td, th {
+      border-collapse: collapse;
+      margin-left: 1em;
+    }
+  
+    th {
+      border-bottom: 1pt solid #AEAEAE;
+    }
+  
+    td,th {
+      padding-top: 4pt;
+      padding-bottom: 4pt;
+      padding-left: 8pt;
+      padding-right: 8pt;
+    }
+  
+    a {
+      color: #1030FF;
+    }
+  
+    a:visited {
+      color: #4060FF;
+    }
+  
+    code {
+      border-top: 1pt solid #AEAEAE;
+      border-bottom: 1pt solid #AEAEAE;
+      background-color: #F0F5FF;
+      padding-left: 0.2em;
+      padding-right: 0.2em;
+      font-family: monospace;
+    }
+  
+  
+    div.sourceCode {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+  
+    pre {
+      border-top: 1pt solid #AEAEAE;
+      border-bottom: 1pt solid #AEAEAE;
+      background-color: #F0F5FF;
+      margin-left: 1em;
+      margin-right: 1em;
+      padding-left: 0.2em;
+      padding-right: 0.2em;
+      font-family: monospace;
+    }
+  
+    pre code {
+      border-top: none;
+      border-bottom: none;
+      background-color: #F0F5FF;
+      padding-left: 0.2em;
+      padding-right: 0.2em;
+      font-family: monospace;
+    }
+  
+    .footer {
+      font-size: 80%;
+  
+    }
+  
+    .thesis {
+      font-family: Georgia serif;
+      align: center;
+      text-align: center;
+      font-size: 120%;
+    }
+  
+    .thesis h1 {
+      text-align: center;
+    }
+  
+    .thesis p {
+      text-align: center;
+      max-width: 100%;
+    }
+  
+    .thesis img {
+      max-width: 10em;
+      width: 80%;
+      text-align: center;
+    }
+  
+    .thesis .head {
+      font-variant: small-caps;
+      text-align: center;
+    }
+  
+    .thesis .author {
+      font-variant: small-caps;
+      text-align: center;
+      font-size: 130%;
+    }
+  
+  
+  </style>
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+</head>
+<body lang="en">
+<p>
+<a href="/">../</a> advisories/
+</p>
+<h2 id="security-advisory">Security advisory</h2>
+<p>An OS command injection vulnerability exists in the web interface of mobro-raspberrypi. It allows an unauthenticated attacker to execute arbitrary OS commands on the host, with the privileges of the web server.</p>
+<h3 id="affected-products">Affected products</h3>
+<p>mobros-raspberrypi v12.3 and older</p>
+<h3 id="steps-to-reproduce">Steps to reproduce</h3>
+<ol type="1">
+<li>Visit <code>/api/log/index.php?lines=0 /dev/null;uptime;ls</code></li>
+</ol>
+<p>The output of the <code>uptime</code> command is shown in the HTTP response.</p>
+<h3 id="cause">Cause</h3>
+<p>An unsanitized GET parameter is passed to <code>shell_exec()</code> at <a href="https://github.com/ModBros/mobro-raspberrypi/blob/fa0a9fa34cbeef664cf8d8fab8c2e7cea8a521c7/web/api/log/index.php#L8">api/log/index.php:8</a>.</p>
+<h3 id="impact">Impact</h3>
+<p>An unauthenticated user is able to execute arbitrary OS commands by including semicolons in the <code>lines</code> parameter to terminate the intended command.</p>
+<h3 id="proposed-mitigation">Proposed Mitigation</h3>
+<p>Ensure that <code>$_GET['lines']</code> is numeric, as is already done in <a href="https://github.com/ModBros/mobro-raspberrypi/blob/fa0a9fa34cbeef664cf8d8fab8c2e7cea8a521c7/web/api/syslog/index.php#L8">the syslog component</a>.</p>
+<h3 id="history">History</h3>
+<ul>
+<li>2023-03-28: Patch submitted</li>
+<li>2023-03-28: Initial report filed</li>
+</ul>
+
+</body>
+</html>
