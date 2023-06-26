@@ -1,12 +1,12 @@
 [
 
   {
-    "cve": "",
+    "cve": "CVE-2023-30261",
     "report": [ "https://github.com/snaptec/openWB/issues/2672",
                 "https://eldstal.se/advisories/230329-openwb.html" ],
     "cvss3": "10.0",
     "cvss_vector": "AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
-    "descr":  "Multiple unauthenticated root RCEs in openWB"
+    "descr":  "Multiple unauthenticated root RCEs in OpenWB"
   }, {
     "cve": "",
     "report": [ "https://github.com/ModBros/mobro-raspberrypi/issues/13",
@@ -15,14 +15,14 @@
     "cvss_vector": "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:H",
     "descr":  "Unauthenticated RCE in ModBros mobro-raspberrypi"
   }, {
-    "cve": "",
+    "cve": "CVE-2023-30260",
     "report": [ "https://github.com/RaspAP/raspap-webgui/issues/1325",
                 "https://eldstal.se/advisories/230328-raspap.html" ],
     "cvss3": "8.1",
     "cvss_vector": "AV:N/AC:L/PR:H/UI:N/S:C/C:N/I:H/A:H/E:F/RL:O/RC:C",
     "descr":  "Multiple authenticated RCEs in RaspAP"
   }, {
-    "cve": "",
+    "cve": "CVE-2023-30258",
     "report": [ "https://eldstal.se/advisories/230327-magnusbilling.html" ],
     "cvss3": "9.4",
     "cvss_vector": "AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:H",
@@ -70,7 +70,7 @@
     "descr":  "Double-Free in shapelib (contrib/shpsort)"
   }, {
     "comment" : "Not yet reported to CVE program, pending confirmation from developer",
-    "cve": "",
+    "cve": "CVE-2023-30259",
     "report": [ "https://github.com/LibreCAD/LibreCAD/issues/1481" ],
     "cvss3": "4.6",
     "cvss_vector": "AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L",

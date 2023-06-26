@@ -1,5 +1,5 @@
 ---
-pagetitle: Security advisory
+pagetitle: CVE-2023-30258 Security advisory
 
 ...
 
@@ -35,6 +35,7 @@ Remove the demo code from `icepay.php`.
 
 
 ### History
+- 2023-06-26: CVE-2023-30258 assigned
 - 2023-03-28: Initial report removed by maintainer
 - 2023-03-27: Vulnerability [fixed](https://github.com/magnussolution/magnusbilling7/commit/ccff9f6370f530cc41ef7de2e31d7590a0fdb8c3)
 - 2023-03-27: Vulnerability [reported](https://github.com/magnussolution/magnusbilling7/issues/627)

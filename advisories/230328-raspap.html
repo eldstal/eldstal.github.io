@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="dcterms.date" content="2023-04-25">
-  <title>Security advisory</title>
+  <meta name="dcterms.date" content="2023-06-26">
+  <title>CVE-2023-30260 Security advisory</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
@@ -283,6 +283,7 @@ up /tmp/payload.sh</code></pre>
 <p>Apply sanitization to the <code>txpower</code> and <code>interface</code> parameters, and use the PHP built-in <code>escapeshellarg()</code> before passing them to <code>exec()</code>.</p>
 <h3 id="history">History</h3>
 <ul>
+<li>2023-06-26: CVE-2023-30260 assigned</li>
 <li>2023-03-30: <a href="https://github.com/RaspAP/raspap-webgui/pull/1326">Additional fix</a> submitted</li>
 <li>2023-03-30: <a href="https://github.com/RaspAP/raspap-webgui/issues/1325">Report</a> merged for all three vulnerabilities</li>
 <li>2023-03-29: Additional vulnerability reported (<code>configure_client.php</code>)</li>
