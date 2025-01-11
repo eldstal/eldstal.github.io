@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="dcterms.date" content="2023-06-26">
+  <meta name="dcterms.date" content="2025-01-11">
   <title>Albin Eldstål-Ahrens</title>
   <style type="text/css">code{white-space: pre;}</style>
   <!--[if lt IE 9]>
@@ -176,6 +176,9 @@ Ph.D. of Computer Science and Engineering, Chalmers University of Technology, G
 <h3 id="strinvader-strinvader"><img src="/strinvader.png" alt="strinvader" /> <a href="https://github.com/eldstal/strinvader">strinvader</a></h3>
 <p><em>Unicode denormalizer</em></p>
 <p>Unicode is quite complex. Since there are many different ways to encode the same text, applications may use <em>normalization</em> to preprocess it into a predictable form. Strinvader is a tool to find multiple text inputs which normalize to the same (given) text. This is useful in security research, because sometimes security features such as block lists are applied to text <em>before</em> normalization. When attacking such an application, strinvader can generate a text encoding such as <code>www.exⓐmple.com</code> which will pass the block list and be normalized to <code>www.example.com</code> before being used. Interestingly, normalization rules vary slightly between implementations. Unicode normalization differs from python’s <code>str.lower()</code> which differs from the URL parsing in node.js. For this reason, strinvader contains support for a number of different such normalization forms.</p>
+<h3 id="nobbler-nobbler"><img src="/nobbler.png" alt="nobbler" /> <a href="https://github.com/eldstal/nobbler">Nobbler</a></h3>
+<p><em>Smart Knob Interface</em></p>
+<p>An attempt at a PC-side control loop for the gorgeous <a href="https://github.com/scottbez1/smartknob">Smartknob</a> designed by Scott Bez. Nobbler lets you automatically activate different views on the Smartknob based on system activity (e.g. which window you have focused) and perform useful tasks when the knob is fiddled with (e.g. run a command to change system volume, emulate a keypress, …).</p>
 <h3 id="spike-spike"><img src="/spike.png" alt="spike" /> <a href="https://github.com/eldstal/spike">spike</a></h3>
 <p><em>Power glitch generator</em></p>
 <p>Hardware devices with opaque or protected firmware may still be vulnerable to hardware faults. One such hardware fault is a <em>power glitch</em>, a transient drop in the power feed. This can have a variety of effects, ranging from device restarts to failure of individual executed instructions. Spike is a <a href="https://zephyrproject.org/">Zephyr</a> project for the Nordic Semiconductor <a href="https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dk">nRF52840 DK</a> development board, which is able to control a target device and perform power glitch attacks against it.</p>
@@ -206,6 +209,7 @@ Ph.D. of Computer Science and Engineering, Chalmers University of Technology, G
 <p>The LaTeX typesetting engine wasn’t intended for this.</p>
 <h1 id="security-1">Security</h1>
 <p>I am the holder of an <a href="https://www.credential.net/43d80588-74b1-4d6b-b25e-45078ae452c8">Offensive Security Certified Professional (OSCP)</a> certification.</p>
+<p>I’ve also earned the certification <a href="https://training.zeropointsecurity.co.uk/courses/red-team-ops">Read Team Ops I</a> issued by Zero Point Security.</p>
 <p>I’ve found and reported the following vulnerabilities in software projects:</p>
 <table>
 <thead>
@@ -562,7 +566,7 @@ Bachelor’s Thesis, Chalmers University of Technology, 2019</p>
 <p>Design, Automation and Test in Europe (DATE) 2016</p>
 <hr>
 <div class="footer">
-<p>Generated on June 26, 2023 using <a href="https://pandoc.org">Pandoc</a>. View the <a href="https://github.com/eldstal/eldstal.github.io">source</a> if you'd like!</p>
+<p>Generated on January 11, 2025 using <a href="https://pandoc.org">Pandoc</a>. View the <a href="https://github.com/eldstal/eldstal.github.io">source</a> if you'd like!</p>
 <p>Generously hosted by <a href="https://docs.github.com/en/pages">GitHub Pages</p>
 </div>
 

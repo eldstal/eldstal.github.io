@@ -44,6 +44,16 @@ normalization differs from python's `str.lower()` which differs from the URL
 parsing in node.js. For this reason, strinvader contains support for a number
 of different such normalization forms.
 
+### ![nobbler](/nobbler.png) [Nobbler](https://github.com/eldstal/nobbler)
+_Smart Knob Interface_
+
+An attempt at a PC-side control loop for the gorgeous [Smartknob](https://github.com/scottbez1/smartknob)
+designed by Scott Bez. Nobbler lets you automatically activate different
+views on the Smartknob based on system activity (e.g. which window you
+have focused) and perform useful tasks when the knob is fiddled with (e.g.
+run a command to change system volume, emulate a keypress, ...). 
+
+
 ### ![spike](/spike.png) [spike](https://github.com/eldstal/spike)
 _Power glitch generator_
 
@@ -119,6 +129,8 @@ The LaTeX typesetting engine wasn't intended for this.
 
 # Security
 I am the holder of an [Offensive Security Certified Professional (OSCP)](https://www.credential.net/43d80588-74b1-4d6b-b25e-45078ae452c8) certification.
+
+I've also earned the certification [Read Team Ops I](https://training.zeropointsecurity.co.uk/courses/red-team-ops) issued by Zero Point Security.
 
 
 I've found and reported the following vulnerabilities in software projects:
