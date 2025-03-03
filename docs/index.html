@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                        <meta charset="utf-8" />
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                        <meta name="generator" content="Pelican" />
+                        <title>Front</title>
+                        <link rel="stylesheet" href="./theme/css/main.css" />
+                                <link href="https://eldstal.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+        </head>
+
+        <body id="index" class="home">
+                <header id="banner" class="body">
+                        <h1><a href="./">A Pelican Blog</a></h1>
+                        <nav><ul>
+                                                <li class="active"><a href="./index.html">Front</a></li>
+                        </ul></nav>
+                </header><!-- /#banner -->
+  <section id="content" class="body">
+    <h1 class="entry-title">Front</h1>
+    
+    <p>...</p>
+<h1>Albin Eldstål-Ahrens</h1>
+<p>Offensive Security Certified Professional (OSCP)\
+Ph.D. of Computer Science and Engineering, Chalmers University of Technology, Gothenburg, Sweden.</p>
+<h1>Links</h1>
+<p>[ <a href="https://github.com/eldstal">GitHub</a> ] |
+[ <a href="https://luftenshjaltar.info">LuftensHjältar</a> ] |
+[ <a href="https://ctftime.org/team/50600">CTFTime</a> ] |
+[ <a rel="me" href="https://kolektiva.social/@albin">Mastodon</a> ]</p>
+<h1>Projects</h1>
+<h2>Security</h2>
+<h3><img alt="MacDongler" src="/images/macdongler.png"> <a href="https://github.com/eldstal/MacDongler">MacDongler</a></h3>
+<p><em>USB Skeleton Key</em></p>
+<p>Some devices (tablet kiosks, buses, cars, air planes, advertising displays, ...) expose
+a USB interface, either for user device charging or for development access or both. One
+way to lock these devices down is to limit the accepted USB devices, based on model or type
+or vendor ID. MacDongler is a scanner based on Linux USB Gadgets, which emulates a large
+number of USB devices and automatically determines which ones are accepted by a host. It
+can emulate network interfaces, serial ports, HID devices, and more!</p>
+<h3><img alt="strinvader" src="/images/strinvader.png"> <a href="https://github.com/eldstal/strinvader">strinvader</a></h3>
+<p><em>Unicode denormalizer</em></p>
+<p>Unicode is quite complex. Since there are many different ways to encode the
+same text, applications may use <em>normalization</em> to preprocess it into a
+predictable form. Strinvader is a tool to find multiple text inputs which
+normalize to the same (given) text. This is useful in security research,
+because sometimes security features such as block lists are applied to text
+<em>before</em> normalization. When attacking such an application, strinvader can
+generate a text encoding such as <code>www.exⓐmple.com</code> which will pass the block
+list and be normalized to <code>www.example.com</code> before being used. Interestingly,
+normalization rules vary slightly between implementations. Unicode
+normalization differs from python's <code>str.lower()</code> which differs from the URL
+parsing in node.js. For this reason, strinvader contains support for a number
+of different such normalization forms.</p>
+<h3><img alt="spike" src="/images/spike.png"> <a href="https://github.com/eldstal/spike">spike</a></h3>
+<p><em>Power glitch generator</em></p>
+<p>Hardware devices with opaque or protected firmware may still be vulnerable to hardware
+faults. One such hardware fault is a <em>power glitch</em>, a transient drop in the power feed.
+This can have a variety of effects, ranging from device restarts to failure of individual
+executed instructions. Spike is a <a href="https://zephyrproject.org/">Zephyr</a> project for the
+Nordic Semiconductor <a href="https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dk">nRF52840 DK</a>
+development board, which is able to control a target device and perform power glitch
+attacks against it.</p>
+<h3><img alt="DESYNK" src="/images/desynk.png"> <a href="https://github.com/eldstal/desynk">DESYNK</a></h3>
+<p><em>Clock glitch generator</em></p>
+<p>Another hardware fault is caused by an unstable clock signal. Shortening individual
+clock cycles can have interesting effects on the instruction decoder/execution stages
+of a microprocessor, or adversely affect I/O. DESYNK is a work-in-progress project to
+explore this. It is based on the <a href="https://1bitsquared.com/products/icebreaker">ICEbreaker</a>
+development board, powered by the Lattice iCE40UP5k FPGA. DESYNK controls the clock signal
+driving the target device, and probes for the proper time and duration of clock inconsistency,
+in order to cause interesting software failures.</p>
+<h3><img alt="elnino" src="/images/elnino.png"> <a href="https://github.com/eldstal/elnino">elnino</a></h3>
+<p><em>Scripts for <a href="https://binary.ninja">binary ninja</a></em></p>
+<p>A collection of utilities for the binja reverse engineering tool.</p>
+<h3><img alt="mediafuzz" src="/images/mediafuzz.png"> <a href="https://github.com/eldstal/mediafuzz">mediafuzz</a></h3>
+<p><em>Fuzzer for the media metadata display of your car</em></p>
+<p>A small web application which fuzzes the artist/title/album information of your "currently playing"
+notification. Run it on your phone and stream the audio by bluetooth to your target device. Hosted <a href="/mediafuzz">here</a> for your convenience.</p>
+<h3><img alt="CTF Notes" src="/images/gitbook.png"> <a href="https://luftenshjaltar.gitbook.io/ctf/">CTF Notes</a></h3>
+<p><em>It won't be a surprise, the second time I see this.</em></p>
+<p>Running notes on CTF techniques, methodology, little tricks we've learned along the way.</p>
+<h2>Other</h2>
+<h3><img alt="nobbler" src="/images/nobbler.png"> <a href="https://github.com/eldstal/nobbler">Nobbler</a></h3>
+<p><em>Smart Knob Interface</em></p>
+<p>An attempt at a PC-side control loop for the gorgeous <a href="https://github.com/scottbez1/smartknob">Smartknob</a>
+designed by Scott Bez. Nobbler lets you automatically activate different
+views on the Smartknob based on system activity (e.g. which window you
+have focused) and perform useful tasks when the knob is fiddled with (e.g.
+run a command to change system volume, emulate a keypress, ...). </p>
+<h3><img alt="Cardcinogen" src="/images/cardcinogen.png"> <a href="https://github.com/eldstal/cardcinogen">Cardcinogen</a></h3>
+<p><em>Deck generator for <a href="https://store.steampowered.com/app/286160/Tabletop_Simulator/">Tabletop Simulator</a></em></p>
+<p>Cardcinogen is a templating system which allows you to create styles for playing cards and
+populate those cards with content from your own data. This is useful to make expansions
+for card-based games such as Concept or Fluxx.</p>
+<h3><img alt="Panel of Doom" src="/images/pod.png"> <a href="https://github.com/eldstal/avr-pod">Panel of Doom</a></h3>
+<p><em>DIY USB joystick HID device</em></p>
+<p>POD uses low-cost commodity components (an AVR ATMEGA-328 microcontroller with no USB hardware support)
+to implement a standard joystick. This lets you, for example, build the custom control
+panel of your tractor simulation dreams. By using the standard USB HID interface, no
+extra drivers or bindings are required to use it in typical PC games. The software USB
+stack used in POD is kindly provided by the <a href="https://www.obdev.at/products/vusb/index.html">V-USB</a>
+library.</p>
+<h3><img alt="CTF" src="/images/ctf.png"> <a href="https://github.com/eldstal/CTF">CTF Terminal Frontend</a></h3>
+<p><em>Capture-The-Flag scoreboard visualization</em></p>
+<p>This program queries a live CTF scoreboard and presents the data in your terminal.
+Some fun animations are implemented, for example when a team grabs the <em>first blood</em>
+of one of the challenges. Several popular serverside systems are supported, and the
+design is modular to allow for easy addition of new backends
+(i.e. support for new online CTF scoreboard systems such as <a href="https://ctfd.io/">CTFd</a>).</p>
+<h3><img alt="Teksh" src="/images/teksh.png"> <a href="https://github.com/eldstal/teksh">Teksh</a></h3>
+<p><em>Command shell implemented in LaTeX</em></p>
+<p>The LaTeX typesetting engine wasn't intended for this.</p>
+<h1>Security</h1>
+<p>I am the holder of an <a href="https://www.credential.net/43d80588-74b1-4d6b-b25e-45078ae452c8">Offensive Security Certified Professional (OSCP)</a> certification.</p>
+<p>I've also earned the certification <a href="https://training.zeropointsecurity.co.uk/courses/red-team-ops">Read Team Ops I</a> issued by Zero Point Security.</p>
+<p>I've found and reported the following vulnerabilities in software projects:</p>
+<p>$(include "cve.md")</p>
+<h1>Bugs for Charity</h1>
+<p>Via bug bounty programs, I've generated $500 for charity. By matching funds, Google VRP has generously
+provided an additional $500 of donations.</p>
+<p>These donations have been made to the <a href="https://abortionfunds.org">National Network of Abortion Funds</a>.</p>
+<h1>Research and Education</h1>
+<h2>Publications</h2>
+<p>The following is a list of my academic publications, to date:</p>
+<div class="nojust">
+
+[ [PDF](https://dl.acm.org/doi/pdf/10.1145/3559009.3569653) ]
+[ [DOI](https://doi.org/10.1145/3559009.3569653) ]
+FlatPack: Flexible Compaction of Compressed Memory\
+**Albin Eldstål-Ahrens**, Angelos Arelakis, Ioannis Sourdis\
+International Conference on Parallel Architectures and Compilation Techniques (PACT), 2022
+
+[ [PDF](https://research.chalmers.se/publication/528343/file/528343_fulltext.pdf) ]
+[ [URL](https://research.chalmers.se/publication/528343) ]
+Lossy and Lossless Compression Techniques to Improve the Utilization of Memory Bandwidth and Capacity\
+**Albin Eldstål-Ahrens**\
+Doctoral Thesis, Chalmers University of Technology, 2022
+
+[ [PDF](https://research.chalmers.se/publication/528250/file/528250_Fulltext.pdf) ]
+[ [DOI](https://doi.org/10.1145/3481641) ]
+L2C: Combining Lossy and Lossless Compression on Memory and I/O\
+**Albin Eldstål-Ahrens**, Angelos Arelakis, Ioannis Sourdis\
+ACM Transactions on Embedded Computing Systems (TECS), 2022
+
+[ [PDF](https://research.chalmers.se/publication/517203/file/517203_Fulltext.pdf) ]
+[ [URL](https://research.chalmers.se/publication/517203) ]
+Reducing Memory Traffic with Approximate Compression\
+**Albin Eldstål-Ahrens**\
+Licentiate Thesis, Chalmers University of Technology, 2020
+
+[ [PDF](https://research.chalmers.se/publication/521215/file/521215_Fulltext.pdf) ]
+[ [DOI](https://doi.org/10.1145/3424668) ]
+MemSZ: Squeezing Memory Traffic with Lossy Compression\
+**Albin Eldstål-Ahrens**, Ioannis Sourdis\
+ACM Transactions on Architecture and Code Optimization (TACO), 2020
+
+[ [PDF](https://research.chalmers.se/publication/512096/file/512096_Fulltext.pdf) ]
+[ [DOI](https://doi.org/10.1145/3337821.3337824) ]
+AVR: Reducing Memory Traffic with Approximate Value Reconstruction\
+**Albin Eldstål-Damlin**, Pedro Trancoso, Ioannis Sourdis\
+International Conference on Parallel Processing (ICPP), 2019
+
+[ [DOI](https://doi.org/10.1109/VTCSpring.2013.6691881) ]
+[ [IEEE](https://ieeexplore.ieee.org/document/6691881) ]
+An Improved Model of LTE Random Access Channel\
+Evgeny Osipov, Laurynas Riliskis, **Albin Eldstål-Damlin**, Michael Burakov, Mats Nordberg, Min Wang\
+IEEE 77th Vehicular Technology Conference, 2013
+
+[ [PDF](https://ltu.diva-portal.org/smash/get/diva2:1029175/FULLTEXT02.pdf) ]
+An LTE Random Access Channel Model for Wireless Sensor Network Applications\
+Mikael Burakov, **Albin Eldstål-Damlin**\
+Master's Thesis, Luleå University of Technology, 2012
+
+[ [PDF](https://www.diva-portal.org/smash/get/diva2:1003393/FULLTEXT01.pdf) ]
+A comparison of two modes for AEAD services in wireless sensor networks\
+**Albin Eldstål-Damlin**, Laurynas Riliskis\
+Technical Report, Luleå University of Technology, 2011
+
+</div>
+
+<h2>Supervision</h2>
+<p>I've had the pleasure of being the advisor for the following Bachelor's thesis work:</p>
+<p>[ <a href="https://odr.chalmers.se/bitstream/20.500.12380/300034/1/CSE%2019-09%20CPL%20Yngvesson%20Magnusson.pdf">PDF</a> ]
+[ <a href="https://hdl.handle.net/20.500.12380/300034">URL</a> ]
+Augmented Reality\
+Johan Yngvesson, Johannes Magnusson\
+Bachelor's Thesis, Chalmers University of Technology, 2019</p>
+<h2>Peer Review</h2>
+<p>I've served as a reviewer for paper(s) for the following publications and conferences:</p>
+<p>Computing Frontiers (CF) 2021</p>
+<p>Design, Automation and Test in Europe (DATE) 2021</p>
+<p>International Conference on Embedded Computer Systems: Architectures, Modeling and Simulation (SAMOS) 2021</p>
+<p>Design, Automation and Test in Europe (DATE) 2020</p>
+<p>Defect and Fault Tolerance in VLSI and Nanotechnology Systems (DFTS) 2020</p>
+<p>Latin American Symposium on Circuits and Systems (LASCAS) 2020</p>
+<p>Design, Automation and Test in Europe (DATE) 2019</p>
+<p>Transactions on Architecture and Code Optimization (TACO) 2018</p>
+<p>Field-Programmable Logic and Applications (FPL) 2017</p>
+<p>International Symposium on Computer Architecture (ISCA) 2016</p>
+<p>Highly Efficient Accelerators and Reconfigurable Technologies (HEART) 2016</p>
+<p>Design, Automation and Test in Europe (DATE) 2016</p>
+  </section>
+                <section id="extras" class="body">
+                                <div class="social">
+                                        <h2>social</h2>
+                                        <ul>
+                                                        <li><a href="https://eldstal.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                                        </ul>
+                                </div><!-- /.social -->
+                </section><!-- /#extras -->
+
+                <footer id="contentinfo" class="body">
+                        <address id="about" class="vcard body">
+                                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                        </address><!-- /#about -->
+
+                        <p>The theme is by <a rel="nofollow" href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+                </footer><!-- /#contentinfo -->
+
+        </body>
+</html>
