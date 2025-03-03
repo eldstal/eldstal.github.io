@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <title>Albin Eldstål-Ahrens - Security advisory</title>
+      <meta charset="utf-8" />
+      <meta name="generator" content="Pelican" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://eldstal.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Full Atom Feed" />
+
+
+  </head>
+
+  <body>
+      <header>
+          <hgroup><h1><a href="../">Albin Eldstål-Ahrens</a></h1></hgroup>
+          <nav><ul>
+                <li><a href="../category/blog.html" >blog</a></li>
+          </ul></nav>
+      </header>
+      <main>
+  <article>
+    <header>
+      <h2>Security advisory</h2>
+    </header>
+    
+
+    <h2>Security advisory</h2>
+<p>An OS command injection vulnerability exists in the web interface of mobro-raspberrypi. It allows an unauthenticated attacker to execute arbitrary OS commands on the host, with the privileges of the web server.</p>
+<h3>Affected products</h3>
+<p>mobros-raspberrypi v12.3 and older</p>
+<h3>Steps to reproduce</h3>
+<ol>
+<li>Visit <code>/api/log/index.php?lines=0 /dev/null;uptime;ls</code></li>
+</ol>
+<p>The output of the <code>uptime</code> command is shown in the HTTP response.</p>
+<h3>Cause</h3>
+<p>An unsanitized GET parameter is passed to <code>shell_exec()</code> at <a href="https://github.com/ModBros/mobro-raspberrypi/blob/fa0a9fa34cbeef664cf8d8fab8c2e7cea8a521c7/web/api/log/index.php#L8">api/log/index.php:8</a>.</p>
+<h3>Impact</h3>
+<p>An unauthenticated user is able to execute arbitrary OS commands by including semicolons in the <code>lines</code> parameter to terminate the intended command.</p>
+<h3>Proposed Mitigation</h3>
+<p>Ensure that <code>$_GET['lines']</code> is numeric, as is already done in <a href="https://github.com/ModBros/mobro-raspberrypi/blob/fa0a9fa34cbeef664cf8d8fab8c2e7cea8a521c7/web/api/syslog/index.php#L8">the syslog component</a>.</p>
+<h3>History</h3>
+<ul>
+<li>2023-03-28: Patch submitted</li>
+<li>2023-03-28: Initial report filed</li>
+</ul>
+
+  </article>
+      </main>
+      <footer>
+          <address>
+            Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>,
+            which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+          </address>
+      </footer>
+  </body>
+</html>

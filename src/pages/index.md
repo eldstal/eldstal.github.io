@@ -1,12 +1,11 @@
 ---
-title: Front
+title:
 date: 2025-03-02
 slug: index
 save_as: index.html
-
 ...
 
-# Albin Eldstål-Ahrens
+
 Offensive Security Certified Professional (OSCP)\
 Ph.D. of Computer Science and Engineering, Chalmers University of Technology, Gothenburg, Sweden.
 
@@ -168,7 +167,7 @@ Lossy and Lossless Compression Techniques to Improve the Utilization of Memory B
 **Albin Eldstål-Ahrens**\
 Doctoral Thesis, Chalmers University of Technology, 2022
 
-[ [PDF](https://research.chalmers.se/publication/528250/file/528250_Fulltext.pdf) ]
+[ [PDF](https://research.chalmers.se/publication/528812/file/528812_Fulltext.pdf) ]
 [ [DOI](https://doi.org/10.1145/3481641) ]
 L2C: Combining Lossy and Lossless Compression on Memory and I/O\
 **Albin Eldstål-Ahrens**, Angelos Arelakis, Ioannis Sourdis\
