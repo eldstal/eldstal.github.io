@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-        <title>Albin Eldstål-Ahrens - </title>
+        <title>Albin Eldstål-Ahrens - Front page</title>
       <meta charset="utf-8" />
       <meta name="generator" content="Pelican" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/bootstrap.min.css" />
+
         <link href="https://eldstal.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Full Atom Feed" />
 
 
@@ -20,11 +24,11 @@
       <main>
   <article>
     <header>
-      <h2></h2>
+      <h2>Front page</h2>
     </header>
     
 
-    <p>Offensive Security Certified Professional (OSCP)\
+    <p>Offensive Security Certified Professional (OSCP)<br />
 Ph.D. of Computer Science and Engineering, Chalmers University of Technology, Gothenburg, Sweden.</p>
 <h1>Links</h1>
 <p>[ <a href="https://github.com/eldstal">GitHub</a> ] |
@@ -33,16 +37,19 @@ Ph.D. of Computer Science and Engineering, Chalmers University of Technology, Go
 [ <a rel="me" href="https://kolektiva.social/@albin">Mastodon</a> ]</p>
 <h1>Projects</h1>
 <h2>Security</h2>
-<h3><img alt="MacDongler" src="/images/macdongler.png"> <a href="https://github.com/eldstal/MacDongler">MacDongler</a></h3>
-<p><em>USB Skeleton Key</em></p>
+<div class="project">
+<h3><img alt="MacDongler" src="/images/macdongler.png" /> <a href="https://github.com/eldstal/MacDongler">MacDongler</a></h3>
+<p>USB skeleton Key</p>
 <p>Some devices (tablet kiosks, buses, cars, air planes, advertising displays, ...) expose
 a USB interface, either for user device charging or for development access or both. One
 way to lock these devices down is to limit the accepted USB devices, based on model or type
 or vendor ID. MacDongler is a scanner based on Linux USB Gadgets, which emulates a large
 number of USB devices and automatically determines which ones are accepted by a host. It
 can emulate network interfaces, serial ports, HID devices, and more!</p>
-<h3><img alt="strinvader" src="/images/strinvader.png"> <a href="https://github.com/eldstal/strinvader">strinvader</a></h3>
-<p><em>Unicode denormalizer</em></p>
+</div>
+<div class="project">
+<h3><img alt="strinvader" src="/images/strinvader.png" /> <a href="https://github.com/eldstal/strinvader">strinvader</a></h3>
+<p>Unicode denormalizer</p>
 <p>Unicode is quite complex. Since there are many different ways to encode the
 same text, applications may use <em>normalization</em> to preprocess it into a
 predictable form. Strinvader is a tool to find multiple text inputs which
@@ -55,8 +62,10 @@ normalization rules vary slightly between implementations. Unicode
 normalization differs from python's <code>str.lower()</code> which differs from the URL
 parsing in node.js. For this reason, strinvader contains support for a number
 of different such normalization forms.</p>
-<h3><img alt="spike" src="/images/spike.png"> <a href="https://github.com/eldstal/spike">spike</a></h3>
-<p><em>Power glitch generator</em></p>
+</div>
+<div class="project">
+<h3><img alt="spike" src="/images/spike.png" /> <a href="https://github.com/eldstal/spike">spike</a></h3>
+<p>Power glitch generator</p>
 <p>Hardware devices with opaque or protected firmware may still be vulnerable to hardware
 faults. One such hardware fault is a <em>power glitch</em>, a transient drop in the power feed.
 This can have a variety of effects, ranging from device restarts to failure of individual
@@ -64,8 +73,10 @@ executed instructions. Spike is a <a href="https://zephyrproject.org/">Zephyr</a
 Nordic Semiconductor <a href="https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dk">nRF52840 DK</a>
 development board, which is able to control a target device and perform power glitch
 attacks against it.</p>
-<h3><img alt="DESYNK" src="/images/desynk.png"> <a href="https://github.com/eldstal/desynk">DESYNK</a></h3>
-<p><em>Clock glitch generator</em></p>
+</div>
+<div class="project">
+<h3><img alt="DESYNK" src="/images/desynk.png" /> <a href="https://github.com/eldstal/desynk">DESYNK</a></h3>
+<p>Clock glitch generator</p>
 <p>Another hardware fault is caused by an unstable clock signal. Shortening individual
 clock cycles can have interesting effects on the instruction decoder/execution stages
 of a microprocessor, or adversely affect I/O. DESYNK is a work-in-progress project to
@@ -73,52 +84,96 @@ explore this. It is based on the <a href="https://1bitsquared.com/products/icebr
 development board, powered by the Lattice iCE40UP5k FPGA. DESYNK controls the clock signal
 driving the target device, and probes for the proper time and duration of clock inconsistency,
 in order to cause interesting software failures.</p>
-<h3><img alt="elnino" src="/images/elnino.png"> <a href="https://github.com/eldstal/elnino">elnino</a></h3>
-<p><em>Scripts for <a href="https://binary.ninja">binary ninja</a></em></p>
+</div>
+<div class="project">
+<h3><img alt="elnino" src="/images/elnino.png" /> <a href="https://github.com/eldstal/elnino">elnino</a></h3>
+<p>Scripts for <a href="https://binary.ninja">binary ninja</a></p>
 <p>A collection of utilities for the binja reverse engineering tool.</p>
-<h3><img alt="mediafuzz" src="/images/mediafuzz.png"> <a href="https://github.com/eldstal/mediafuzz">mediafuzz</a></h3>
-<p><em>Fuzzer for the media metadata display of your car</em></p>
+</div>
+<div class="project">
+<h3><img alt="mediafuzz" src="/images/mediafuzz.png" /> <a href="https://github.com/eldstal/mediafuzz">mediafuzz</a></h3>
+<p>Fuzzer for the media metadata display of your car</p>
 <p>A small web application which fuzzes the artist/title/album information of your "currently playing"
 notification. Run it on your phone and stream the audio by bluetooth to your target device. Hosted <a href="/mediafuzz">here</a> for your convenience.</p>
-<h3><img alt="CTF Notes" src="/images/gitbook.png"> <a href="https://luftenshjaltar.gitbook.io/ctf/">CTF Notes</a></h3>
-<p><em>It won't be a surprise, the second time I see this.</em></p>
+</div>
+<div class="project">
+<h3><img alt="CTF Notes" src="/images/gitbook.png" /> <a href="https://luftenshjaltar.gitbook.io/ctf/">CTF Notes</a></h3>
+<p>It won't be a surprise, the second time I see this.</p>
 <p>Running notes on CTF techniques, methodology, little tricks we've learned along the way.</p>
+</div>
 <h2>Other</h2>
-<h3><img alt="nobbler" src="/images/nobbler.png"> <a href="https://github.com/eldstal/nobbler">Nobbler</a></h3>
-<p><em>Smart Knob Interface</em></p>
+<div class="project">
+<h3><img alt="nobbler" src="/images/nobbler.png" /> <a href="https://github.com/eldstal/nobbler">Nobbler</a></h3>
+<p>Smart Knob Interface</p>
 <p>An attempt at a PC-side control loop for the gorgeous <a href="https://github.com/scottbez1/smartknob">Smartknob</a>
 designed by Scott Bez. Nobbler lets you automatically activate different
 views on the Smartknob based on system activity (e.g. which window you
 have focused) and perform useful tasks when the knob is fiddled with (e.g.
 run a command to change system volume, emulate a keypress, ...). </p>
-<h3><img alt="Cardcinogen" src="/images/cardcinogen.png"> <a href="https://github.com/eldstal/cardcinogen">Cardcinogen</a></h3>
-<p><em>Deck generator for <a href="https://store.steampowered.com/app/286160/Tabletop_Simulator/">Tabletop Simulator</a></em></p>
+</div>
+<div class="project">
+<h3><img alt="Cardcinogen" src="/images/cardcinogen.png" /> <a href="https://github.com/eldstal/cardcinogen">Cardcinogen</a></h3>
+<p>Deck generator for <a href="https://store.steampowered.com/app/286160/Tabletop_Simulator/">Tabletop Simulator</a></p>
 <p>Cardcinogen is a templating system which allows you to create styles for playing cards and
 populate those cards with content from your own data. This is useful to make expansions
 for card-based games such as Concept or Fluxx.</p>
-<h3><img alt="Panel of Doom" src="/images/pod.png"> <a href="https://github.com/eldstal/avr-pod">Panel of Doom</a></h3>
-<p><em>DIY USB joystick HID device</em></p>
+</div>
+<div class="project">
+<h3><img alt="Panel of Doom" src="/images/pod.png" /> <a href="https://github.com/eldstal/avr-pod">Panel of Doom</a></h3>
+<p>DIY USB joystick HID device</p>
 <p>POD uses low-cost commodity components (an AVR ATMEGA-328 microcontroller with no USB hardware support)
 to implement a standard joystick. This lets you, for example, build the custom control
 panel of your tractor simulation dreams. By using the standard USB HID interface, no
 extra drivers or bindings are required to use it in typical PC games. The software USB
 stack used in POD is kindly provided by the <a href="https://www.obdev.at/products/vusb/index.html">V-USB</a>
 library.</p>
-<h3><img alt="CTF" src="/images/ctf.png"> <a href="https://github.com/eldstal/CTF">CTF Terminal Frontend</a></h3>
-<p><em>Capture-The-Flag scoreboard visualization</em></p>
+</div>
+<div class="project">
+<h3><img alt="CTF" src="/images/ctf.png" /> <a href="https://github.com/eldstal/CTF">CTF Terminal Frontend</a></h3>
+<p>Capture-The-Flag scoreboard visualization</p>
 <p>This program queries a live CTF scoreboard and presents the data in your terminal.
 Some fun animations are implemented, for example when a team grabs the <em>first blood</em>
 of one of the challenges. Several popular serverside systems are supported, and the
 design is modular to allow for easy addition of new backends
 (i.e. support for new online CTF scoreboard systems such as <a href="https://ctfd.io/">CTFd</a>).</p>
-<h3><img alt="Teksh" src="/images/teksh.png"> <a href="https://github.com/eldstal/teksh">Teksh</a></h3>
-<p><em>Command shell implemented in LaTeX</em></p>
+</div>
+<div class="project">
+<h3><img alt="Teksh" src="/images/teksh.png" /> <a href="https://github.com/eldstal/teksh">Teksh</a></h3>
+<p>Command shell implemented in LaTeX</p>
 <p>The LaTeX typesetting engine wasn't intended for this.</p>
+</div>
 <h1>Security</h1>
 <p>I am the holder of an <a href="https://www.credential.net/43d80588-74b1-4d6b-b25e-45078ae452c8">Offensive Security Certified Professional (OSCP)</a> certification.</p>
 <p>I've also earned the certification <a href="https://training.zeropointsecurity.co.uk/courses/red-team-ops">Read Team Ops I</a> issued by Zero Point Security.</p>
 <p>I've found and reported the following vulnerabilities in software projects:</p>
-<p>$(include "cve.md")</p>
+<table>
+<thead>
+<tr><th>Reference                                                      </th><th>Report                                                                                                                                               </th><th>CVSS3                                                                                                                                                                                      </th><th>Description                                                </th></tr>
+</thead>
+<tbody>
+<tr><td>[CVE-2023-30261](https://www.cvedetails.com/cve/CVE-2023-30261)</td><td>[1](https://github.com/snaptec/openWB/issues/2672) [2](https://eldstal.se/advisories/230329-openwb.html)                                             </td><td>[10.0](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H&amp;version=3.1)                                                                        </td><td>Multiple unauthenticated root RCEs in OpenWB               </td></tr>
+<tr><td>[](https://www.cvedetails.com/cve/)                            </td><td>[1](https://github.com/ModBros/mobro-raspberrypi/issues/13) [2](https://eldstal.se/advisories/230328-mobro.html)                                     </td><td>[9.4](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:H&amp;version=3.1)                                                                         </td><td>Unauthenticated RCE in ModBros mobro-raspberrypi           </td></tr>
+<tr><td>[CVE-2023-30260](https://www.cvedetails.com/cve/CVE-2023-30260)</td><td>[1](https://github.com/RaspAP/raspap-webgui/issues/1325) [2](https://eldstal.se/advisories/230328-raspap.html)                                       </td><td>[8.1](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:H/UI:N/S:C/C:N/I:H/A:H/E:F/RL:O/RC:C&amp;version=3.1)                                                           </td><td>Multiple authenticated RCEs in RaspAP                      </td></tr>
+<tr><td>[CVE-2023-30258](https://www.cvedetails.com/cve/CVE-2023-30258)</td><td>[1](https://eldstal.se/advisories/230327-magnusbilling.html)                                                                                         </td><td>[9.4](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:H&amp;version=3.1)                                                                         </td><td>Unauthenticated RCE in magnusbilling6 and magnusbilling7   </td></tr>
+<tr><td>[CVE-2022-1215](https://www.cvedetails.com/cve/CVE-2022-1215)  </td><td>[1](https://gitlab.freedesktop.org/libinput/libinput/-/issues/752)                                                                                   </td><td>[7.1](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H/E:U/RL:O/RC:C&amp;version=3.1)                                                           </td><td>Format string vulnerability in freedesktop&#x27;s libinput      </td></tr>
+<tr><td>[CVE-2022-0546](https://www.cvedetails.com/cve/CVE-2022-0546)  </td><td>[1](https://developer.blender.org/T94572)                                                                                                            </td><td>[5.4](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L/E:U/RL:U/RC:R/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:L/MA:L&amp;version=3.1)</td><td>Multiple Out-of-bounds reads/writes in Blender (HDR loader)</td></tr>
+<tr><td>[CVE-2022-0545](https://www.cvedetails.com/cve/CVE-2022-0545)  </td><td>[1](https://developer.blender.org/T94629)                                                                                                            </td><td>[7.1](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:L/A:L/E:U/RL:U/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:L/MA:L&amp;version=3.1)</td><td>Controlled out-of-bounds read/write in Blender (IMB_flipy) </td></tr>
+<tr><td>[CVE-2022-0544](https://www.cvedetails.com/cve/CVE-2022-0544)  </td><td>[1](https://developer.blender.org/T94661)                                                                                                            </td><td>[4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1)</td><td>Out-of-bounds read in Blender (DDS loader)                 </td></tr>
+<tr><td>[CVE-2022-0497](https://www.cvedetails.com/cve/CVE-2022-0497)  </td><td>[1](https://github.com/openscad/openscad/issues/4043)                                                                                                </td><td>[4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1)</td><td>Out-of-bounds read in OpenSCAD (Comment parser)            </td></tr>
+<tr><td>[CVE-2022-0496](https://www.cvedetails.com/cve/CVE-2022-0496)  </td><td>[1](https://github.com/openscad/openscad/issues/4037)                                                                                                </td><td>[4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1)</td><td>Out-of-bounds read in OpenSCAD (DXF path)                  </td></tr>
+<tr><td>[CVE-2022-0699](https://www.cvedetails.com/cve/CVE-2022-0699)  </td><td>[1](https://github.com/OSGeo/shapelib/issues/39)                                                                                                     </td><td>                                                                                                                                                                                           </td><td>Double-Free in shapelib (contrib/shpsort)                  </td></tr>
+<tr><td>[CVE-2023-30259](https://www.cvedetails.com/cve/CVE-2023-30259)</td><td>[1](https://github.com/LibreCAD/LibreCAD/issues/1481)                                                                                                </td><td>[4.6](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L/E:P/RL:T/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:L/MI:N/MA:L&amp;version=3.1)</td><td>Out-of-bounds read in LibreCAD (importshp DBF parser)      </td></tr>
+<tr><td>[CVE-2021-45847](https://www.cvedetails.com/cve/CVE-2021-45847)</td><td>[1](https://github.com/slic3r/Slic3r/issues/5118) [2](https://github.com/slic3r/Slic3r/issues/5119) [3](https://github.com/slic3r/Slic3r/issues/5120)</td><td>[5.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:H/RL:U/RC:C&amp;version=3.1)                                                           </td><td>Multiple NULL-pointer dereferences in Slic3r (3MF XML)     </td></tr>
+<tr><td>[CVE-2021-45846](https://www.cvedetails.com/cve/CVE-2021-45846)</td><td>[1](https://github.com/slic3r/Slic3r/issues/5117)                                                                                                    </td><td>[5.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:H/RL:U/RC:C&amp;version=3.1)                                                           </td><td>NULL-pointer dereference in Slic3r (AMF XML)               </td></tr>
+<tr><td>[CVE-2021-45845](https://www.cvedetails.com/cve/CVE-2021-45845)</td><td>[1](https://tracker.freecad.org/view.php?id=4810)                                                                                                    </td><td>[7.5](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C&amp;version=3.1)                                                           </td><td>RCE in FreeCAD (Path Sanity Check script)                  </td></tr>
+<tr><td>[CVE-2021-45844](https://www.cvedetails.com/cve/CVE-2021-45844)</td><td>[1](https://tracker.freecad.org/view.php?id=4809)                                                                                                    </td><td>[7.5](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C&amp;version=3.1)                                                           </td><td>RCE in FreeCAD (ODA DWG import)                            </td></tr>
+<tr><td>[CVE-2021-45343](https://www.cvedetails.com/cve/CVE-2021-45343)</td><td>[1](https://github.com/LibreCAD/LibreCAD/issues/1468)                                                                                                </td><td>[5.3](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:X/RL:O/RC:C&amp;version=3.1)                                                           </td><td>NULL-pointer dereference in LibreCAD (DXF HATCH 93)        </td></tr>
+<tr><td>[CVE-2021-45342](https://www.cvedetails.com/cve/CVE-2021-45342)</td><td>[1](https://github.com/LibreCAD/LibreCAD/issues/1464)                                                                                                </td><td>[7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&amp;version=3.1)</td><td>RCE in LibreCAD (JWW CDataList)                            </td></tr>
+<tr><td>[CVE-2021-45341](https://www.cvedetails.com/cve/CVE-2021-45341)</td><td>[1](https://github.com/LibreCAD/LibreCAD/issues/1462)                                                                                                </td><td>[7.8](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H/E:P/RL:W/RC:C/CR:X/IR:X/AR:X/MAV:L/MAC:L/MPR:N/MUI:R/MS:C/MC:H/MI:H/MA:L&amp;version=3.1)</td><td>RCE in LibreCAD (JWW CDataMoji)                            </td></tr>
+<tr><td>[CVE-2021-45340](https://www.cvedetails.com/cve/CVE-2021-45340)</td><td>[1](https://github.com/libsixel/libsixel/issues/51) [2](https://github.com/saitoha/libsixel/issues/160)                                              </td><td>[5.7](https://nvd.nist.gov/vuln-metrics/cvss/v3-calculator?vector=AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C&amp;version=3.1)                                                           </td><td>NULL-pointer dereference in libSIXEL                       </td></tr>
+</tbody>
+</table>
+
 <h1>Bugs for Charity</h1>
 <p>Via bug bounty programs, I've generated $500 for charity. By matching funds, Google VRP has generously
 provided an additional $500 of donations.</p>
@@ -127,67 +182,56 @@ provided an additional $500 of donations.</p>
 <h2>Publications</h2>
 <p>The following is a list of my academic publications, to date:</p>
 <div class="nojust">
-
-[ [PDF](https://dl.acm.org/doi/pdf/10.1145/3559009.3569653) ]
-[ [DOI](https://doi.org/10.1145/3559009.3569653) ]
-FlatPack: Flexible Compaction of Compressed Memory\
-**Albin Eldstål-Ahrens**, Angelos Arelakis, Ioannis Sourdis\
-International Conference on Parallel Architectures and Compilation Techniques (PACT), 2022
-
-[ [PDF](https://research.chalmers.se/publication/528343/file/528343_fulltext.pdf) ]
-[ [URL](https://research.chalmers.se/publication/528343) ]
-Lossy and Lossless Compression Techniques to Improve the Utilization of Memory Bandwidth and Capacity\
-**Albin Eldstål-Ahrens**\
-Doctoral Thesis, Chalmers University of Technology, 2022
-
-[ [PDF](https://research.chalmers.se/publication/528812/file/528812_Fulltext.pdf) ]
-[ [DOI](https://doi.org/10.1145/3481641) ]
-L2C: Combining Lossy and Lossless Compression on Memory and I/O\
-**Albin Eldstål-Ahrens**, Angelos Arelakis, Ioannis Sourdis\
-ACM Transactions on Embedded Computing Systems (TECS), 2022
-
-[ [PDF](https://research.chalmers.se/publication/517203/file/517203_Fulltext.pdf) ]
-[ [URL](https://research.chalmers.se/publication/517203) ]
-Reducing Memory Traffic with Approximate Compression\
-**Albin Eldstål-Ahrens**\
-Licentiate Thesis, Chalmers University of Technology, 2020
-
-[ [PDF](https://research.chalmers.se/publication/521215/file/521215_Fulltext.pdf) ]
-[ [DOI](https://doi.org/10.1145/3424668) ]
-MemSZ: Squeezing Memory Traffic with Lossy Compression\
-**Albin Eldstål-Ahrens**, Ioannis Sourdis\
-ACM Transactions on Architecture and Code Optimization (TACO), 2020
-
-[ [PDF](https://research.chalmers.se/publication/512096/file/512096_Fulltext.pdf) ]
-[ [DOI](https://doi.org/10.1145/3337821.3337824) ]
-AVR: Reducing Memory Traffic with Approximate Value Reconstruction\
-**Albin Eldstål-Damlin**, Pedro Trancoso, Ioannis Sourdis\
-International Conference on Parallel Processing (ICPP), 2019
-
-[ [DOI](https://doi.org/10.1109/VTCSpring.2013.6691881) ]
-[ [IEEE](https://ieeexplore.ieee.org/document/6691881) ]
-An Improved Model of LTE Random Access Channel\
-Evgeny Osipov, Laurynas Riliskis, **Albin Eldstål-Damlin**, Michael Burakov, Mats Nordberg, Min Wang\
-IEEE 77th Vehicular Technology Conference, 2013
-
-[ [PDF](https://ltu.diva-portal.org/smash/get/diva2:1029175/FULLTEXT02.pdf) ]
-An LTE Random Access Channel Model for Wireless Sensor Network Applications\
-Mikael Burakov, **Albin Eldstål-Damlin**\
-Master's Thesis, Luleå University of Technology, 2012
-
-[ [PDF](https://www.diva-portal.org/smash/get/diva2:1003393/FULLTEXT01.pdf) ]
-A comparison of two modes for AEAD services in wireless sensor networks\
-**Albin Eldstål-Damlin**, Laurynas Riliskis\
-Technical Report, Luleå University of Technology, 2011
-
+<p>[ <a href="https://dl.acm.org/doi/pdf/10.1145/3559009.3569653">PDF</a> ]
+[ <a href="https://doi.org/10.1145/3559009.3569653">DOI</a> ]
+FlatPack: Flexible Compaction of Compressed Memory<br />
+<strong>Albin Eldstål-Ahrens</strong>, Angelos Arelakis, Ioannis Sourdis<br />
+International Conference on Parallel Architectures and Compilation Techniques (PACT), 2022</p>
+<p>[ <a href="https://research.chalmers.se/publication/528343/file/528343_fulltext.pdf">PDF</a> ]
+[ <a href="https://research.chalmers.se/publication/528343">URL</a> ]
+Lossy and Lossless Compression Techniques to Improve the Utilization of Memory Bandwidth and Capacity<br />
+<strong>Albin Eldstål-Ahrens</strong><br />
+Doctoral Thesis, Chalmers University of Technology, 2022</p>
+<p>[ <a href="https://research.chalmers.se/publication/528812/file/528812_Fulltext.pdf">PDF</a> ]
+[ <a href="https://doi.org/10.1145/3481641">DOI</a> ]
+L2C: Combining Lossy and Lossless Compression on Memory and I/O<br />
+<strong>Albin Eldstål-Ahrens</strong>, Angelos Arelakis, Ioannis Sourdis<br />
+ACM Transactions on Embedded Computing Systems (TECS), 2022</p>
+<p>[ <a href="https://research.chalmers.se/publication/517203/file/517203_Fulltext.pdf">PDF</a> ]
+[ <a href="https://research.chalmers.se/publication/517203">URL</a> ]
+Reducing Memory Traffic with Approximate Compression<br />
+<strong>Albin Eldstål-Ahrens</strong><br />
+Licentiate Thesis, Chalmers University of Technology, 2020</p>
+<p>[ <a href="https://research.chalmers.se/publication/521215/file/521215_Fulltext.pdf">PDF</a> ]
+[ <a href="https://doi.org/10.1145/3424668">DOI</a> ]
+MemSZ: Squeezing Memory Traffic with Lossy Compression<br />
+<strong>Albin Eldstål-Ahrens</strong>, Ioannis Sourdis<br />
+ACM Transactions on Architecture and Code Optimization (TACO), 2020</p>
+<p>[ <a href="https://research.chalmers.se/publication/512096/file/512096_Fulltext.pdf">PDF</a> ]
+[ <a href="https://doi.org/10.1145/3337821.3337824">DOI</a> ]
+AVR: Reducing Memory Traffic with Approximate Value Reconstruction<br />
+<strong>Albin Eldstål-Damlin</strong>, Pedro Trancoso, Ioannis Sourdis<br />
+International Conference on Parallel Processing (ICPP), 2019</p>
+<p>[ <a href="https://doi.org/10.1109/VTCSpring.2013.6691881">DOI</a> ]
+[ <a href="https://ieeexplore.ieee.org/document/6691881">IEEE</a> ]
+An Improved Model of LTE Random Access Channel<br />
+Evgeny Osipov, Laurynas Riliskis, <strong>Albin Eldstål-Damlin</strong>, Michael Burakov, Mats Nordberg, Min Wang<br />
+IEEE 77th Vehicular Technology Conference, 2013</p>
+<p>[ <a href="https://ltu.diva-portal.org/smash/get/diva2:1029175/FULLTEXT02.pdf">PDF</a> ]
+An LTE Random Access Channel Model for Wireless Sensor Network Applications<br />
+Mikael Burakov, <strong>Albin Eldstål-Damlin</strong><br />
+Master's Thesis, Luleå University of Technology, 2012</p>
+<p>[ <a href="https://www.diva-portal.org/smash/get/diva2:1003393/FULLTEXT01.pdf">PDF</a> ]
+A comparison of two modes for AEAD services in wireless sensor networks<br />
+<strong>Albin Eldstål-Damlin</strong>, Laurynas Riliskis<br />
+Technical Report, Luleå University of Technology, 2011</p>
 </div>
-
 <h2>Supervision</h2>
 <p>I've had the pleasure of being the advisor for the following Bachelor's thesis work:</p>
 <p>[ <a href="https://odr.chalmers.se/bitstream/20.500.12380/300034/1/CSE%2019-09%20CPL%20Yngvesson%20Magnusson.pdf">PDF</a> ]
 [ <a href="https://hdl.handle.net/20.500.12380/300034">URL</a> ]
-Augmented Reality\
-Johan Yngvesson, Johannes Magnusson\
+Augmented Reality<br />
+Johan Yngvesson, Johannes Magnusson<br />
 Bachelor's Thesis, Chalmers University of Technology, 2019</p>
 <h2>Peer Review</h2>
 <p>I've served as a reviewer for paper(s) for the following publications and conferences:</p>

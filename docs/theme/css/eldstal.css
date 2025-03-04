@@ -1,0 +1,51 @@
+/*
+ * Menu
+ */
+header nav ul {
+    list-style-type: none;
+    background-color: #333;
+    overflow: hidden;
+}
+
+header nav li {
+
+    a { 
+        color: red;
+    }
+    float: left;
+}
+
+header nav li [aria-current] {
+        color: white;
+        font-weight: bold;
+}
+
+/*
+ * Project box
+ */
+
+div.project {
+    display: block;
+    /*background: red; */
+    border-style: double;
+
+}
+
+div.project > h3 {
+    /* Project title */
+}
+
+div.project > h3 > img {
+    /* Icon */
+    height: 2.5em;
+    vertical-align: middle;
+}
+
+div.project > p:nth-of-type(1) {
+    /* Subtitle */
+    font-style: italic;
+}
+
+div.project > p:nth-of-type(n+2) {
+    /* Description */
+}

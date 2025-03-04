@@ -5,6 +5,10 @@
       <meta charset="utf-8" />
       <meta name="generator" content="Pelican" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/bootstrap.min.css" />
+
         <link href="https://eldstal.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Full Atom Feed" />
 
 
@@ -33,7 +37,7 @@
 <li>Obtain credentials for RaspAP</li>
 <li>Configure and execute the following script</li>
 </ol>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/env python3</span>
 
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -62,8 +66,7 @@
 
 <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to execute command&quot;</span><span class="p">)</span>
-</pre></div>
-
+</code></pre></div>
 
 <ol>
 <li>Observe that the file <code>/tmp/hax</code> has been created on the raspi, and contains the output of <code>uptime</code>.</li>
@@ -74,10 +77,9 @@
 <h3>Impact</h3>
 <p>An authenticated user is able to execute arbitrary commands as <code>www-data</code>.</p>
 <p>In the default RaspAP configuration, this can be leveraged to gain root access by exploiting two of the configured <code>sudo</code> permissions; overwrite the openvpn client configuration to set the following:</p>
-<div class="highlight"><pre><span></span><span class="n">script</span><span class="o">-</span><span class="n">security</span><span class="w"> </span><span class="mi">2</span>
+<div class="highlight"><pre><span></span><code><span class="n">script</span><span class="o">-</span><span class="n">security</span><span class="w"> </span><span class="mi">2</span>
 <span class="n">up</span><span class="w"> </span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">payload</span><span class="o">.</span><span class="n">sh</span>
-</pre></div>
-
+</code></pre></div>
 
 <p>and establish an OpenVPN connection. <code>/tmp/payload.sh</code> will be executed with root privileges.</p>
 <h3>Proposed Mitigation</h3>

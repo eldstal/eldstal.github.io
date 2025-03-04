@@ -1,6 +1,20 @@
-SITENAME="Albin Eldstål-Ahrens"
-SITEURL="https://eldstal.se"
-TIMEZONE="Europe/Stockholm"
+SITENAME = "Albin Eldstål-Ahrens"
+SITEURL = "https://eldstal.se"
+TIMEZONE = "Europe/Stockholm"
+AUTHOR = "Albin Eldstål-Ahrens"
+
+PLUGINS = [ "md_include" ]
+MD_INCLUDE_BASE_PATH = "src/md-include"
+
+MARKDOWN = {
+        "extension_configs": {
+            "markdown.extensions.md_in_html": {},
+            "markdown.extensions.extra": {},
+            "markdown.extensions.meta": {},
+            "markdown.extensions.codehilite": {"css_class": "highlight"},
+        }
+
+}
 
 PATH = 'src'
 OUTPUT_PATH = 'docs/'
