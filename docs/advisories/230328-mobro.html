@@ -10,24 +10,30 @@
         <link rel="stylesheet" type="text/css" href="/theme/css/bootstrap.min.css" />
 
         <link href="https://eldstal.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Full Atom Feed" />
+        <link href="https://eldstal.se/feeds/advisories.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Categories Atom Feed" />
+
+
+
 
 
   </head>
 
   <body>
       <header>
-          <hgroup><h1><a href="../">Albin Eldstål-Ahrens</a></h1></hgroup>
           <nav><ul>
-                <li><a href="../category/blog.html" >blog</a></li>
+              <a href="../index.html" ><li>Albin Eldstål-Ahrens</li></a>
+              <a href="../category/advisories.html"  aria-current="page" ><li>advisories</li></a>
+              <a href="../category/blog.html" ><li>blog</li></a>
           </ul></nav>
       </header>
       <main>
   <article>
     <header>
-      <h2>Security advisory</h2>
+      <h2>
+        <a href="../advisories/230328-mobro.html" rel="bookmark"
+           title="Permalink to Security advisory">Security advisory</a></h2>
+      
     </header>
-    
-
     <h2>Security advisory</h2>
 <p>An OS command injection vulnerability exists in the web interface of mobro-raspberrypi. It allows an unauthenticated attacker to execute arbitrary OS commands on the host, with the privileges of the web server.</p>
 <h3>Affected products</h3>
@@ -48,7 +54,17 @@
 <li>2023-03-28: Patch submitted</li>
 <li>2023-03-28: Initial report filed</li>
 </ul>
-
+    <footer>
+      <p>Published: <time datetime="2023-03-27T00:00:00+02:00">
+        Mon 27 March 2023
+      </time></p>
+        <address>
+          By           <span>Albin Eldstål-Ahrens</span>
+        </address>
+        <p>
+          Category: <a href="../category/advisories.html">advisories</a>
+        </p>
+    </footer>
   </article>
       </main>
       <footer>

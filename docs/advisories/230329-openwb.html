@@ -10,24 +10,30 @@
         <link rel="stylesheet" type="text/css" href="/theme/css/bootstrap.min.css" />
 
         <link href="https://eldstal.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Full Atom Feed" />
+        <link href="https://eldstal.se/feeds/advisories.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Categories Atom Feed" />
+
+
+
 
 
   </head>
 
   <body>
       <header>
-          <hgroup><h1><a href="../">Albin Eldstål-Ahrens</a></h1></hgroup>
           <nav><ul>
-                <li><a href="../category/blog.html" >blog</a></li>
+              <a href="../index.html" ><li>Albin Eldstål-Ahrens</li></a>
+              <a href="../category/advisories.html"  aria-current="page" ><li>advisories</li></a>
+              <a href="../category/blog.html" ><li>blog</li></a>
           </ul></nav>
       </header>
       <main>
   <article>
     <header>
-      <h2>CVE-2023-30261 Security advisory</h2>
+      <h2>
+        <a href="../advisories/230329-openwb.html" rel="bookmark"
+           title="Permalink to CVE-2023-30261 Security advisory">CVE-2023-30261 Security advisory</a></h2>
+      
     </header>
-    
-
     <h2>Security advisory</h2>
 <p>Multiple command injection vulnerabilities exist in openWB version 1.7 and older. Each allows an unauthenticated user to execute arbitrary OS commands on the host. In the default configuration of openWB, commands can be executed with root privileges.</p>
 <h3>Affected products</h3>
@@ -53,7 +59,17 @@
 <li>2023-03-30: <a href="https://github.com/DetMoerk/openWB/pull/1">Fix</a> committed</li>
 <li>2023-03-29: <a href="https://github.com/snaptec/openWB/issues/2672">Initial report</a> filed</li>
 </ul>
-
+    <footer>
+      <p>Published: <time datetime="2023-03-29T00:00:00+02:00">
+        Wed 29 March 2023
+      </time></p>
+        <address>
+          By           <span>Albin Eldstål-Ahrens</span>
+        </address>
+        <p>
+          Category: <a href="../category/advisories.html">advisories</a>
+        </p>
+    </footer>
   </article>
       </main>
       <footer>

@@ -20,13 +20,13 @@ PATH = 'src'
 OUTPUT_PATH = 'docs/'
 THEME = 'pelican-theme'
 
-ARTICLE_PATHS = ['blog']
-ARTICLE_SAVE_AS = 'blog/{date:%Y}/{slug}.html'
-ARTICLE_URL = 'blog/{date:%Y}/{slug}.html'
+ARTICLE_PATHS = ['blog', 'advisories']
+ARTICLE_SAVE_AS = '{category}/{slug}.html'
+ARTICLE_URL = '{category}/{slug}.html'
 
-PAGE_PATHS = [ 'pages', 'advisories' ]
+PAGE_PATHS = [ 'pages' ]
 PAGE_URL = '{slug}.html'
-DISPLAY_PAGES_ON_MENU = False
+DISPLAY_PAGES_ON_MENU = True
 
 # Don't need these pages
 AUTHOR_SAVE_AS = ''

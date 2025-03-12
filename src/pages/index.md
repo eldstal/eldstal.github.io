@@ -1,5 +1,5 @@
 ---
-title: Front page
+title: Albin Eldstål-Ahrens
 date: 2025-03-02
 slug: index
 save_as: index.html
@@ -166,7 +166,7 @@ The LaTeX typesetting engine wasn't intended for this.
 # Security
 I am the holder of an [Offensive Security Certified Professional (OSCP)](https://www.credential.net/43d80588-74b1-4d6b-b25e-45078ae452c8) certification.
 
-I've also earned the certification [Read Team Ops I](https://training.zeropointsecurity.co.uk/courses/red-team-ops) issued by Zero Point Security.
+I've also earned the certification [Red Team Ops I](https://training.zeropointsecurity.co.uk/courses/red-team-ops) issued by Zero Point Security.
 
 
 I've found and reported the following vulnerabilities in software projects:

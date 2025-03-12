@@ -1,51 +1,110 @@
+body {
+    margin: 0;
+
+
+}
+
+a:visited { color: inherit }
+
 /*
  * Menu
  */
+
 header nav ul {
+    display: block;
     list-style-type: none;
     background-color: #333;
     overflow: hidden;
+    height: 3em;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 0;
 }
 
 header nav li {
 
-    a { 
-        color: red;
-    }
+    display: flex;
     float: left;
+    padding-left: 1em;
+    padding-right: 1em;
+    align-items: center;
+    height: 100%;
+    font-weight: normal;
 }
 
-header nav li [aria-current] {
-        color: white;
-        font-weight: bold;
+header nav li {
+    background-color: blue;
+    color: #dedede;
 }
+
+header nav li:hover {
+    background-color: red;
+    color: #dedede;
+}
+
+header nav [aria-current] li {
+    background-color: olive;
+    color: white;
+}
+
+header nav [aria-current] li:hover {
+    background-color: green;
+    color: white;
+}
+
 
 /*
  * Project box
  */
 
 div.project {
+    background: moccasin;
+
     display: block;
-    /*background: red; */
-    border-style: double;
+
+    border-style: none;
+    border-image-source: url("/images/topbars.png");
+    border-image-slice: 19 8 1 17 fill;
+    border-image-width: 19px 4px 1px 17px;
+    border-image-repeat: repeat;
+
+    padding-top: 22px;
+    padding-bottom: 1px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 20px;
+    margin-left: 12px;
+    margin-right: 12px;
+
+    box-sizing: border-box;
+    max-width: min(50em, 100%);
 
 }
 
 div.project > h3 {
     /* Project title */
+    margin-top: 0;
+    margin-bottom: 0.5em;
 }
 
 div.project > h3 > img {
     /* Icon */
     height: 2.5em;
     vertical-align: middle;
+    max-width: 48px;
+    max-height: 48px;
 }
 
 div.project > p:nth-of-type(1) {
     /* Subtitle */
     font-style: italic;
+    margin-top: 0.5em;
 }
 
 div.project > p:nth-of-type(n+2) {
     /* Description */
+    text-align: justify;
+    width: 100%;
 }
