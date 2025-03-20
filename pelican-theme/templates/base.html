@@ -3,6 +3,15 @@
   <head>
     {% block head %}
       <title>{% block title %}{{ SITENAME|striptags }}{% endblock title %}</title>
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+
       <meta charset="utf-8" />
       <meta name="generator" content="Pelican" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,6 +53,12 @@
   </head>
 
   <body>
+      <div class="bleed">
+      <div class="bleed-tl"></div>
+      <!--<div class="bleed-tl lcd-negative"></div>-->
+      <!--<div class="bleed-br lcd-positive"></div>-->
+      <div class="bleed-br"></div>
+      </div>
     {% block body %}
       <header>
         {% block header %}
@@ -76,8 +91,8 @@
       <footer>
         {% block footer %}
           <address>
-            Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>,
-            which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+            Powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>,
+            and generously hosted by <a rel="nofollow" href="https://docs.github.com/en/pages">Github pages</a>.
           </address>
         {% endblock footer %}
       </footer>

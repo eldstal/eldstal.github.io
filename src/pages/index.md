@@ -6,9 +6,13 @@ save_as: index.html
 ...
 
 
+<div class="h1" markdown="1">
 Offensive Security Certified Professional (OSCP)  
 Ph.D. of Computer Science and Engineering, Chalmers University of Technology, Gothenburg, Sweden.
 
+</div>
+
+<div class="h1" markdown="1">
 
 
 # Links
@@ -17,10 +21,15 @@ Ph.D. of Computer Science and Engineering, Chalmers University of Technology, Go
 [ [CTFTime](https://ctftime.org/team/50600) ] |
 [ <a rel="me" href="https://kolektiva.social/@albin">Mastodon</a> ]
 
+</div>
+
+<div class="h1" markdown="1">
 # Projects
+
+<div class="h2" markdown="1">
 ## Security
 
-<div class="project" markdown="1">
+<div class="h3 project" markdown="1">
 ### ![MacDongler](/images/macdongler.png) [MacDongler](https://github.com/eldstal/MacDongler)
 USB skeleton Key
 
@@ -33,7 +42,7 @@ can emulate network interfaces, serial ports, HID devices, and more!
 </div>
 
 
-<div class="project" markdown="1">
+<div class="h3 project" markdown="1">
 ### ![strinvader](/images/strinvader.png) [strinvader](https://github.com/eldstal/strinvader)
 Unicode denormalizer
 
@@ -52,7 +61,7 @@ of different such normalization forms.
 </div>
 
 
-<div class="project" markdown="1">
+<div class="h3 project" markdown="1">
 ### ![spike](/images/spike.png) [spike](https://github.com/eldstal/spike)
 Power glitch generator
 
@@ -66,7 +75,7 @@ attacks against it.
 </div>
 
 
-<div class="project" markdown="1">
+<div class="h3 project" markdown="1">
 ### ![DESYNK](/images/desynk.png) [DESYNK](https://github.com/eldstal/desynk)
 Clock glitch generator
 
@@ -80,7 +89,7 @@ in order to cause interesting software failures.
 </div>
 
 
-<div class="project" markdown="1">
+<div class="h3 project" markdown="1">
 ### ![elnino](/images/elnino.png) [elnino](https://github.com/eldstal/elnino)
 Scripts for [binary ninja](https://binary.ninja)
 
@@ -88,7 +97,7 @@ A collection of utilities for the binja reverse engineering tool.
 </div>
 
 
-<div class="project" markdown="1">
+<div class="h3 project" markdown="1">
 ### ![mediafuzz](/images/mediafuzz.png) [mediafuzz](https://github.com/eldstal/mediafuzz)
 Fuzzer for the media metadata display of your car
 
@@ -97,17 +106,20 @@ notification. Run it on your phone and stream the audio by bluetooth to your tar
 </div>
 
 
-<div class="project" markdown="1">
+<div class="h3 project" markdown="1">
 ### ![CTF Notes](/images/gitbook.png) [CTF Notes](https://luftenshjaltar.gitbook.io/ctf/)
 It won't be a surprise, the second time I see this.
 
 Running notes on CTF techniques, methodology, little tricks we've learned along the way.
 </div>
 
+</div>
+
+<div class="h2" markdown="1">
 ## Other
 
 
-<div class="project" markdown="1">
+<div class="h3 project" markdown="1">
 ### ![nobbler](/images/nobbler.png) [Nobbler](https://github.com/eldstal/nobbler)
 Smart Knob Interface
 
@@ -119,7 +131,7 @@ run a command to change system volume, emulate a keypress, ...).
 </div>
 
 
-<div class="project" markdown="1">
+<div class="h3 project" markdown="1">
 ### ![Cardcinogen](/images/cardcinogen.png) [Cardcinogen](https://github.com/eldstal/cardcinogen)
 Deck generator for [Tabletop Simulator](https://store.steampowered.com/app/286160/Tabletop_Simulator/)
 
@@ -129,7 +141,7 @@ for card-based games such as Concept or Fluxx.
 </div>
 
 
-<div class="project" markdown="1">
+<div class="h3 project" markdown="1">
 ### ![Panel of Doom](/images/pod.png) [Panel of Doom](https://github.com/eldstal/avr-pod)
 DIY USB joystick HID device
 
@@ -142,7 +154,7 @@ library.
 </div>
 
 
-<div class="project" markdown="1">
+<div class="h3 project" markdown="1">
 ### ![CTF](/images/ctf.png) [CTF Terminal Frontend](https://github.com/eldstal/CTF)
 Capture-The-Flag scoreboard visualization
 
@@ -155,14 +167,16 @@ design is modular to allow for easy addition of new backends
 
 
 
-<div class="project" markdown="1">
+<div class="h3 project" markdown="1">
 ### ![Teksh](/images/teksh.png) [Teksh](https://github.com/eldstal/teksh)
 Command shell implemented in LaTeX
 
 The LaTeX typesetting engine wasn't intended for this.
 </div>
+</div>
 
-
+</div>
+<div class="h1" markdown="1">
 # Security
 I am the holder of an [Offensive Security Certified Professional (OSCP)](https://www.credential.net/43d80588-74b1-4d6b-b25e-45078ae452c8) certification.
 
@@ -175,14 +189,19 @@ I've found and reported the following vulnerabilities in software projects:
 {! cve.md !}
 
 
+</div>
+<div class="h1" markdown="1">
 # Bugs for Charity
 Via bug bounty programs, I've generated $500 for charity. By matching funds, Google VRP has generously
 provided an additional $500 of donations.
 
 These donations have been made to the [National Network of Abortion Funds](https://abortionfunds.org).
 
+</div>
+<div class="h1" markdown="1">
 # Research and Education
 
+<div class="h2" markdown="1">
 ## Publications
 The following is a list of my academic publications, to date:
 
@@ -242,6 +261,8 @@ Technical Report, Luleå University of Technology, 2011
 
 </div>
 
+</div>
+<div class="h2" markdown="1">
 ## Supervision
 I've had the pleasure of being the advisor for the following Bachelor's thesis work:
 
@@ -253,6 +274,8 @@ Bachelor's Thesis, Chalmers University of Technology, 2019
 
 
 
+</div>
+<div class="h2" markdown="1">
 ## Peer Review
 I've served as a reviewer for paper(s) for the following publications and conferences:
 
@@ -280,3 +303,5 @@ Highly Efficient Accelerators and Reconfigurable Technologies (HEART) 2016
 
 Design, Automation and Test in Europe (DATE) 2016
 
+</div>
+</div>

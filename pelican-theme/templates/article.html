@@ -23,14 +23,17 @@
 
 {% block content %}
   <article>
+    <div class="h3 article">
     <header>
-      <h2>
+      <h3>
         <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-           title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
+           title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>
       {% import 'translations.html' as translations with context %}
       {{ translations.translations_for(article) }}
     </header>
     {{ article.content }}
+    </div>
+    <div class="h1">
     <footer>
       <p>Published: <time datetime="{{ article.date.isoformat() }}">
         {{ article.locale_date }}
@@ -62,5 +65,6 @@
         </p>
       {% endif %}
     </footer>
+    </div>
   </article>
 {% endblock %}
