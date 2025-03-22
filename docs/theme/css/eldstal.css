@@ -63,15 +63,48 @@ footer {
     width: min(100%, 45em);
 }
 
-a { color: var(--lcdfg4); }
-a:visited { color: var(--lcdfg4); }
+a {
+    color: var(--lcdfg4);
+    font-weight: 450;
+}
+a:visited {
+    color: var(--lcdfg4);
+    font-weight: 450;
+}
+
+pre {
+    /*font-family: "Lekton", monospace;*/
+    font-family: monospace;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 90%;
+
+    padding-top: 0.5ex;
+    padding-bottom: 0.5ex;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    border-color: var(--lcdfg2);
+    background-color: var(--lcdbg);
+
+    code {
+        border-style: none;
+    }
+}
 
 code {
-    font-family: "Kode Mono", monospace;
-    /*font-optical-sizing: auto; */
+    /*font-family: "Lekton", monospace;*/
+    font-family: monospace;
+    font-weight: 200;
     font-size: 11pt;
-    font-weight: 300;
     font-style: normal;
+
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    border-color: var(--lcdfg2);
+    background-color: var(--lcdbg);
+    padding-top: -1em;
+
+    word-break: all;
 }
 
 /*
@@ -79,7 +112,11 @@ code {
  * Top-right and bottom-left each have one positive, one negative
  */
 
-div.bleed {
+div.turn-around {
+    transform: rotateZ(180deg);
+}
+
+div.edge-bleed {
     display: block;
     position: fixed;
     width: 100%;
@@ -89,41 +126,67 @@ div.bleed {
     left: 0;
     z-index: 100;
     pointer-events: none;
-    opacity: 0.25;
+    opacity: 0.4;
+
+    .edge-bleed-t {
+        width: 100%;
+        height: 100%;
+
+        position: fixed;
+        margin: 0;
+        top: 0;
+        left: 0;
+
+        background: url("/images/bleed-edge-h.svg");
+        background-position: top left;
+        background-repeat: no-repeat;
+    }
+
+    .edge-bleed-l {
+        width: 100%;
+        height: 100%;
+
+        position: fixed;
+        margin: 0;
+        top: 0;
+        right: 0;
+
+        background: url("/images/bleed-edge-v.svg");
+        background-position: top left;
+        background-repeat: no-repeat;
+    }
 }
 
-div.bleed-tl {
+
+div.bleed {
+    display: block;
     position: fixed;
     width: 100%;
     height: 100%;
     margin: 0;
     top: 0;
     left: 0;
-}
+    z-index: 80;
+    pointer-events: none;
+    opacity: 0.25;
 
-div.bleed-br {
-    display: block;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    bottom: 0;
-    right: 0;
+    .bleed-splotches {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        top: 0;
+        left: 0;
+
+        background: url("/images/bleed-splotch.svg");
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+
 }
 
 
 div.bleed-tl {
-    background: url("/images/bleed-tl.svg");
-    background-repeat: no-repeat;
-    pointer-events: none;
-}
-
-div.bleed-br {
-    background: url("/images/bleed-tl.svg");
-    transform: rotateZ(180deg);
-    background-repeat: no-repeat;
-    background-position: top left;
-    pointer-events: none;
 }
 
 /*
@@ -133,7 +196,7 @@ div.bleed-br {
 header nav ul {
     display: block;
     list-style-type: none;
-    background-color: #333;
+    background-color: var(--lcdfg);
     overflow: hidden;
     height: 3em;
     width: 100%;
@@ -155,23 +218,23 @@ header nav li {
 }
 
 header nav li {
-    background-color: blue;
-    color: #dedede;
+    background-color: var(--lcdfg3);
+    color: var(--lcdbg1);
 }
 
 header nav li:hover {
-    background-color: red;
-    color: #dedede;
+    background-color: var(--lcdbg1);
+    color: var(--lcdfg3);
 }
 
 header nav [aria-current] li {
-    background-color: olive;
-    color: white;
+    background-color: var(--lcdbg);
+    color: var(--lcdfg);
 }
 
 header nav [aria-current] li:hover {
-    background-color: green;
-    color: white;
+    background-color: var(--lcdbg1);
+    color: var(--lcdfg);
 }
 
 /*
@@ -191,7 +254,7 @@ div.h1 {
     box-sizing: border-box;
 
     h1 {
-        margin-top: 1ex;
+        margin-top: 0ex;
         margin-bottom: 1ex;
     }
 
@@ -209,7 +272,7 @@ div.h2 {
     margin-bottom: 1ex;
 
     h2 {
-        margin-top: 1ex;
+        margin-top: 0ex;
         margin-bottom: 1ex;
     }
 
@@ -261,6 +324,9 @@ div.h3.project {
         vertical-align: middle;
         max-width: 48px;
         max-height: 48px;
+
+        filter: grayscale(100%);
+        opacity: 0.8;
     }
 
 
@@ -344,6 +410,7 @@ div.h3.article:nth-of-type(4n + 3) {
 
 table {
     width: 100%;
+    margin-bottom: 1ex;
 
     th, td {
         padding-left: 1ex;
