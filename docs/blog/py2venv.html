@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-        <title>Albin Eldstål-Ahrens - Hello, there</title>
+        <title>Albin Eldstål-Ahrens - Python2 virtual environment</title>
       <link rel="icon" type="image/x-icon" href="/images/favicon.png">
       <!-- Fonts -->
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,7 @@
 
 
 
+    <meta name="tags" content="solution" />
 
   </head>
 
@@ -50,22 +51,46 @@
     <div class="h3 article">
     <header>
       <h1>
-        <a href="../blog/hello.html" rel="bookmark"
-           title="Permalink to Hello, there">Hello, there</a></h1>
+        <a href="../blog/py2venv.html" rel="bookmark"
+           title="Permalink to Python2 virtual environment">Python2 virtual environment</a></h1>
       
     </header>
-    <p>Just testing the <a href="http://getpelican.com">Pelican</a> site generator. I've been meaning to start writing down solutions when I come across them, and a blog format is probably useful enough.</p>
+    <p>Sometimes you need to run old tools on a modern system.
+As long as your distro of choice still ships <code>python2</code>,
+you can set up a virtual environment
+to use it for a specific tool. These are the steps:</p>
+<h3>Step 1: Get pip for your old Python2</h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>wget<span class="w"> </span>https://bootstrap.pypa.io/pip/2.7/get-pip.py
+$<span class="w"> </span>python2<span class="w"> </span>get-pip.py
+</code></pre></div>
+
+<h3>Step 2: Install <code>virtualenv</code></h3>
+<div class="highlight"><pre><span></span><code><span class="n">pip2</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="o">--</span><span class="n">user</span><span class="w"> </span><span class="o">-</span><span class="n">U</span><span class="w"> </span><span class="n">setuptools</span>
+<span class="n">pip2</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="o">--</span><span class="n">user</span><span class="w"> </span><span class="n">virtualenv</span>
+</code></pre></div>
+
+<h3>Step 3: Create your venv</h3>
+<div class="highlight"><pre><span></span><code>virtualenv --python=$(which python2) /my/new/env
+</code></pre></div>
+
+<p>Now you can activate <code>/my/new/env</code> and anything you
+run in there (pip, your own script, whatever) will
+run using python2 and the libraries installed in the venv.</p>
     </div>
     <div class="h1">
     <footer>
-      <p>Published: <time datetime="2025-03-03T00:00:00+01:00">
-        Mon 03 March 2025
+      <p>Published: <time datetime="2025-03-22T00:00:00+01:00">
+        Sat 22 March 2025
       </time></p>
         <address>
           By           <span>Albin Eldstål-Ahrens</span>
         </address>
         <p>
           Category: <a href="../category/blog.html">blog</a>
+        </p>
+        <p>
+          Tags:
+            <a href="../tag/solution.html">solution</a>
         </p>
     </footer>
     </div>
