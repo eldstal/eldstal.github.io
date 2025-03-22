@@ -54,12 +54,11 @@
            title="Permalink to CVE-2023-30258 Security advisory">CVE-2023-30258 Security advisory</a></h1>
       
     </header>
-    <h2>Security advisory</h2>
-<p>A command injection vulnerability exists in magnusbilling versions 6 and 7. The vulnerability allows an unauthenticated user to execute arbitrary OS commands on the host, with the privileges of the web server.</p>
-<h3>Affected products</h3>
+    <p>A command injection vulnerability exists in magnusbilling versions 6 and 7. The vulnerability allows an unauthenticated user to execute arbitrary OS commands on the host, with the privileges of the web server.</p>
+<h2>Affected products</h2>
 <p>magnusbilling 7 up to and including commit <a href="https://github.com/magnussolution/magnusbilling7/commit/7af21ed6203f80947a5df4a92df0be7a6aa158f9">7af21ed620</a></p>
 <p>magnusbilling 6 (all versions)</p>
-<h3>Steps to reproduce</h3>
+<h2>Steps to reproduce</h2>
 <p>The following proof of concept uses a harmless <code>sleep 30</code> command as a payload.</p>
 <ol>
 <li>Visit <code>/mbilling/lib/icepay/icepay.php?democ=/dev/null;sleep%2030;ls%20a</code></li>
@@ -67,13 +66,13 @@
 <li>Visit <code>/mbilling/lib/icepay/icepay.php?democ=/dev/null;sleep%203;ls%20a</code></li>
 <li>Observe that the page takes only 3 seconds to load</li>
 </ol>
-<h3>Cause</h3>
+<h2>Cause</h2>
 <p>A piece of demonstration code is present in <code>lib/icepay/icepay.php</code>, with a call to <code>exec()</code> at <a href="https://github.com/magnussolution/magnusbilling7/blob/f6cd038161349895ff6f186405b9a89f564c9448/lib/icepay/icepay.php#L753">line 753</a>. The parameter to <code>exec()</code> includes the GET parameter <code>democ</code>, which is controlled by the user.</p>
-<h3>Impact</h3>
+<h2>Impact</h2>
 <p>An unauthenticated user is able to execute arbitrary OS commands. The commands run with the privileges of the web server process, typically <code>www-data</code>. At a minimum, this allows an attacker to compromise the billing system and its database.</p>
-<h3>Proposed Mitigation</h3>
+<h2>Proposed Mitigation</h2>
 <p>Remove the demo code from <code>icepay.php</code>.</p>
-<h3>History</h3>
+<h2>History</h2>
 <ul>
 <li>2023-06-26: CVE-2023-30258 assigned</li>
 <li>2023-03-28: Initial report removed by maintainer</li>

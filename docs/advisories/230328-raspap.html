@@ -54,11 +54,10 @@
            title="Permalink to CVE-2023-30260 Security advisory">CVE-2023-30260 Security advisory</a></h1>
       
     </header>
-    <h2>Security advisory</h2>
-<p>Multiple command injection vulnerabilities are present in the RaspAP web interface. They allow an authenticated user to execute arbitrary OS commands with the privileges of the web server. Additional factors in the default configuration allow elevation to <code>root</code> privileges.</p>
-<h3>Affected products</h3>
+    <p>Multiple command injection vulnerabilities are present in the RaspAP web interface. They allow an authenticated user to execute arbitrary OS commands with the privileges of the web server. Additional factors in the default configuration allow elevation to <code>root</code> privileges.</p>
+<h2>Affected products</h2>
 <p>RaspAP v2.8.9 and older</p>
-<h3>Steps to reproduce</h3>
+<h2>Steps to reproduce</h2>
 <ol>
 <li>Obtain credentials for RaspAP</li>
 <li>Configure and execute the following script</li>
@@ -97,10 +96,10 @@
 <ol>
 <li>Observe that the file <code>/tmp/hax</code> has been created on the raspi, and contains the output of <code>uptime</code>.</li>
 </ol>
-<h3>Cause</h3>
+<h2>Cause</h2>
 <p>There are two almost identical instances of the vulnerability, at <a href="https://github.com/RaspAP/raspap-webgui/blob/dda1fe6bbb92cffae7a53b516108650bfbb76cb2/includes/hostapd.php#L103">hostapd.php:103</a> and <a href="https://github.com/RaspAP/raspap-webgui/blob/dda1fe6bbb92cffae7a53b516108650bfbb76cb2/includes/hostapd.php#L108">hostapd.php:108</a>. In both instances, an unsanitized POST variable is fed into a command executed using <code>exec()</code>.</p>
 <p>A third instance exists at <a href="https://github.com/RaspAP/raspap-webgui/blob/592bce02bfee1169ca92e5e93ebded66bac42c6e/includes/configure_client.php#L20">configure_client.php:20</a>, exploitable in a similar manner.</p>
-<h3>Impact</h3>
+<h2>Impact</h2>
 <p>An authenticated user is able to execute arbitrary commands as <code>www-data</code>.</p>
 <p>In the default RaspAP configuration, this can be leveraged to gain root access by exploiting two of the configured <code>sudo</code> permissions; overwrite the openvpn client configuration to set the following:</p>
 <div class="highlight"><pre><span></span><code><span class="n">script</span><span class="o">-</span><span class="n">security</span><span class="w"> </span><span class="mi">2</span>
@@ -108,9 +107,9 @@
 </code></pre></div>
 
 <p>and establish an OpenVPN connection. <code>/tmp/payload.sh</code> will be executed with root privileges.</p>
-<h3>Proposed Mitigation</h3>
+<h2>Proposed Mitigation</h2>
 <p>Apply sanitization to the <code>txpower</code> and <code>interface</code> parameters, and use the PHP built-in <code>escapeshellarg()</code> before passing them to <code>exec()</code>.</p>
-<h3>History</h3>
+<h2>History</h2>
 <ul>
 <li>2023-06-26: CVE-2023-30260 assigned</li>
 <li>2023-03-30: <a href="https://github.com/RaspAP/raspap-webgui/pull/1326">Additional fix</a> submitted</li>
