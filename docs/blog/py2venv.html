@@ -71,12 +71,12 @@ $<span class="w"> </span>python2<span class="w"> </span>get-pip.py
 </code></pre></div>
 
 <h3>Step 2: Install <code>virtualenv</code></h3>
-<div class="highlight"><pre><span></span><code><span class="n">pip2</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="o">--</span><span class="n">user</span><span class="w"> </span><span class="o">-</span><span class="n">U</span><span class="w"> </span><span class="n">setuptools</span>
-<span class="n">pip2</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="o">--</span><span class="n">user</span><span class="w"> </span><span class="n">virtualenv</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>pip2<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>-U<span class="w"> </span>setuptools
+$<span class="w"> </span>pip2<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>virtualenv
 </code></pre></div>
 
 <h3>Step 3: Create your venv</h3>
-<div class="highlight"><pre><span></span><code>virtualenv --python=$(which python2) /my/new/env
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>virtualenv<span class="w"> </span>--python<span class="o">=</span><span class="k">$(</span>which<span class="w"> </span>python2<span class="k">)</span><span class="w"> </span>/my/new/env
 </code></pre></div>
 
 <p>Now you can activate <code>/my/new/env</code> and anything you

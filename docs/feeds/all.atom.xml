@@ -14,12 +14,12 @@ $&lt;span class="w"&gt; &lt;/span&gt;python2&lt;span class="w"&gt; &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;Step 2: Install &lt;code&gt;virtualenv&lt;/code&gt;&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;pip2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;U&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;setuptools&lt;/span&gt;
-&lt;span class="n"&gt;pip2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;virtualenv&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;pip2&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;-U&lt;span class="w"&gt; &lt;/span&gt;setuptools
+$&lt;span class="w"&gt; &lt;/span&gt;pip2&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;--user&lt;span class="w"&gt; &lt;/span&gt;virtualenv
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h3&gt;Step 3: Create your venv&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;virtualenv --python=$(which python2) /my/new/env
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$&lt;span class="w"&gt; &lt;/span&gt;virtualenv&lt;span class="w"&gt; &lt;/span&gt;--python&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;which&lt;span class="w"&gt; &lt;/span&gt;python2&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;/my/new/env
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Now you can activate &lt;code&gt;/my/new/env&lt;/code&gt; and anything you

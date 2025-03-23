@@ -88,14 +88,15 @@ pre {
     font-family: monospace;
     font-weight: 500;
     font-style: normal;
-    line-height: 90%;
+    line-height: 110%;
 
+    overflow-x: auto;
     padding-top: 0.5ex;
     padding-bottom: 0.5ex;
     border-top: solid 1px;
     border-bottom: solid 1px;
     border-color: var(--lcdpx7);
-    background-color: var(--lcdbg);
+    background-color: var(--lcdpx1);
 }
 
 pre code {
@@ -114,7 +115,7 @@ code {
     border-top: solid 1px;
     border-bottom: solid 1px;
     border-color: var(--lcdpx7);
-    background-color: var(--lcdbg);
+    background-color: var(--lcdpx1);
     padding-top: -1em;
 
     word-break: all;
