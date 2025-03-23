@@ -1,0 +1,41 @@
+@media only screen and (max-width: 500px) {
+    body {
+        font-size: 10pt;
+    }
+
+    main {
+        padding-left: 0.5ex;
+        padding-right: 0.5ex;
+    }
+
+    header nav {
+        height: 2em;
+    }
+
+    header nav ul {
+        height: 2em;
+    }
+
+    p { line-height: 110%; }
+
+    h1 { font-size: 14pt; margin-bottom: 0.3ex; }
+    h2 { font-size: 12pt; margin-bottom: 0.3ex; }
+    h3 { font-size: 11pt; margin-bottom: 0.3ex; }
+
+    div.h1 {
+        padding-left: 0.5ex;
+        padding-right: 0.5ex;
+        border-width: 2px;
+        margin-bottom: 0.5ex;
+    }
+
+    div.h2 {
+        padding-left: 0.5ex;
+        padding-right: 0.5ex;
+        border-width: 1px;
+        margin-bottom: 0.5ex;
+    }
+
+    div.h3 {
+    }
+}

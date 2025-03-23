@@ -243,32 +243,52 @@ div.bleed-tl {
  * Menu
  */
 
+header nav {
+    /*display: table; */
+    height: 3em;
+    width: 100%;
+}
+
 header nav ul {
     display: block;
-    list-style-type: none;
-    background-color: var(--lcdfg);
     overflow: hidden;
-    height: 3em;
+    height: 100%;
+    
+    /*display: inline-block;*/
+    /*
+    display: table-row;
+    white-space: nowrap;
+    */
+    /*scrollbar-width: none;*/
+
+    /* hack to null out the space between <li> */
+
+    background-color: var(--lcdfg);
+    list-style-type: none;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
     padding: 0;
 }
-
 header nav li {
-
     display: flex;
     float: left;
+    align-items: center;
+
+/*
+    display: table-cell;
+    vertical-align: middle;
+*/
+
     padding-left: 1em;
     padding-right: 1em;
-    align-items: center;
     height: 100%;
     font-weight: normal;
 }
 
 header nav li {
-    background-color: var(--lcdfg3);
+    background-color: var(--lcdfg4);
     color: var(--lcdbg1);
 }
 
@@ -295,6 +315,8 @@ div.h1 {
     border-style: solid;
     border-width: 4px;
 
+    overflow-x: auto;
+
     display: block;
     padding-left: 1ex;
     padding-right: 1ex;
@@ -302,11 +324,6 @@ div.h1 {
     margin-bottom: 1ex;
 
     box-sizing: border-box;
-
-    h1 {
-        margin-top: 0ex;
-        margin-bottom: 1ex;
-    }
 
 }
 
@@ -321,11 +338,6 @@ div.h2 {
     /*padding-bottom: 1ex; */
     margin-bottom: 1ex;
 
-    h2 {
-        margin-top: 0ex;
-        margin-bottom: 1ex;
-    }
-
 }
 
 div.h3 {
@@ -339,11 +351,6 @@ div.h3 {
     margin-bottom: 1ex;
 
     width: 100%;
-
-    h3 {
-        margin-top: 1ex;
-        margin-bottom: 1ex;
-    }
 
 }
 

@@ -25,6 +25,7 @@
       {% endif %}
 
         <link rel="stylesheet" type="text/css" href="/theme/css/eldstal.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-mobile.css" />
 
       {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME|striptags }} Full Atom Feed" />
@@ -73,19 +74,19 @@
         {% block nav %}
           <nav><ul>
             {% for title, link in MENUITEMS %}
-                <a href="{{ link }}"><li>{{ title }}</li></a>
-            {% endfor %}
+<a href="{{ link }}"><li>{{ title }}</li></a>
+            {%- endfor %}
             {% if DISPLAY_PAGES_ON_MENU %}
               {% for p in pages %}
-              <a href="{{ SITEURL }}/{{ p.url }}" {% if p==page %} aria-current="page" {% endif %}><li>{{ p.title }}</li></a>
-              {% endfor %}
+<a href="{{ SITEURL }}/{{ p.url }}" {% if p==page %} aria-current="page" {% endif %}><li>{{ p.title }}</li></a>
+              {%- endfor %}
             {% endif %}
             {% if DISPLAY_CATEGORIES_ON_MENU %}
               {% for cat, null in categories %}
-              <a href="{{ SITEURL }}/{{ cat.url }}" {% if cat==category %} aria-current="page" {% endif %}><li>{{ cat}}</li></a>
-              {% endfor %}
+<a href="{{ SITEURL }}/{{ cat.url }}" {% if cat==category %} aria-current="page" {% endif %}><li>{{ cat}}</li></a>
+              {%- endfor %}
             {% endif %}
-          </ul></nav>
+</ul></nav>
         {% endblock nav %}
       </header>
       <main>
