@@ -133,6 +133,14 @@ header nav {
     height: 3em;
     width: 100%;
     margin-bottom: 1ex;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+}
+
+header nav::-webkit-scrollbar {
+    display: none;
 }
 
 header nav ul {
@@ -142,6 +150,7 @@ header nav ul {
     
     background-color: var(--lcdfg);
     list-style-type: none;
+    min-width: max-content;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
@@ -156,6 +165,7 @@ header nav li {
 
     padding-left: 1em;
     padding-right: 1em;
+    width: max-content;
     height: 100%;
     font-weight: normal;
 }

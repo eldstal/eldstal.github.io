@@ -16,6 +16,11 @@
         height: 2em;
     }
 
+    header nav ul li {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
     p { line-height: 120%; }
 
     h1 { font-size: 14pt; margin-bottom: 0.3ex; }
