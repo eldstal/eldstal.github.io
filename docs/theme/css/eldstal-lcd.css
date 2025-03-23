@@ -60,7 +60,7 @@ div.bleed {
     left: 0;
     z-index: 80;
     pointer-events: none;
-    opacity: 0.25;
+    opacity: 0.15;
 
 }
 
@@ -72,8 +72,9 @@ div.bleed .bleed-splotches {
     top: 0;
     left: 0;
 
-    background: url("/images/bleed-splotch.png");
-    background-repeat: no-repeat;
+    /*background: url("/images/bleed-splotch.png");*/
+    background: url("/images/bleed-uniformish.png");
+    background-repeat: repeat;
     background-position: top center;
 }
 

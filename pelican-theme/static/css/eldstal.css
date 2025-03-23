@@ -33,7 +33,7 @@ main {
 p {
     margin-top: 1ex;
     margin-bottom: 1ex;
-    line-height: 120%;
+    line-height: 130%;
 }
 
 footer {
@@ -88,7 +88,7 @@ pre {
     font-family: monospace;
     font-weight: 500;
     font-style: normal;
-    line-height: 110%;
+    line-height: 120%;
 
     overflow-x: auto;
     padding-top: 0.5ex;
@@ -109,7 +109,7 @@ code {
     /*font-family: "Lekton", monospace;*/
     font-family: monospace;
     font-weight: 200;
-    font-size: 11pt;
+    font-size: 10pt;
     font-style: normal;
 
     border-top: solid 1px;
@@ -352,7 +352,6 @@ table th, td {
 }
 
 table th {
-    /*font-size: 13pt;*/
     padding: 1ex;
     font-weight: 600;
 }
@@ -363,7 +362,7 @@ table thead tr {
 }
 
 table tbody tr:nth-of-type(2n){
-    background-color: var(--lcdpx4);
+    background-color: var(--lcdpx3);
 }
 
 table tbody tr:nth-of-type(2n+1) {
