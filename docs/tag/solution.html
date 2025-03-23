@@ -17,8 +17,16 @@
       <meta name="generator" content="Pelican" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-colors.css" />
         <link rel="stylesheet" type="text/css" href="/theme/css/eldstal.css" />
         <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-mobile.css" />
+        <!-- This CSS is slow due to cool SVG effects.
+             If JS is enabled we can load it asyncronously to get the page loaded first. -->
+        
+        <link rel="preload" as="style" href="/theme/css/eldstal-lcd.css" onload="this.onload=null;this.rel='stylesheet'"/>
+        <noscript>
+            <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-lcd.css" />
+        </noscript>
 
         <link href="https://eldstal.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Full Atom Feed" />
   </head>
@@ -35,7 +43,7 @@
       </div>
       <header>
           <nav><ul>
-<a href="https://eldstal.se/index.html" ><li>Albin Eldstål-Ahrens</li></a><a href="https://eldstal.se/category/advisories.html" ><li>advisories</li></a><a href="https://eldstal.se/category/blog.html" ><li>blog</li></a></ul></nav>
+<a href="../index.html" ><li>Albin Eldstål-Ahrens</li></a><a href="../category/advisories.html" ><li>advisories</li></a><a href="../category/blog.html" ><li>blog</li></a></ul></nav>
       </header>
       <main>
     <div class="h2" markdown="1">
@@ -44,7 +52,7 @@
 
         <article>
             <div class="h3 article" markdown="1">
-            <header><h2><a href="https://eldstal.se/blog/py2venv.html" rel="bookmark" title="Permalink to Python2 virtual environment">Python2 virtual environment</a></h2> </header>
+            <header><h2><a href="../blog/py2venv.html" rel="bookmark" title="Permalink to Python2 virtual environment">Python2 virtual environment</a></h2> </header>
             <section><p>Sometimes you need to run old tools on a modern system.
 As long as your distro of choice still ships <code>python2</code>,
 you can set up a virtual environment

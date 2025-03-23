@@ -1,0 +1,25 @@
+:root {
+    --lcdfg: #273540;
+    --lcdbg: #e8e8d0;
+    --bg: #d0d0bb;
+
+    /*
+     * lcdpx0 is background, lcdpx15 is full intensity foreground
+     */
+    --lcdpx0: #e8e8d0;
+    --lcdpx1: #dbdcc6;
+    --lcdpx2: #ced0bc;
+    --lcdpx3: #c1c4b3;
+    --lcdpx4: #b4b8a9;
+    --lcdpx5: #a7aca0;
+    --lcdpx6: #9aa096;
+    --lcdpx7: #8d948c;
+    --lcdpx8: #818883;
+    --lcdpx9: #747c79;
+    --lcdpx10: #677070;
+    --lcdpx11: #5a6466;
+    --lcdpx12: #4d585c;
+    --lcdpx13: #404c53;
+    --lcdpx14: #334049;
+    --lcdpx15: #273540;
+}

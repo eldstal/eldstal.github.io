@@ -1,0 +1,79 @@
+/*
+ * Cool LCD noise. There are four separate overlays.
+ * Top-right and bottom-left each have one positive, one negative
+ */
+
+div.turn-around {
+    transform: rotateZ(180deg);
+}
+
+div.edge-bleed {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.3;
+
+}
+
+div.edge-bleed .edge-bleed-t {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+
+    background: url("/images/bleed-edge-h.png");
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
+div.edge-bleed .edge-bleed-l {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    margin: 0;
+    top: 0;
+    right: 0;
+
+    background: url("/images/bleed-edge-v.png");
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
+
+div.bleed {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    pointer-events: none;
+    opacity: 0.25;
+
+}
+
+div.bleed .bleed-splotches {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+
+    background: url("/images/bleed-splotch.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+

@@ -24,8 +24,16 @@
         <link rel="stylesheet" type="text/css" href="{{ STYLESHEET_URL }}" />
       {% endif %}
 
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-colors.css" />
         <link rel="stylesheet" type="text/css" href="/theme/css/eldstal.css" />
         <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-mobile.css" />
+        <!-- This CSS is slow due to cool SVG effects.
+             If JS is enabled we can load it asyncronously to get the page loaded first. -->
+        
+        <link rel="preload" as="style" href="/theme/css/eldstal-lcd.css" onload="this.onload=null;this.rel='stylesheet'"/>
+        <noscript>
+            <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-lcd.css" />
+        </noscript>
 
       {% if FEED_ALL_ATOM %}
         <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME|striptags }} Full Atom Feed" />

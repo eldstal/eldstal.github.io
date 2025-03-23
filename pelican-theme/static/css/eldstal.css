@@ -1,31 +1,12 @@
-:root {
-    /* LCD colors */
-    --lcdbg: #e8e8d0;
-    --lcdfg: #273540;
-
-    --bg: color-mix(in srgb, var(--lcdbg) 90%, #000000 10%);
-
-    --lcdfg4: color-mix(in srgb, var(--lcdfg) 95%, var(--lcdbg) 5%);
-    --lcdfg3: color-mix(in srgb, var(--lcdfg) 75%, var(--lcdbg) 25%);
-    --lcdfg2: color-mix(in srgb, var(--lcdfg) 35%, var(--lcdbg) 65%);
-    --lcdfg1: color-mix(in srgb, var(--lcdfg) 25%, var(--lcdbg) 75%);
-
-
-    --lcdbg3: color-mix(in srgb, var(--lcdbg) 95%, var(--lcdfg) 5%);
-    --lcdbg2: color-mix(in srgb, var(--lcdbg) 85%, var(--lcdfg) 15%);
-    --lcdbg1: color-mix(in srgb, var(--lcdbg) 75%, var(--lcdfg) 25%);
-
-}
-
 body {
     margin: 0;
 
 
     box-sizing: border-box;
 
-    background-color: var(--lcdbg2);
+    background-color: var(--bg);
     color: var(--lcdfg);
-    border-color: var(--lcdfg1);
+    border-color: var(--lcdpx12);
 
     /*
     font-family: "VT323", monospace;
@@ -34,7 +15,6 @@ body {
     */
 
     font-family: "Texturina", serif;
-    /*font-optical-sizing: auto;*/
     font-weight: 300;
     font-style: normal;
     font-size: 12pt;
@@ -53,6 +33,7 @@ main {
 p {
     margin-top: 1ex;
     margin-bottom: 1ex;
+    line-height: 120%;
 }
 
 footer {
@@ -64,12 +45,12 @@ footer {
 }
 
 a {
-    color: var(--lcdfg4);
+    color: var(--lcdpx13);
     font-weight: 450;
 }
 
 a:visited {
-    color: var(--lcdfg4);
+    color: var(--lcdpx13);
     font-weight: 450;
 }
 
@@ -77,44 +58,29 @@ h1 {
     margin-top: 0;
     margin-bottom: 0.5em;
     font-size: 18pt;
-
-    a {
-        font-weight: bold;
-    }
-
-    a:visited {
-        font-weight: bold;
-    }
 }
+
+h1 a { font-weight: bold; }
+h1 a:visited { font-weight: bold; }
 
 h2 {
     margin-top: 0;
     margin-bottom: 0.5em;
     font-size: 16pt;
-
-    a {
-        font-weight: bold;
-    }
-
-    a:visited {
-        font-weight: bold;
-    }
 }
+
+h2 a { font-weight: bold; }
+h2 a:visited { font-weight: bold; }
 
 
 h3 {
     margin-top: 0;
     margin-bottom: 0.5em;
     font-size: 14pt;
-
-    a {
-        font-weight: bold;
-    }
-
-    a:visited {
-        font-weight: bold;
-    }
 }
+
+h3 a { font-weight: bold; }
+h3 a:visited { font-weight: bold; }
 
 
 pre {
@@ -128,14 +94,14 @@ pre {
     padding-bottom: 0.5ex;
     border-top: solid 1px;
     border-bottom: solid 1px;
-    border-color: var(--lcdfg2);
+    border-color: var(--lcdpx7);
     background-color: var(--lcdbg);
+}
 
-    code {
-        border-style: none;
-        padding-left: 0px;
-        padding-right: 0px;
-    }
+pre code {
+    border-style: none;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 code {
@@ -147,7 +113,7 @@ code {
 
     border-top: solid 1px;
     border-bottom: solid 1px;
-    border-color: var(--lcdfg2);
+    border-color: var(--lcdpx7);
     background-color: var(--lcdbg);
     padding-top: -1em;
 
@@ -158,88 +124,6 @@ code {
 }
 
 /*
- * Cool LCD noise. There are four separate overlays.
- * Top-right and bottom-left each have one positive, one negative
- */
-
-div.turn-around {
-    transform: rotateZ(180deg);
-}
-
-div.edge-bleed {
-    display: block;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    pointer-events: none;
-    opacity: 0.4;
-
-    .edge-bleed-t {
-        width: 100%;
-        height: 100%;
-
-        position: fixed;
-        margin: 0;
-        top: 0;
-        left: 0;
-
-        background: url("/images/bleed-edge-h.svg");
-        background-position: top left;
-        background-repeat: no-repeat;
-    }
-
-    .edge-bleed-l {
-        width: 100%;
-        height: 100%;
-
-        position: fixed;
-        margin: 0;
-        top: 0;
-        right: 0;
-
-        background: url("/images/bleed-edge-v.svg");
-        background-position: top left;
-        background-repeat: no-repeat;
-    }
-}
-
-
-div.bleed {
-    display: block;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    top: 0;
-    left: 0;
-    z-index: 80;
-    pointer-events: none;
-    opacity: 0.25;
-
-    .bleed-splotches {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        top: 0;
-        left: 0;
-
-        background: url("/images/bleed-splotch.svg");
-        background-repeat: no-repeat;
-        background-position: top center;
-    }
-
-}
-
-
-div.bleed-tl {
-}
-
-/*
  * Menu
  */
 
@@ -247,6 +131,7 @@ header nav {
     /*display: table; */
     height: 3em;
     width: 100%;
+    margin-bottom: 1ex;
 }
 
 header nav ul {
@@ -254,15 +139,6 @@ header nav ul {
     overflow: hidden;
     height: 100%;
     
-    /*display: inline-block;*/
-    /*
-    display: table-row;
-    white-space: nowrap;
-    */
-    /*scrollbar-width: none;*/
-
-    /* hack to null out the space between <li> */
-
     background-color: var(--lcdfg);
     list-style-type: none;
     width: 100%;
@@ -271,15 +147,11 @@ header nav ul {
     margin-top: 0;
     padding: 0;
 }
+
 header nav li {
     display: flex;
     float: left;
     align-items: center;
-
-/*
-    display: table-cell;
-    vertical-align: middle;
-*/
 
     padding-left: 1em;
     padding-right: 1em;
@@ -288,13 +160,13 @@ header nav li {
 }
 
 header nav li {
-    background-color: var(--lcdfg4);
-    color: var(--lcdbg1);
+    background-color: var(--lcdpx13);
+    color: var(--lcdpx4);
 }
 
 header nav li:hover {
-    background-color: var(--lcdbg1);
-    color: var(--lcdfg3);
+    background-color: var(--lcdpx10);
+    color: var(--lcdpx4);
 }
 
 header nav [aria-current] li {
@@ -303,7 +175,7 @@ header nav [aria-current] li {
 }
 
 header nav [aria-current] li:hover {
-    background-color: var(--lcdbg1);
+    background-color: var(--lcdpx4);
     color: var(--lcdfg);
 }
 
@@ -311,7 +183,7 @@ header nav [aria-current] li:hover {
  * Block Hierarchy
  */ 
 div.h1 {
-    border-color: var(--lcdfg1);
+    border-color: var(--lcdpx4);
     border-style: solid;
     border-width: 4px;
 
@@ -328,7 +200,7 @@ div.h1 {
 }
 
 div.h2 {
-    border-color: var(--lcdfg2);
+    border-color: var(--lcdpx6);
     border-style: solid;
     border-width: 2px;
 
@@ -359,8 +231,8 @@ div.h3 {
  * Project box
  */
 
-div.h3.project {
-    background-color: var(--lcdbg3);
+div.project {
+    background-color: var(--lcdpx0);
 
     box-sizing: border-box;
     border-style: none;
@@ -369,38 +241,33 @@ div.h3.project {
     border-image-width: 19px 8px 9px 17px;
     border-image-repeat: repeat;
 
-    h3 {
-        /* Project title */
-        margin-top: 0;
-        margin-bottom: 0.5em;
-    }
 
-    img {
-        /* Icon */
-        height: 2.5em;
-        vertical-align: middle;
-        max-width: 48px;
-        max-height: 48px;
+}
 
-        filter: grayscale(100%);
-        opacity: 0.8;
-    }
+div.h3.project img {
+    /* Icon */
+    height: 2.5em;
+    vertical-align: middle;
+    max-width: 48px;
+    max-height: 48px;
+
+    filter: grayscale(100%);
+    opacity: 0.8;
+}
 
 
-    p:nth-of-type(1) {
-        /* Subtitle */
-        font-style: italic;
-        margin-top: 0.5em;
-    }
+div.h3.project p:nth-of-type(1) {
+    /* Subtitle */
+    font-style: italic;
+    margin-top: 0.5em;
+}
 
-    p:nth-of-type(n+2) {
-        /* Description */
-        text-align: justify;
-        width: 100%;
-        margin-top: 1ex;
-        margin-bottom: 0;
-    }
-
+div.h3.project p:nth-of-type(n+2) {
+    /* Description */
+    text-align: justify;
+    width: 100%;
+    margin-top: 1ex;
+    margin-bottom: 0;
 }
 
 /* Make them a little wonky */
@@ -426,7 +293,7 @@ div.h3.project:nth-of-type(4n + 3) {
  * Post listing
  */
 div.h3.article {
-    background-color: var(--lcdbg3);
+    background-color: var(--lcdpx0);
 
     box-sizing: border-box;
     border-style: none;
@@ -464,31 +331,31 @@ div.h3.article:nth-of-type(4n + 3) {
 table {
     width: 100%;
     margin-bottom: 1ex;
+}
 
-    th, td {
-        padding-left: 1ex;
-        padding-right: 1ex;
-        padding-bottom: 1ex;
+table th, td {
+    padding-left: 1ex;
+    padding-right: 1ex;
+    padding-bottom: 1ex;
 
-    }
+}
 
-    th {
-        /*font-size: 13pt;*/
-        padding: 1ex;
-        font-weight: 600;
-    }
+table th {
+    /*font-size: 13pt;*/
+    padding: 1ex;
+    font-weight: 600;
 }
 
 table thead tr {
     background-color: var(--lcdfg);
-    color: var(--lcdbg3);
+    color: var(--lcdpx0);
 }
 
 table tbody tr:nth-of-type(2n){
-    background-color: var(--lcdbg1);
+    background-color: var(--lcdpx4);
 }
 
 table tbody tr:nth-of-type(2n+1) {
-    background-color: var(--lcdbg3);
+    background-color: var(--lcdpx1);
 }
 
