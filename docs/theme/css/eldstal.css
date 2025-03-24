@@ -194,8 +194,8 @@ header nav [aria-current] li:hover {
  * Block Hierarchy
  */ 
 div.h1 {
-    border-color: var(--lcdpx4);
-    background-color: var(--lcdpx1);
+    border-color: var(--lcdpx5);
+    background-color: var(--lcdpx2);
     border-style: solid;
     border-width: 4px;
 
@@ -213,7 +213,7 @@ div.h1 {
 
 div.h2 {
     border-color: var(--lcdpx6);
-    background-color: var(--lcdpx2);
+    background-color: var(--lcdpx3);
     border-style: solid;
     border-width: 2px;
 
@@ -364,7 +364,7 @@ table thead tr {
 }
 
 table tbody tr:nth-of-type(2n){
-    background-color: var(--lcdpx3);
+    background-color: var(--lcdpx4);
 }
 
 table tbody tr:nth-of-type(2n+1) {
