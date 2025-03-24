@@ -357,7 +357,7 @@ table th {
 }
 
 table thead tr {
-    background-color: var(--lcdfg);
+    background-color: var(--lcdpx13);
     color: var(--lcdpx0);
 }
 
