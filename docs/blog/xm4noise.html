@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <title>Albin Eldstål-Ahrens - WH1000-XM4 Noise fix</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+      <meta charset="utf-8" />
+      <meta name="generator" content="Pelican" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-colors.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-mobile.css" />
+        <!-- This CSS is slow due to cool SVG effects.
+             If JS is enabled we can load it asyncronously to get the page loaded first. -->
+        
+        <link rel="preload" as="style" href="/theme/css/eldstal-lcd.css" onload="this.onload=null;this.rel='stylesheet'"/>
+        <noscript>
+            <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-lcd.css" />
+        </noscript>
+
+        <link href="https://eldstal.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Full Atom Feed" />
+        <link href="https://eldstal.se/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Categories Atom Feed" />
+
+
+
+
+    <meta name="tags" content="solution" />
+
+  </head>
+
+  <body>
+      <div class="bleed">
+          <div class="bleed-splotches"></div>
+          <div class="bleed-neg"></div>
+      </div>
+      <div class="edge-bleed">
+          <div class="edge-bleed-t"></div>
+          <div class="edge-bleed-l"></div>
+          <div class="edge-bleed-t turn-around"></div>
+          <div class="edge-bleed-l turn-around"></div>
+      </div>
+      <header>
+          <nav><ul>
+<a href="https://eldstal.se/index.html" ><li>Albin Eldstål-Ahrens</li></a><a href="https://eldstal.se/category/advisories.html" ><li>advisories</li></a><a href="https://eldstal.se/category/blog.html"  aria-current="page" ><li>blog</li></a></ul></nav>
+      </header>
+      <main>
+  <article>
+    <div class="h3 article">
+    <header>
+      <h1>
+        <a href="https://eldstal.se/blog/xm4noise.html" rel="bookmark"
+           title="Permalink to WH1000-XM4 Noise fix">WH1000-XM4 Noise fix</a></h1>
+      
+    </header>
+    <p>After three years of dedicated service, my Sony WH1000-XM4 headset started making odd noises in the left ear cup. It only occurred when the ANC was enabled, and seemed to be related to head movement or when the headset slips back and forth over the ear. The sound was a sort of clicking, clucking noise with some whistling components. </p>
+<h1>Solutions online</h1>
+<p><a href="https://www.youtube.com/watch?v=aCD9grHot20">Several</a> <a href="https://www.reddit.com/r/SonyHeadphones/comments/n1bu7n/wh1000xm4_high_pitched_noise_in_left_ear_cup_when/">other</a> <a href="https://www.reddit.com/r/SonyHeadphones/comments/15w7t5m/fix_wh1000xm4_high_pitched_noise/">people</a> <a href="https://us.community.sony.com/s/question/0D54O00006affAqSAI/wh1000xm4-static-crackling-noise?language=en_US">have</a> reported noise issues with the XM4, but none of their descriptions match my problem and their suggested fixes did not seem to work for me.</p>
+<p>I found online and tried the following methods to remediate the issue:
+- Make sure there is no condensation inside the ear cup
+- Ensure that the two wires of the internal ANC microphone are clearly separated from each other
+- Ensure that the ear cup itself is properly attached and seals against the headset body</p>
+<p>Another potential cause is that <a href="https://www.reddit.com/r/SonyHeadphones/comments/15w7t5m/fix_wh1000xm4_high_pitched_noise/">the microphone itself is damaged</a> and needs to be replaced.</p>
+<p><a href="https://www.ifixit.com/Answers/View/740970/ANC+mic+in+right+ear+gives+off+high-pitched+whining+that+is+deafening.">This thread</a> on iFixit suggests that the microphone's own mesh can be the cause of the issue, and that removing it may help. Other suggested solutions are to move the microphone to a different position inside the ear cup.</p>
+<h1>My solution</h1>
+<p>For me, two changes combined made the problem go away: cleaning sweaty/dirty parts and making sure the microphone is firmly mounted. For some great instructions on disassembly of both sides of the headset, please take a look at <a href="https://www.ifixit.com/Guide/Sony+WH-1000XM4+Ear+Pads+Replacement/143667">iFixit's guide</a>.</p>
+<h2>Cleaning</h2>
+<p>Clean the three parts around the microphone which are exposed to ear gunk:</p>
+<ol>
+<li>Ear cup mesh</li>
+<li>The foam insert</li>
+<li>The mesh on the front of the internal microphone itself</li>
+<li>The rubber dome covering the microphone</li>
+</ol>
+<p><img alt="Disassembled left ear cup" src="../images/xm4noise/clean.jpeg" /></p>
+<p>I used cotton swabs and isopropyl alcohol, gently rubbing and then letting the parts air dry</p>
+<p>This cleaning on its own was not enough to solve the problem, so this probably wasn't the issue.</p>
+<h2>Mounting the microphone firmly</h2>
+<p>The internal microphone was noticably loose in its cradle, and could move a fraction of a mm when shaken/jostled. To prevent this, I cut a thin strip of tape and wrapped it around the edge of the microphone until it had a more snug fit in the plastic frame.</p>
+<p><img alt="Wrapping tape around the microphone" src="../images/xm4noise/wrap.jpeg" /></p>
+<p><strong>Be very careful when handling the microphone</strong>, as it is quite sensitive. Also make sure your tape doesn't reach in front of the microphone, as that can interfere with its operation.</p>
+<p>In my case, 1.5 wraps of tape was enough to make it stop moving on its own.</p>
+<p>After reassembling, the noise problem is gone. We'll see if the fix stays good over time.</p>
+<h1>Other observations</h1>
+<p>While testing this solution, I accidentally left tape sticking out in front of the microphone, and forgot to add the foam insert when reassembling the ear cup. This led to a <strong>very loud</strong> squealing noise which hadn't been there before. This suggests to me that a malfunctioning microphone or interference with it (covered, dirty, misaligned) can be the cause of these problems as well.</p>
+<p>It also suggests that a broken/damaged foam insert could be a part of the problem.</p>
+<p>Re-applying the tape more carefully and including the foam insert made the squealing go away.</p>
+<p>If the fix above doesn't work for you, I would suggest looking at other potential problems related to this internal microphone.
+- Is the cable damaged?
+- Is the black plastic mount damaged?
+- Is the microphone itself damaged?
+- Is the rubber dome damaged or missing?</p>
+    </div>
+    <div class="h1">
+    <footer>
+      <p>Published: <time datetime="2025-06-21T00:00:00+02:00">
+        Sat 21 June 2025
+      </time></p>
+        <address>
+          By           <span>Albin Eldstål-Ahrens</span>
+        </address>
+        <p>
+          Category: <a href="https://eldstal.se/category/blog.html">blog</a>
+        </p>
+        <p>
+          Tags:
+            <a href="https://eldstal.se/tag/solution.html">solution</a>
+        </p>
+    </footer>
+    </div>
+  </article>
+          <div class="h1">
+          <footer>
+              <address>
+                Powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>,
+                and generously hosted by <a rel="nofollow" href="https://docs.github.com/en/pages">Github pages</a>.
+              </address>
+          </footer>
+          </div>
+      </main>
+  </body>
+</html>

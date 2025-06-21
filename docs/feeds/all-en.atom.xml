@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Albin Eldstål-Ahrens</title><link href="https://eldstal.se/" rel="alternate"></link><link href="https://eldstal.se/feeds/all-en.atom.xml" rel="self"></link><id>https://eldstal.se/</id><updated>2025-03-22T00:00:00+01:00</updated><entry><title>Python2 virtual environment</title><link href="https://eldstal.se/blog/py2venv.html" rel="alternate"></link><published>2025-03-22T00:00:00+01:00</published><updated>2025-03-22T00:00:00+01:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2025-03-22:/blog/py2venv.html</id><summary type="html">&lt;p&gt;Sometimes you need to run old tools on a modern system.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Albin Eldstål-Ahrens</title><link href="https://eldstal.se/" rel="alternate"></link><link href="https://eldstal.se/feeds/all-en.atom.xml" rel="self"></link><id>https://eldstal.se/</id><updated>2025-06-21T00:00:00+02:00</updated><entry><title>WH1000-XM4 Noise fix</title><link href="https://eldstal.se/blog/xm4noise.html" rel="alternate"></link><published>2025-06-21T00:00:00+02:00</published><updated>2025-06-21T00:00:00+02:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2025-06-21:/blog/xm4noise.html</id><summary type="html">&lt;p&gt;After three years of dedicated service, my Sony WH1000-XM4 headset started making odd noises in the left ear cup. It only occurred when the ANC was enabled, and seemed to be related to head movement or when the headset slips back and forth over the ear. The sound was a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;After three years of dedicated service, my Sony WH1000-XM4 headset started making odd noises in the left ear cup. It only occurred when the ANC was enabled, and seemed to be related to head movement or when the headset slips back and forth over the ear. The sound was a sort of clicking, clucking noise with some whistling components. &lt;/p&gt;
+&lt;h1&gt;Solutions online&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=aCD9grHot20"&gt;Several&lt;/a&gt; &lt;a href="https://www.reddit.com/r/SonyHeadphones/comments/n1bu7n/wh1000xm4_high_pitched_noise_in_left_ear_cup_when/"&gt;other&lt;/a&gt; &lt;a href="https://www.reddit.com/r/SonyHeadphones/comments/15w7t5m/fix_wh1000xm4_high_pitched_noise/"&gt;people&lt;/a&gt; &lt;a href="https://us.community.sony.com/s/question/0D54O00006affAqSAI/wh1000xm4-static-crackling-noise?language=en_US"&gt;have&lt;/a&gt; reported noise issues with the XM4, but none of their descriptions match my problem and their suggested fixes did not seem to work for me.&lt;/p&gt;
+&lt;p&gt;I found online and tried the following methods to remediate the issue:
+- Make sure there is no condensation inside the ear cup
+- Ensure that the two wires of the internal ANC microphone are clearly separated from each other
+- Ensure that the ear cup itself is properly attached and seals against the headset body&lt;/p&gt;
+&lt;p&gt;Another potential cause is that &lt;a href="https://www.reddit.com/r/SonyHeadphones/comments/15w7t5m/fix_wh1000xm4_high_pitched_noise/"&gt;the microphone itself is damaged&lt;/a&gt; and needs to be replaced.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.ifixit.com/Answers/View/740970/ANC+mic+in+right+ear+gives+off+high-pitched+whining+that+is+deafening."&gt;This thread&lt;/a&gt; on iFixit suggests that the microphone's own mesh can be the cause of the issue, and that removing it may help. Other suggested solutions are to move the microphone to a different position inside the ear cup.&lt;/p&gt;
+&lt;h1&gt;My solution&lt;/h1&gt;
+&lt;p&gt;For me, two changes combined made the problem go away: cleaning sweaty/dirty parts and making sure the microphone is firmly mounted. For some great instructions on disassembly of both sides of the headset, please take a look at &lt;a href="https://www.ifixit.com/Guide/Sony+WH-1000XM4+Ear+Pads+Replacement/143667"&gt;iFixit's guide&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Cleaning&lt;/h2&gt;
+&lt;p&gt;Clean the three parts around the microphone which are exposed to ear gunk:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ear cup mesh&lt;/li&gt;
+&lt;li&gt;The foam insert&lt;/li&gt;
+&lt;li&gt;The mesh on the front of the internal microphone itself&lt;/li&gt;
+&lt;li&gt;The rubber dome covering the microphone&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt="Disassembled left ear cup" src="../images/xm4noise/clean.jpeg" /&gt;&lt;/p&gt;
+&lt;p&gt;I used cotton swabs and isopropyl alcohol, gently rubbing and then letting the parts air dry&lt;/p&gt;
+&lt;p&gt;This cleaning on its own was not enough to solve the problem, so this probably wasn't the issue.&lt;/p&gt;
+&lt;h2&gt;Mounting the microphone firmly&lt;/h2&gt;
+&lt;p&gt;The internal microphone was noticably loose in its cradle, and could move a fraction of a mm when shaken/jostled. To prevent this, I cut a thin strip of tape and wrapped it around the edge of the microphone until it had a more snug fit in the plastic frame.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Wrapping tape around the microphone" src="../images/xm4noise/wrap.jpeg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Be very careful when handling the microphone&lt;/strong&gt;, as it is quite sensitive. Also make sure your tape doesn't reach in front of the microphone, as that can interfere with its operation.&lt;/p&gt;
+&lt;p&gt;In my case, 1.5 wraps of tape was enough to make it stop moving on its own.&lt;/p&gt;
+&lt;p&gt;After reassembling, the noise problem is gone. We'll see if the fix stays good over time.&lt;/p&gt;
+&lt;h1&gt;Other observations&lt;/h1&gt;
+&lt;p&gt;While testing this solution, I accidentally left tape sticking out in front of the microphone, and forgot to add the foam insert when reassembling the ear cup. This led to a &lt;strong&gt;very loud&lt;/strong&gt; squealing noise which hadn't been there before. This suggests to me that a malfunctioning microphone or interference with it (covered, dirty, misaligned) can be the cause of these problems as well.&lt;/p&gt;
+&lt;p&gt;It also suggests that a broken/damaged foam insert could be a part of the problem.&lt;/p&gt;
+&lt;p&gt;Re-applying the tape more carefully and including the foam insert made the squealing go away.&lt;/p&gt;
+&lt;p&gt;If the fix above doesn't work for you, I would suggest looking at other potential problems related to this internal microphone.
+- Is the cable damaged?
+- Is the black plastic mount damaged?
+- Is the microphone itself damaged?
+- Is the rubber dome damaged or missing?&lt;/p&gt;</content><category term="blog"></category><category term="solution"></category></entry><entry><title>Python2 virtual environment</title><link href="https://eldstal.se/blog/py2venv.html" rel="alternate"></link><published>2025-03-22T00:00:00+01:00</published><updated>2025-03-22T00:00:00+01:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2025-03-22:/blog/py2venv.html</id><summary type="html">&lt;p&gt;Sometimes you need to run old tools on a modern system.
 As long as your distro of choice still ships &lt;code&gt;python2&lt;/code&gt;,
 you can set up a virtual environment
 to use it for a specific tool. These are the steps:&lt;/p&gt;
