@@ -316,6 +316,7 @@ div.h3.article {
     border-image-repeat: repeat;
 
     padding-top: 15px;
+    text-align: justify;
 
 }
 
@@ -343,6 +344,10 @@ div.h3.article img {
     border-color: var(--lcdpx15);
     border-style: solid;
     border-width: 1px;
+}
+
+div.h3.article p {
+    margin-bottom: 1em;
 }
 
 /*

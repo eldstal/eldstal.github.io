@@ -31,11 +31,13 @@
 &lt;p&gt;While testing this solution, I accidentally left tape sticking out in front of the microphone, and forgot to add the foam insert when reassembling the ear cup. This led to a &lt;strong&gt;very loud&lt;/strong&gt; squealing noise which hadn't been there before. This suggests to me that a malfunctioning microphone or interference with it (covered, dirty, misaligned) can be the cause of these problems as well.&lt;/p&gt;
 &lt;p&gt;It also suggests that a broken/damaged foam insert could be a part of the problem.&lt;/p&gt;
 &lt;p&gt;Re-applying the tape more carefully and including the foam insert made the squealing go away.&lt;/p&gt;
-&lt;p&gt;If the fix above doesn't work for you, I would suggest looking at other potential problems related to this internal microphone.
-- Is the cable damaged?
-- Is the black plastic mount damaged?
-- Is the microphone itself damaged?
-- Is the rubber dome damaged or missing?&lt;/p&gt;</content><category term="blog"></category><category term="solution"></category></entry><entry><title>Python2 virtual environment</title><link href="https://eldstal.se/blog/py2venv.html" rel="alternate"></link><published>2025-03-22T00:00:00+01:00</published><updated>2025-03-22T00:00:00+01:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2025-03-22:/blog/py2venv.html</id><summary type="html">&lt;p&gt;Sometimes you need to run old tools on a modern system.
+&lt;p&gt;If the fix above doesn't work for you, I would suggest looking at other potential problems related to this internal microphone.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Is the cable damaged?&lt;/li&gt;
+&lt;li&gt;Is the black plastic mount damaged?&lt;/li&gt;
+&lt;li&gt;Is the microphone itself damaged?&lt;/li&gt;
+&lt;li&gt;Is the rubber dome damaged or missing?&lt;/li&gt;
+&lt;/ul&gt;</content><category term="blog"></category><category term="solution"></category></entry><entry><title>Python2 virtual environment</title><link href="https://eldstal.se/blog/py2venv.html" rel="alternate"></link><published>2025-03-22T00:00:00+01:00</published><updated>2025-03-22T00:00:00+01:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2025-03-22:/blog/py2venv.html</id><summary type="html">&lt;p&gt;Sometimes you need to run old tools on a modern system.
 As long as your distro of choice still ships &lt;code&gt;python2&lt;/code&gt;,
 you can set up a virtual environment
 to use it for a specific tool. These are the steps:&lt;/p&gt;
