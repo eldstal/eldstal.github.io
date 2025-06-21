@@ -6,7 +6,7 @@ all: gen
 	cp CNAME docs/CNAME
 
 dev: gen
-	pelican -l --relative-urls --autoreload src/
+	pelican -b 0.0.0.0 -l --relative-urls --autoreload src/
 
 gen: $(MD_INCLUDE)/cve.md $(CSS)/eldstal-colors.css
 

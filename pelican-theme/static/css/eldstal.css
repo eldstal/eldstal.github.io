@@ -322,11 +322,11 @@ div.h3.article {
 /* Make them a little wonky */
 
 div.h3.article:nth-of-type(4n) {
-    transform: rotateZ(0.4deg);
+    transform: rotateZ(-0.2deg);
 }
 
 div.h3.article:nth-of-type(4n + 1) {
-    transform: rotateZ(-0.2deg);
+    transform: rotateZ(0deg);
 }
 
 div.h3.article:nth-of-type(4n + 2) {
@@ -334,7 +334,15 @@ div.h3.article:nth-of-type(4n + 2) {
 }
 
 div.h3.article:nth-of-type(4n + 3) {
-    transform: rotateZ(0deg);
+    transform: rotateZ(0.4deg);
+}
+
+div.h3.article img {
+    width: 100%;
+    box-sizing: border-box;
+    border-color: var(--lcdpx15);
+    border-style: solid;
+    border-width: 1px;
 }
 
 /*
