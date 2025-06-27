@@ -26,11 +26,13 @@
 &lt;p&gt;&lt;img alt="Wrapping tape around the microphone" src="../images/xm4noise/wrap.jpeg" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Be very careful when handling the microphone&lt;/strong&gt;, as it is quite sensitive. Also make sure your tape doesn't reach in front of the microphone, as that can interfere with its operation.&lt;/p&gt;
 &lt;p&gt;In my case, 1.5 wraps of tape was enough to make it stop moving on its own.&lt;/p&gt;
-&lt;p&gt;After reassembling, the noise problem is gone. We'll see if the fix stays good over time.&lt;/p&gt;
+&lt;p&gt;After reassembling, the noise problem has been reduced. It still reoccurs on occasion, and appears to be related to movement of the headphones (typically synced with my footsteps).&lt;/p&gt;
+&lt;p&gt;Pressing gently on the microphone bump inside the ear cup can sometimes make the noise go away, but &lt;strong&gt;I don't recommend&lt;/strong&gt; getting used to this as a solution. The motion sensitivity suggests again that this is related to a loose microphone.&lt;/p&gt;
 &lt;h1&gt;Other observations&lt;/h1&gt;
-&lt;p&gt;While testing this solution, I accidentally left tape sticking out in front of the microphone, and forgot to add the foam insert when reassembling the ear cup. This led to a &lt;strong&gt;very loud&lt;/strong&gt; squealing noise which hadn't been there before. This suggests to me that a malfunctioning microphone or interference with it (covered, dirty, misaligned) can be the cause of these problems as well.&lt;/p&gt;
-&lt;p&gt;It also suggests that a broken/damaged foam insert could be a part of the problem.&lt;/p&gt;
+&lt;p&gt;While testing this solution, I accidentally left tape sticking out in front of the microphone, and forgot to add the foam insert when reassembling the ear cup. This led to a &lt;strong&gt;very loud&lt;/strong&gt; squealing noise which hadn't been there before. The same happens on the other (functioning) side if I take the foam insert out. It seems that if the ear forms a cup around the microphone, the result is this ear-piercing shriek.&lt;/p&gt;
 &lt;p&gt;Re-applying the tape more carefully and including the foam insert made the squealing go away.&lt;/p&gt;
+&lt;p&gt;This suggests to me that a malfunctioning microphone or interference with it (covered, dirty, misaligned) can be the cause of these problems as well.&lt;/p&gt;
+&lt;p&gt;It also suggests that a broken/damaged foam insert could be a part of the problem; even when the microphone works perfectly (as my right-side did), interfering with the foam insert can still cause feedback in the ANC.&lt;/p&gt;
 &lt;p&gt;If the fix above doesn't work for you, I would suggest looking at other potential problems related to this internal microphone.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Is the cable damaged?&lt;/li&gt;
