@@ -12,7 +12,7 @@
 &lt;p&gt;&lt;a href="https://www.ifixit.com/Answers/View/740970/ANC+mic+in+right+ear+gives+off+high-pitched+whining+that+is+deafening."&gt;This thread&lt;/a&gt; on iFixit suggests that the microphone's own mesh can be the cause of the issue, and that removing it may help. Other suggested solutions are to move the microphone to a different position inside the ear cup.&lt;/p&gt;
 &lt;h1&gt;My solution&lt;/h1&gt;
 &lt;p&gt;For me, two changes combined made the problem go away: cleaning sweaty/dirty parts and making sure the microphone is firmly mounted. For some great instructions on disassembly of both sides of the headset, please take a look at &lt;a href="https://www.ifixit.com/Guide/Sony+WH-1000XM4+Ear+Pads+Replacement/143667"&gt;iFixit's guide&lt;/a&gt;.&lt;/p&gt;
-&lt;h2&gt;Cleaning&lt;/h2&gt;
+&lt;h2&gt;Cleaning the internal microphone&lt;/h2&gt;
 &lt;p&gt;Clean the parts around the microphone which are exposed to ear gunk:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Ear cup mesh&lt;/li&gt;
@@ -30,7 +30,6 @@
 &lt;p&gt;In my case, 1.5 wraps of tape was enough to make it stop moving on its own.&lt;/p&gt;
 &lt;p&gt;After reassembling, the noise problem has been reduced. It still reoccurs on occasion, and appears to be related to movement of the headphones (typically synced with my footsteps).&lt;/p&gt;
 &lt;p&gt;Pressing gently on the microphone bump inside the ear cup can sometimes make the noise go away, but &lt;strong&gt;I don't recommend&lt;/strong&gt; getting used to this as a solution. The motion sensitivity suggests again that this is related to a loose microphone.&lt;/p&gt;
-&lt;p&gt;After performing these steps, the noise was gone for a few days and then returned. It still occurred less often, but it did happen occasionally.&lt;/p&gt;
 &lt;h2&gt;Cleaning the external microphone&lt;/h2&gt;
 &lt;p&gt;By removing the four silver screws around the speaker driver (they are also marked by arrows in the black plastic!), you can take off the external ear cup cap. Be very careful when separating the cap, since both sides have cables extending from the cup body and into the cap itself!&lt;/p&gt;
 &lt;p&gt;There is another microphone mounted at the top of this cavity. This is the microphone with the oblong decorated mic grill on the outside of each ear cup. This microphone is also used for noice cancelling, as you can confirm by gently blowing into it while ANC is enabled.&lt;/p&gt;
@@ -38,6 +37,7 @@
 &lt;p&gt;Finally, I ensured that all the wires were inserted in their plastic holders. There is a black wire extending into the left ear cap (NFC, I believe), which has a little fastener inside the cup. I made sure all the wires were in their intended places and reassembled the ear cup.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;At this point the always-present hissing sound was gone&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Something about either the cleaning of the mic or re-seating the rubber cover in its place seems to have remedied that noise.&lt;/p&gt;
+&lt;p&gt;I still haven't heard any of the other noises reappearing, so maybe this was the fix.&lt;/p&gt;
 &lt;h1&gt;Other observations&lt;/h1&gt;
 &lt;p&gt;While testing this solution, I accidentally left tape sticking out in front of the microphone, and forgot to add the foam insert when reassembling the ear cup. This led to a &lt;strong&gt;very loud&lt;/strong&gt; squealing noise which hadn't been there before. The same happens on the other (functioning) side if I take the foam insert out. It seems that if the ear forms a cup around the microphone, the result is this ear-piercing shriek.&lt;/p&gt;
 &lt;p&gt;Re-applying the tape more carefully and including the foam insert made the squealing go away.&lt;/p&gt;
