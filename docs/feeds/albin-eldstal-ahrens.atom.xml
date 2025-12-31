@@ -1,5 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Albin Eldstål-Ahrens - Albin Eldstål-Ahrens</title><link href="https://eldstal.se/" rel="alternate"/><link href="https://eldstal.se/feeds/albin-eldstal-ahrens.atom.xml" rel="self"/><id>https://eldstal.se/</id><updated>2025-06-21T00:00:00+02:00</updated><entry><title>WH1000-XM4 Noise fix</title><link href="https://eldstal.se/blog/xm4noise.html" rel="alternate"/><published>2025-06-21T00:00:00+02:00</published><updated>2025-06-21T00:00:00+02:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2025-06-21:/blog/xm4noise.html</id><summary type="html">&lt;p&gt;After three years of dedicated service, my Sony WH1000-XM4 headset started making odd noises in the left ear cup. It only occurred when the ANC was enabled, and seemed to be related to head movement or when the headset slips back and forth over the ear. The sound was a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;After three years of dedicated service, my Sony WH1000-XM4 headset started making odd noises in the left ear cup. It only occurred when the ANC was enabled, and seemed to be related to head movement or when the headset slips back and forth over the ear. The sound was a sort of clicking, clucking noise with some whistling components. The same earcup also had a very feint hissing sound, always present but only noticeable when nothing was playing.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Albin Eldstål-Ahrens - Albin Eldstål-Ahrens</title><link href="https://eldstal.se/" rel="alternate"/><link href="https://eldstal.se/feeds/albin-eldstal-ahrens.atom.xml" rel="self"/><id>https://eldstal.se/</id><updated>2025-12-31T00:00:00+01:00</updated><entry><title>Flutter app reversing</title><link href="https://eldstal.se/blog/flutter-re.html" rel="alternate"/><published>2025-12-31T00:00:00+01:00</published><updated>2025-12-31T00:00:00+01:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2025-12-31:/blog/flutter-re.html</id><summary type="html">&lt;p&gt;I've been poking at an Android app written in Flutter, and reverse-engineering it is a bit of a hassle.&lt;/p&gt;
+&lt;p&gt;Here are the problems I've run into and the solutions I've found.&lt;/p&gt;
+&lt;h1&gt;1. Getting the APK(s)&lt;/h1&gt;
+&lt;p&gt;Install the app normally on a rooted phone/emulator and then use &lt;code&gt;pm path …&lt;/code&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;I've been poking at an Android app written in Flutter, and reverse-engineering it is a bit of a hassle.&lt;/p&gt;
+&lt;p&gt;Here are the problems I've run into and the solutions I've found.&lt;/p&gt;
+&lt;h1&gt;1. Getting the APK(s)&lt;/h1&gt;
+&lt;p&gt;Install the app normally on a rooted phone/emulator and then use &lt;code&gt;pm path&lt;/code&gt; to find the package files in the  Android filesystem. Fetch them with &lt;code&gt;adb pull&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class="nv"&gt;PACKAGE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;com.company.app
+
+&lt;span class="c1"&gt;# Locate the APKs on the device&lt;/span&gt;
+&lt;span class="nv"&gt;PATHS&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;adb&lt;span class="w"&gt; &lt;/span&gt;shell&lt;span class="w"&gt; &lt;/span&gt;pm&lt;span class="w"&gt; &lt;/span&gt;path&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PACKAGE&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;cut&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;:&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-f&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+
+mkdir&lt;span class="w"&gt; &lt;/span&gt;unmodified
+&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;unmodified
+
+&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;P&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PATHS&lt;/span&gt;&lt;span class="p"&gt;[@]&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;adb&lt;span class="w"&gt; &lt;/span&gt;pull&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;P&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Unpacking the APK will reveal very little of interest, since the app's logic is compiled into &lt;code&gt;lib/&amp;lt;arch&amp;gt;/libapp.so&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Opening &lt;code&gt;libapp.so&lt;/code&gt; in a reversing tool such as Binary Ninja or Ghidra will not reveal much. Strings are there, but no xrefs to them.&lt;/p&gt;
+&lt;p&gt;Flutter uses Dart, which compiles to its own special kind of binary and follows no common conventions.&lt;/p&gt;
+&lt;h1&gt;2. Getting function names&lt;/h1&gt;
+&lt;p&gt;There's an excellent tool called &lt;a href="https://github.com/Impact-I/reFlutter"&gt;reflutter&lt;/a&gt; by Impact-I which instruments a Flutter app and uses the Dart runtime (while executing!) to dump information about the program's functions.&lt;/p&gt;
+&lt;p&gt;This can get you names for most functions in the app, including both application functions and library/runtime stuff.&lt;/p&gt;
+&lt;p&gt;I use &lt;a href="https://github.com/sensepost/objection"&gt;objection&lt;/a&gt; here to repack and resign APKs, but you can use apksigner instead.&lt;/p&gt;
+&lt;p&gt;The app I'm looking at is distributed as a split APK, and the libapp.so is in &lt;code&gt;split_config.arm64_v8a.apk&lt;/code&gt; so that's the one that gets patched by reflutter.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="ch"&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class="nv"&gt;ORIG_APK_DIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;1&lt;/span&gt;&lt;span class="k"&gt;:-&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PWD&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="p"&gt;/../unmodified/&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;!&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ORIG_APK_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;echo&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;reflut.sh &amp;lt;dir-of-unmodified-apks&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+rm&lt;span class="w"&gt; &lt;/span&gt;*.objection.apk
+
+reflutter&lt;span class="w"&gt; &lt;/span&gt;--patch-dump&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ORIG_APK_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/split_config.arm64_v8a.apk
+
+cp&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ORIG_APK_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/&lt;span class="o"&gt;{&lt;/span&gt;base.apk,split_config.en.apk,split_config.sv.apk,split_config.xxhdpi.apk&lt;span class="o"&gt;}&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;.
+&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;APK&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;*.apk&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;objection&lt;span class="w"&gt; &lt;/span&gt;signapk&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;$APK&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This should yield a set of files named &lt;code&gt;*.objection.apk&lt;/code&gt; which are all signed with the same signing key (otherwise they won't install).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;adb install-multiple *.objection.apk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You may get an error like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;Failure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="cp"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;INSTALL_FAILED_UPDATE_INCOMPATIBLE&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;Package&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;com.miko3.app&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;signatures&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;match&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;previously&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;installed&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ignoring&lt;/span&gt;&lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="cp"&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is because you're installing new APKs with the same package name as the original app, but you've now signed them with a key that doesn't match the key of the publisher. Android doesn't allow that.&lt;/p&gt;
+&lt;p&gt;Solution: Uninstall the original app first, then try &lt;code&gt;adb install-multiple *.objection.apk&lt;/code&gt; again.&lt;/p&gt;
+&lt;p&gt;Once the reflutter-patched app is installed, run it once. On startup, it will dump a bunch of flutter/dart state to a file. The file is stored in &lt;code&gt;/data/data/&amp;lt;package-name/dump.dart&lt;/code&gt; on the android device.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;adb pull /data/data/com.miko3.app/dump.dart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You can now parse the &lt;code&gt;dump.dart&lt;/code&gt; (which isn't actually a dart source file!) and find the names and offsets of functions in &lt;code&gt;libapp.so&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;If you happen to use Binary Ninja, I've prepared &lt;a href="https://github.com/eldstal/elnino/blob/main/reflutter_load_dump.py"&gt;a script&lt;/a&gt; to import &lt;code&gt;dump.dart&lt;/code&gt; and create/rename functions accordingly.&lt;/p&gt;
+&lt;h1&gt;2. Where are all my string xrefs?!&lt;/h1&gt;
+&lt;p&gt;If you are fortunate, your RE tool will have identified a bunch of strings that look relevant (urls, API keys, that sort of thing), but you probably won't see any references to them from the code. That's because Dart uses a weird indirection for its constant storage, so the offsets of the actual strings aren't mentioned directly in the disassembly.&lt;/p&gt;
+&lt;p&gt;Instead, there will be an instruction sequence like&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;add     x2, x27, #0x15, lsl #0xc
+ldr     x2, [x2, #0xf0]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;i.e. a read from &lt;code&gt;x27 + 0x15040&lt;/code&gt;. On arm64, x27 is the base register for the "Pointer Pool" (PP), which somehow (don't ask me how) leads to the constant data itself. I haven't learned how to decode the PP and find the path directly, but there is another tool called &lt;a href="https://github.com/worawit/blutter"&gt;blutter&lt;/a&gt; by Worawit Wangwarunyoo which can do the work for us. Extract the unmodified APK which contains app.so and run blutter on its directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python3 /path/to/blutter.py unmodified/split_config.arm64_v8a/lib/arm64-v8a/ blutter/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This yields a bunch of interesting files, but the one we need at the moment is &lt;code&gt;pp.txt&lt;/code&gt; which gives us a flat list of the offsets and objects stored by the PP.&lt;/p&gt;
+&lt;p&gt;You can parse this list with relative ease, and then figure out a way to import it into your RE tool. Basically, you're looking for accesses relative to &lt;code&gt;x27&lt;/code&gt;, with some static offset. Take that offset, look it up in pp.txt and you'll find the corresponding object.&lt;/p&gt;
+&lt;p&gt;I've made &lt;a href="https://github.com/eldstal/elnino/blob/main/blutter_load_pp.py"&gt;a script&lt;/a&gt; for binja which imports &lt;code&gt;pp.txt&lt;/code&gt; and adds comments in the disassembly where a PP access is made as well as xrefs to strings where possible.&lt;/p&gt;
+&lt;h1&gt;3. Patching the app&lt;/h1&gt;
+&lt;p&gt;Once you've found function names and some data references, you may be able to start reversing the app. The calling convention used by Dart is utterly confusing to standard RE tools, but you can still probably make some sense of the call graph and string use.&lt;/p&gt;
+&lt;p&gt;Let's say you found a root detection function and you need to patch an instruction. How do you run the patched app?&lt;/p&gt;
+&lt;p&gt;It's relatively straight-forward, actually:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Modify libapp.so (e.g. change an instruction)&lt;/li&gt;
+&lt;li&gt;Replace libapp.so in the corresponding APK with your patched copy&lt;/li&gt;
+&lt;li&gt;Zipalign and Sign the APK (I use objection because it's easy)&lt;/li&gt;
+&lt;li&gt;Install all the APKs again and you're done!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;!/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bash&lt;/span&gt;
+
+&lt;span class="c1"&gt;# We are in patched/&lt;/span&gt;
+&lt;span class="c1"&gt;# and we have already created ./lib/arm64-v8a/libapp.so which is our altered library&lt;/span&gt;
+
+&lt;span class="n"&gt;cp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;../&lt;/span&gt;&lt;span class="n"&gt;unmodified&lt;/span&gt;&lt;span class="o"&gt;/*.&lt;/span&gt;&lt;span class="n"&gt;apk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Inject the patched libapp.so into the split_config.arm64_v8a.apk&lt;/span&gt;
+&lt;span class="c1"&gt;# The -0 is important here! If you allow the lib to be compressed, it may fail to load.&lt;/span&gt;
+&lt;span class="n"&gt;zip&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;split_config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arm64_v8a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
+
+&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;APK&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;base&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;split_config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;en&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;split_config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sv&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;split_config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;arm64_v8a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;split_config&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;xxhdpi&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apk&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;do&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;objection&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;signapk&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="n"&gt;APK&lt;/span&gt;
+&lt;span class="n"&gt;done&lt;/span&gt;
+
+&lt;span class="n"&gt;adb&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;install&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;multiple&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*.&lt;/span&gt;&lt;span class="n"&gt;objection&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apk&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You may get an error when installing:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;INSTALL_FAILED_INVALID_APK&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Failed&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;extract&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;native&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;libraries&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;res&lt;/span&gt;&lt;span class="o"&gt;=-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is due to a new mechanism in android where native libraries can be loaded directly from the APK without being extracted to the device filesystem. This only works if the so is *&lt;em&gt;uncompressed&lt;/em&gt; in the APK (i.e. &lt;code&gt;store&lt;/code&gt; instead of &lt;code&gt;deflate&lt;/code&gt; mode). Ensure you've used &lt;code&gt;-0&lt;/code&gt; for the zip command, or the equivalent when you replace the so file in the APK.&lt;/p&gt;
+&lt;p&gt;With some luck, the app will run and your patch will work.&lt;/p&gt;
+&lt;p&gt;Happy hacking!&lt;/p&gt;</content><category term="blog"/><category term="solution"/></entry><entry><title>WH1000-XM4 Noise fix</title><link href="https://eldstal.se/blog/xm4noise.html" rel="alternate"/><published>2025-06-21T00:00:00+02:00</published><updated>2025-06-21T00:00:00+02:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2025-06-21:/blog/xm4noise.html</id><summary type="html">&lt;p&gt;After three years of dedicated service, my Sony WH1000-XM4 headset started making odd noises in the left ear cup. It only occurred when the ANC was enabled, and seemed to be related to head movement or when the headset slips back and forth over the ear. The sound was a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;After three years of dedicated service, my Sony WH1000-XM4 headset started making odd noises in the left ear cup. It only occurred when the ANC was enabled, and seemed to be related to head movement or when the headset slips back and forth over the ear. The sound was a sort of clicking, clucking noise with some whistling components. The same earcup also had a very feint hissing sound, always present but only noticeable when nothing was playing.&lt;/p&gt;
 &lt;h1&gt;Solutions online&lt;/h1&gt;
 &lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=aCD9grHot20"&gt;Several&lt;/a&gt; &lt;a href="https://www.reddit.com/r/SonyHeadphones/comments/n1bu7n/wh1000xm4_high_pitched_noise_in_left_ear_cup_when/"&gt;other&lt;/a&gt; &lt;a href="https://www.reddit.com/r/SonyHeadphones/comments/15w7t5m/fix_wh1000xm4_high_pitched_noise/"&gt;people&lt;/a&gt; &lt;a href="https://us.community.sony.com/s/question/0D54O00006affAqSAI/wh1000xm4-static-crackling-noise?language=en_US"&gt;have&lt;/a&gt; reported noise issues with the XM4, but none of their descriptions match my problem and their suggested fixes did not seem to work for me.&lt;/p&gt;
 &lt;p&gt;I found online and tried the following methods to remediate the issue:&lt;/p&gt;

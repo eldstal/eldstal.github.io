@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <title>Albin Eldstål-Ahrens - Flutter app reversing</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+      <meta charset="utf-8" />
+      <meta name="generator" content="Pelican" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-colors.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-mobile.css" />
+        <!-- This CSS is slow due to cool SVG effects.
+             If JS is enabled we can load it asyncronously to get the page loaded first. -->
+        
+        <link rel="preload" as="style" href="/theme/css/eldstal-lcd.css" onload="this.onload=null;this.rel='stylesheet'"/>
+        <noscript>
+            <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-lcd.css" />
+        </noscript>
+
+        <link href="https://eldstal.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Full Atom Feed" />
+        <link href="https://eldstal.se/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Categories Atom Feed" />
+
+
+
+
+    <meta name="tags" content="solution" />
+
+  </head>
+
+  <body>
+      <div class="bleed">
+          <div class="bleed-splotches"></div>
+          <div class="bleed-neg"></div>
+      </div>
+      <div class="edge-bleed">
+          <div class="edge-bleed-t"></div>
+          <div class="edge-bleed-l"></div>
+          <div class="edge-bleed-t turn-around"></div>
+          <div class="edge-bleed-l turn-around"></div>
+      </div>
+      <header>
+          <nav><ul>
+<a href="https://eldstal.se/index.html" ><li>Albin Eldstål-Ahrens</li></a><a href="https://eldstal.se/category/advisories.html" ><li>advisories</li></a><a href="https://eldstal.se/category/blog.html"  aria-current="page" ><li>blog</li></a></ul></nav>
+      </header>
+      <main>
+  <article>
+    <div class="h3 article">
+    <header>
+      <h1>
+        <a href="https://eldstal.se/blog/flutter-re.html" rel="bookmark"
+           title="Permalink to Flutter app reversing">Flutter app reversing</a></h1>
+      
+    </header>
+    <p>I've been poking at an Android app written in Flutter, and reverse-engineering it is a bit of a hassle.</p>
+<p>Here are the problems I've run into and the solutions I've found.</p>
+<h1>1. Getting the APK(s)</h1>
+<p>Install the app normally on a rooted phone/emulator and then use <code>pm path</code> to find the package files in the  Android filesystem. Fetch them with <code>adb pull</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="nv">PACKAGE</span><span class="o">=</span>com.company.app
+
+<span class="c1"># Locate the APKs on the device</span>
+<span class="nv">PATHS</span><span class="o">=(</span><span class="w"> </span><span class="k">$(</span>adb<span class="w"> </span>shell<span class="w"> </span>pm<span class="w"> </span>path<span class="w"> </span><span class="si">${</span><span class="nv">PACKAGE</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">2</span><span class="k">)</span><span class="w"> </span><span class="o">)</span>
+
+mkdir<span class="w"> </span>unmodified
+<span class="nb">cd</span><span class="w"> </span>unmodified
+
+<span class="k">for</span><span class="w"> </span>P<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">PATHS</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>adb<span class="w"> </span>pull<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">P</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+</code></pre></div>
+
+<p>Unpacking the APK will reveal very little of interest, since the app's logic is compiled into <code>lib/&lt;arch&gt;/libapp.so</code>.</p>
+<p>Opening <code>libapp.so</code> in a reversing tool such as Binary Ninja or Ghidra will not reveal much. Strings are there, but no xrefs to them.</p>
+<p>Flutter uses Dart, which compiles to its own special kind of binary and follows no common conventions.</p>
+<h1>2. Getting function names</h1>
+<p>There's an excellent tool called <a href="https://github.com/Impact-I/reFlutter">reflutter</a> by Impact-I which instruments a Flutter app and uses the Dart runtime (while executing!) to dump information about the program's functions.</p>
+<p>This can get you names for most functions in the app, including both application functions and library/runtime stuff.</p>
+<p>I use <a href="https://github.com/sensepost/objection">objection</a> here to repack and resign APKs, but you can use apksigner instead.</p>
+<p>The app I'm looking at is distributed as a split APK, and the libapp.so is in <code>split_config.arm64_v8a.apk</code> so that's the one that gets patched by reflutter.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="nv">ORIG_APK_DIR</span><span class="o">=</span><span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="si">${</span><span class="nv">PWD</span><span class="si">}</span><span class="p">/../unmodified/</span><span class="si">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>!<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ORIG_APK_DIR</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;reflut.sh &lt;dir-of-unmodified-apks&gt;&quot;</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
+
+rm<span class="w"> </span>*.objection.apk
+
+reflutter<span class="w"> </span>--patch-dump<span class="w"> </span><span class="si">${</span><span class="nv">ORIG_APK_DIR</span><span class="si">}</span>/split_config.arm64_v8a.apk
+
+cp<span class="w"> </span><span class="si">${</span><span class="nv">ORIG_APK_DIR</span><span class="si">}</span>/<span class="o">{</span>base.apk,split_config.en.apk,split_config.sv.apk,split_config.xxhdpi.apk<span class="o">}</span><span class="w"> </span>.
+<span class="k">for</span><span class="w"> </span>APK<span class="w"> </span><span class="k">in</span><span class="w"> </span>*.apk<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>objection<span class="w"> </span>signapk<span class="w"> </span><span class="nv">$APK</span>
+<span class="k">done</span>
+</code></pre></div>
+
+<p>This should yield a set of files named <code>*.objection.apk</code> which are all signed with the same signing key (otherwise they won't install).</p>
+<div class="highlight"><pre><span></span><code>adb install-multiple *.objection.apk
+</code></pre></div>
+
+<p>You may get an error like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">Failure</span><span class="w"> </span><span class="cp">[</span><span class="nx">INSTALL_FAILED_UPDATE_INCOMPATIBLE</span><span class="p">:</span><span class="w"> </span><span class="nx">Package</span><span class="w"> </span><span class="nx">com.miko3.app</span><span class="w"> </span><span class="nx">signatures</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="nx">previously</span><span class="w"> </span><span class="nx">installed</span><span class="w"> </span><span class="nx">version</span><span class="p">;</span><span class="w"> </span><span class="nx">ignoring</span><span class="o">!</span><span class="cp">]</span>
+</code></pre></div>
+
+<p>This is because you're installing new APKs with the same package name as the original app, but you've now signed them with a key that doesn't match the key of the publisher. Android doesn't allow that.</p>
+<p>Solution: Uninstall the original app first, then try <code>adb install-multiple *.objection.apk</code> again.</p>
+<p>Once the reflutter-patched app is installed, run it once. On startup, it will dump a bunch of flutter/dart state to a file. The file is stored in <code>/data/data/&lt;package-name/dump.dart</code> on the android device.</p>
+<div class="highlight"><pre><span></span><code>adb pull /data/data/com.miko3.app/dump.dart
+</code></pre></div>
+
+<p>You can now parse the <code>dump.dart</code> (which isn't actually a dart source file!) and find the names and offsets of functions in <code>libapp.so</code>.</p>
+<p>If you happen to use Binary Ninja, I've prepared <a href="https://github.com/eldstal/elnino/blob/main/reflutter_load_dump.py">a script</a> to import <code>dump.dart</code> and create/rename functions accordingly.</p>
+<h1>2. Where are all my string xrefs?!</h1>
+<p>If you are fortunate, your RE tool will have identified a bunch of strings that look relevant (urls, API keys, that sort of thing), but you probably won't see any references to them from the code. That's because Dart uses a weird indirection for its constant storage, so the offsets of the actual strings aren't mentioned directly in the disassembly.</p>
+<p>Instead, there will be an instruction sequence like</p>
+<div class="highlight"><pre><span></span><code>add     x2, x27, #0x15, lsl #0xc
+ldr     x2, [x2, #0xf0]
+</code></pre></div>
+
+<p>i.e. a read from <code>x27 + 0x15040</code>. On arm64, x27 is the base register for the "Pointer Pool" (PP), which somehow (don't ask me how) leads to the constant data itself. I haven't learned how to decode the PP and find the path directly, but there is another tool called <a href="https://github.com/worawit/blutter">blutter</a> by Worawit Wangwarunyoo which can do the work for us. Extract the unmodified APK which contains app.so and run blutter on its directory:</p>
+<div class="highlight"><pre><span></span><code>python3 /path/to/blutter.py unmodified/split_config.arm64_v8a/lib/arm64-v8a/ blutter/
+</code></pre></div>
+
+<p>This yields a bunch of interesting files, but the one we need at the moment is <code>pp.txt</code> which gives us a flat list of the offsets and objects stored by the PP.</p>
+<p>You can parse this list with relative ease, and then figure out a way to import it into your RE tool. Basically, you're looking for accesses relative to <code>x27</code>, with some static offset. Take that offset, look it up in pp.txt and you'll find the corresponding object.</p>
+<p>I've made <a href="https://github.com/eldstal/elnino/blob/main/blutter_load_pp.py">a script</a> for binja which imports <code>pp.txt</code> and adds comments in the disassembly where a PP access is made as well as xrefs to strings where possible.</p>
+<h1>3. Patching the app</h1>
+<p>Once you've found function names and some data references, you may be able to start reversing the app. The calling convention used by Dart is utterly confusing to standard RE tools, but you can still probably make some sense of the call graph and string use.</p>
+<p>Let's say you found a root detection function and you need to patch an instruction. How do you run the patched app?</p>
+<p>It's relatively straight-forward, actually:</p>
+<ol>
+<li>Modify libapp.so (e.g. change an instruction)</li>
+<li>Replace libapp.so in the corresponding APK with your patched copy</li>
+<li>Zipalign and Sign the APK (I use objection because it's easy)</li>
+<li>Install all the APKs again and you're done!</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="o">!/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
+
+<span class="c1"># We are in patched/</span>
+<span class="c1"># and we have already created ./lib/arm64-v8a/libapp.so which is our altered library</span>
+
+<span class="n">cp</span><span class="w"> </span><span class="o">../</span><span class="n">unmodified</span><span class="o">/*.</span><span class="n">apk</span><span class="w"> </span><span class="o">.</span>
+
+<span class="c1"># Inject the patched libapp.so into the split_config.arm64_v8a.apk</span>
+<span class="c1"># The -0 is important here! If you allow the lib to be compressed, it may fail to load.</span>
+<span class="n">zip</span><span class="w"> </span><span class="o">-</span><span class="mi">0</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">split_config</span><span class="o">.</span><span class="n">arm64_v8a</span><span class="o">.</span><span class="n">apk</span><span class="w"> </span><span class="n">lib</span><span class="o">/</span>
+
+<span class="k">for</span><span class="w"> </span><span class="n">APK</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">base</span><span class="o">.</span><span class="n">apk</span><span class="w"> </span><span class="n">split_config</span><span class="o">.</span><span class="n">en</span><span class="o">.</span><span class="n">apk</span><span class="w"> </span><span class="n">split_config</span><span class="o">.</span><span class="n">sv</span><span class="o">.</span><span class="n">apk</span><span class="w"> </span><span class="n">split_config</span><span class="o">.</span><span class="n">arm64_v8a</span><span class="o">.</span><span class="n">apk</span><span class="w"> </span><span class="n">split_config</span><span class="o">.</span><span class="n">xxhdpi</span><span class="o">.</span><span class="n">apk</span><span class="p">;</span><span class="w"> </span><span class="n">do</span>
+<span class="w">    </span><span class="n">objection</span><span class="w"> </span><span class="n">signapk</span><span class="w"> </span><span class="o">$</span><span class="n">APK</span>
+<span class="n">done</span>
+
+<span class="n">adb</span><span class="w"> </span><span class="n">install</span><span class="o">-</span><span class="n">multiple</span><span class="w"> </span><span class="o">*.</span><span class="n">objection</span><span class="o">.</span><span class="n">apk</span>
+</code></pre></div>
+
+<p>You may get an error when installing:</p>
+<div class="highlight"><pre><span></span><code><span class="n">INSTALL_FAILED_INVALID_APK</span><span class="o">:</span><span class="w"> </span><span class="n">Failed</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">extract</span><span class="w"> </span><span class="kd">native</span><span class="w"> </span><span class="n">libraries</span><span class="o">,</span><span class="w"> </span><span class="n">res</span><span class="o">=-</span><span class="mi">2</span>
+</code></pre></div>
+
+<p>This is due to a new mechanism in android where native libraries can be loaded directly from the APK without being extracted to the device filesystem. This only works if the so is *<em>uncompressed</em> in the APK (i.e. <code>store</code> instead of <code>deflate</code> mode). Ensure you've used <code>-0</code> for the zip command, or the equivalent when you replace the so file in the APK.</p>
+<p>With some luck, the app will run and your patch will work.</p>
+<p>Happy hacking!</p>
+    </div>
+    <div class="h1">
+    <footer>
+      <p>Published: <time datetime="2025-12-31T00:00:00+01:00">
+        ons 31 december 2025
+      </time></p>
+        <address>
+          By           <span>Albin Eldstål-Ahrens</span>
+        </address>
+        <p>
+          Category: <a href="https://eldstal.se/category/blog.html">blog</a>
+        </p>
+        <p>
+          Tags:
+            <a href="https://eldstal.se/tag/solution.html">solution</a>
+        </p>
+    </footer>
+    </div>
+  </article>
+          <div class="h1">
+          <footer>
+              <address>
+                Powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>,
+                and generously hosted by <a rel="nofollow" href="https://docs.github.com/en/pages">Github pages</a>.
+              </address>
+          </footer>
+          </div>
+      </main>
+  </body>
+</html>
