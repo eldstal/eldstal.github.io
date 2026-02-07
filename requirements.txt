@@ -1,3 +1,4 @@
 pelican[markdown]
 pelican-markdown-include
+beautifulsoup4
 
