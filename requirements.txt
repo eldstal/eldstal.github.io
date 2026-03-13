@@ -1,4 +1,6 @@
 pelican[markdown]
 pelican-markdown-include
 beautifulsoup4
+requests
+tabulate
 
