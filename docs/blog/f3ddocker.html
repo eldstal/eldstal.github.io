@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <title>Albin Eldstål-Ahrens - F3D in a Docker container</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+      <meta charset="utf-8" />
+      <meta name="generator" content="Pelican" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-colors.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-mobile.css" />
+        <!-- This CSS is slow due to cool SVG effects.
+             If JS is enabled we can load it asyncronously to get the page loaded first. -->
+        
+        <link rel="preload" as="style" href="/theme/css/eldstal-lcd.css" onload="this.onload=null;this.rel='stylesheet'"/>
+        <noscript>
+            <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-lcd.css" />
+        </noscript>
+
+        <link href="https://eldstal.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Full Atom Feed" />
+        <link href="https://eldstal.se/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Categories Atom Feed" />
+
+
+
+
+    <meta name="tags" content="solution" />
+
+  </head>
+
+  <body>
+      <div class="bleed">
+          <div class="bleed-splotches"></div>
+          <div class="bleed-neg"></div>
+      </div>
+      <div class="edge-bleed">
+          <div class="edge-bleed-t"></div>
+          <div class="edge-bleed-l"></div>
+          <div class="edge-bleed-t turn-around"></div>
+          <div class="edge-bleed-l turn-around"></div>
+      </div>
+      <header>
+          <nav><ul>
+<a href="https://eldstal.se/index.html" ><li>Albin Eldstål-Ahrens</li></a><a href="https://eldstal.se/category/advisories.html" ><li>advisories</li></a><a href="https://eldstal.se/category/blog.html"  aria-current="page" ><li>blog</li></a></ul></nav>
+      </header>
+      <main>
+  <article>
+    <div class="h3 article">
+    <header>
+      <h1>
+        <a href="https://eldstal.se/blog/f3ddocker.html" rel="bookmark"
+           title="Permalink to F3D in a Docker container">F3D in a Docker container</a></h1>
+      
+    </header>
+    <p>I was trying to render some 3D models into images, and found <a href="https://f3d.dev">F3D</a> which is a neat tool and library for that purpose. It worked great on my machine, but would segfault without any other information when run inside a Docker container.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>f3d<span class="w"> </span>--input<span class="o">=</span>my_model.stl<span class="w"> </span>--output<span class="o">=</span>/tmp/preview.png
+Configuration<span class="w"> </span>file<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s2">&quot;config&quot;</span><span class="w"> </span>could<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>found
+Segmentation<span class="w"> </span>fault<span class="w"> </span><span class="o">(</span>core<span class="w"> </span>dumped<span class="o">)</span>
+</code></pre></div>
+
+<p>My first approach was to switch to <a href="https://open3d.org">open3d</a>, but that <em>also</em> segfaulted.</p>
+<p>Running <code>strace</code> shows that the last thing that happens is a set of attempts to load various OpenGL-related libraries (output shortened here to make it a little easier to read):</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>strace<span class="w"> </span>f3d<span class="w"> </span>--input<span class="o">=</span>my_model.stl<span class="w"> </span>--output<span class="o">=</span>/tmp/preview.png
+...
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/bin/../lib/x86_64-linux-gnu/libEGL.so.1&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/lib/x86_64-linux-gnu/libEGL.so.1&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/lib/x86_64-linux-gnu/libEGL.so.1&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/lib/libEGL.so.1&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/lib/libEGL.so.1&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/bin/../lib/x86_64-linux-gnu/libEGL.so&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/lib/x86_64-linux-gnu/libEGL.so&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/lib/x86_64-linux-gnu/libEGL.so&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/lib/libEGL.so&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/lib/libEGL.so&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/bin/../lib/x86_64-linux-gnu/libOSMesa.so.8&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/lib/x86_64-linux-gnu/libOSMesa.so.8&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/lib/x86_64-linux-gnu/libOSMesa.so.8&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/lib/libOSMesa.so.8&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/lib/libOSMesa.so.8&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/bin/../lib/x86_64-linux-gnu/libOSMesa.so.6&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/lib/x86_64-linux-gnu/libOSMesa.so.6&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/lib/x86_64-linux-gnu/libOSMesa.so.6&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/lib/libOSMesa.so.6&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/lib/libOSMesa.so.6&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/bin/../lib/x86_64-linux-gnu/libOSMesa.so&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/lib/x86_64-linux-gnu/libOSMesa.so&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/lib/x86_64-linux-gnu/libOSMesa.so&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/lib/libOSMesa.so&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD,<span class="w"> </span><span class="s2">&quot;/usr/lib/libOSMesa.so&quot;</span>,<span class="w"> </span>O_RDONLY<span class="p">|</span>O_CLOEXEC<span class="o">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-1<span class="w"> </span>ENOENT<span class="w"> </span><span class="o">(</span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory<span class="o">)</span>
+---<span class="w"> </span>SIGSEGV<span class="w"> </span><span class="o">{</span><span class="nv">si_signo</span><span class="o">=</span>SIGSEGV,<span class="w"> </span><span class="nv">si_code</span><span class="o">=</span>SEGV_MAPERR,<span class="w"> </span><span class="nv">si_addr</span><span class="o">=</span>NULL<span class="o">}</span><span class="w"> </span>---
+</code></pre></div>
+
+<p>As it turns out, installing these packages (<code>f3d</code> in an ubuntu container, for example) did install Mesa but none of these required libraries. The solution turned out to be pretty simple:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>libegl1
+</code></pre></div>
+
+<p>And just like that, F3D runs fine in a GPU-less Docker container!</p>
+    </div>
+    <div class="h1">
+    <footer>
+      <p>Published: <time datetime="2026-03-28T00:00:00+01:00">
+        lör 28 mars 2026
+      </time></p>
+        <address>
+          By           <span>Albin Eldstål-Ahrens</span>
+        </address>
+        <p>
+          Category: <a href="https://eldstal.se/category/blog.html">blog</a>
+        </p>
+        <p>
+          Tags:
+            <a href="https://eldstal.se/tag/solution.html">solution</a>
+        </p>
+    </footer>
+    </div>
+  </article>
+          <div class="h1">
+          <footer>
+              <address>
+                Powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>,
+                and generously hosted by <a rel="nofollow" href="https://docs.github.com/en/pages">Github pages</a>.
+              </address>
+          </footer>
+          </div>
+      </main>
+  </body>
+</html>
