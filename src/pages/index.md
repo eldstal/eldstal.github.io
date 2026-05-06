@@ -118,6 +118,16 @@ Running notes on CTF techniques, methodology, little tricks we've learned along 
 <div class="h2" markdown="1">
 ## Other
 
+<div class="h3 project" markdown="1">
+### ![touchlaess](/images/touchlaess.png) [Touchlaess XM](https://github.com/eldstal/touchless-xm)
+Physical buttons for an otherwise great headset
+
+Sony's WH1000 series headphones are quite good. I really like my pair of XM4, apart from the one
+annoying detail of touch controls. Touchlæss XM is a drop-in replacement for the right-hand side earcup
+cover, which gives you five (or more!) physical buttons to control volume, play/pause, song skipping
+and more. I use it daily, and it works well!
+</div>
+
 
 <div class="h3 project" markdown="1">
 ### ![nobbler](/images/nobbler.png) [Nobbler](https://github.com/eldstal/nobbler)
