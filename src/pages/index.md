@@ -130,6 +130,13 @@ and more. I use it daily, and it works well!
 
 
 <div class="h3 project" markdown="1">
+### ![replacement-parts](/images/replacement-parts.png) [Replacement-parts.net](https://replacement-parts.net)
+An open repository of CAD drawings for old computers and game consoles
+
+So you've got an old Sega Mega Drive II, but the dust flaps covering the cartridge port are broken and jammed half-way open. You could remove them entirely, sure. But maybe someone has made models so you can 3D print new ones? But the printable sites are pretty difficult to search, and the metadata isn't great. Well *look no further*, this is a repository of spare parts organized by machine and part number.
+</div>
+
+<div class="h3 project" markdown="1">
 ### ![nobbler](/images/nobbler.png) [Nobbler](https://github.com/eldstal/nobbler)
 Smart Knob Interface
 
