@@ -1,5 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Albin Eldstål-Ahrens</title><link href="https://eldstal.se/" rel="alternate"/><link href="https://eldstal.se/feeds/all-en.atom.xml" rel="self"/><id>https://eldstal.se/</id><updated>2026-05-06T00:00:00+02:00</updated><entry><title>Replacement buttons for Logitech MX Master 3S</title><link href="https://eldstal.se/blog/mxmaster.html" rel="alternate"/><published>2026-05-06T00:00:00+02:00</published><updated>2026-05-06T00:00:00+02:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2026-05-06:/blog/mxmaster.html</id><summary type="html">&lt;p&gt;The left click button of my Logitech MX Master 3S started misbehaving after several years of heavy use. Click and drag became sporadic clicking, the occasional click turned into a double-click. Very annoying.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Albin Eldstål-Ahrens</title><link href="https://eldstal.se/" rel="alternate"/><link href="https://eldstal.se/feeds/all-en.atom.xml" rel="self"/><id>https://eldstal.se/</id><updated>2026-09-07T00:00:00+02:00</updated><entry><title>Retrolan 1: Virtual MMX</title><link href="https://eldstal.se/blog/retrolan1.html" rel="alternate"/><published>2026-09-07T00:00:00+02:00</published><updated>2026-09-07T00:00:00+02:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2026-09-07:/blog/retrolan1.html</id><summary type="html">&lt;p&gt;One of the things you get for free while passing through your 30s is an
+increasing sense of nostalgia. I sincerely hope that you get only the harmless
+type and it doesn't turn you into an insufferable reactionary. If you were also
+shaped by computering in the Y2K era, chances …&lt;/p&gt;</summary><content type="html">&lt;p&gt;One of the things you get for free while passing through your 30s is an
+increasing sense of nostalgia. I sincerely hope that you get only the harmless
+type and it doesn't turn you into an insufferable reactionary. If you were also
+shaped by computering in the Y2K era, chances are you have fond memories of
+floppy drive noises, LAN parties, NoCD cracktros and not-quite-effortless file
+sharing.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Eye exam slide, circa 2078" src="../images/retrolan1/98ish.png" /&gt;
+&lt;em&gt;Eye exam slide, circa 2078&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;OK, so computers these days are &lt;em&gt;faster&lt;/em&gt;. Orders of magnitude faster. Operating
+systems are more convenient. Applications are more accesible. The web is
+always-on and far more useful than it used to be. And although hardware costs
+are through the roof at the moment, computing is more accessible now than it
+was 30 years ago at least.&lt;/p&gt;
+&lt;p&gt;But we &lt;em&gt;miss&lt;/em&gt; something, don't we? Well, let's build it! This is a series of posts
+about how to recreate some of that 2003 LAN party magic in the comfort of your
+2026 hardware. We'll walk through creating a sick gaming virtual machine, then move
+on to programs and games and stuff and finally: Global LAN connectivity to your friends!&lt;/p&gt;
+&lt;h1&gt;Requirements&lt;/h1&gt;
+&lt;p&gt;I'll assume you're just like me: Pining for the Windows 98-XP era of computer
+gaming, but well familiar with modern Linux and stuff. You'll need an OK modern
+machine, but this can probably be done on an i7 from 2015 if that's what you
+happen to have available to you. Everything will be done with free (as in beer)
+or abandoned software, and free (as in liberty) wherever possible. Sorry about
+the compromise, we'll see how far we get.&lt;/p&gt;
+&lt;h1&gt;Selecting a Hypervisor&lt;/h1&gt;
+&lt;p&gt;This is part 1: Virtual MMX. Our goal for today is to set up two virtual
+machines: one running Windows 98 and one running Windows XP. They will have
+both have working sound, graphics and network support.&lt;/p&gt;
+&lt;p&gt;The first thing we need is a hypervisor. This is the virtualization host
+we'll use to run our bad-ass imaginary gaming rigs. Let's look at some contenders.&lt;/p&gt;
+&lt;h2&gt;Libvirt (KVM/QEMU)&lt;/h2&gt;
+&lt;p&gt;Libvirt has several strengths compared to the other alternatives. It's free and open-source, it's likely a first-rate member of your host distribution, and it rests on robust support in the mainline Linux kernel.&lt;/p&gt;
+&lt;p&gt;What this means is, you can install and set up Libvirt and a nice graphical front-end like virt-manager and it won't require installing any third-party kernel modules and stuff that will pollute your otherwise neatly managed system. Excellent.&lt;/p&gt;
+&lt;p&gt;For Windows 9x guests, Libvirt with QEMU supports the &lt;a href="https://github.com/JHRobotics/softgpu"&gt;SoftGPU&lt;/a&gt; drivers, which should give you OK graphics performance. If you get &lt;code&gt;qemu-3dfx&lt;/code&gt; working, you can apparently even get hardware accelerated 3D!&lt;/p&gt;
+&lt;p&gt;I haven't had much luck getting good graphics performance out of Windows XP under libvirt. It's possible that there's a solution out there, but I don't know how.&lt;/p&gt;
+&lt;h2&gt;86Box&lt;/h2&gt;
+&lt;p&gt;86Box is more of an emulator than a Hypervisor, really. It does a great job emulating all kinds of early to middle-age 8086, 286, 386, 486, Pentium and Pentium-2 machines. It's accurate all the way down to the BIOS, and it even allows you to add &lt;em&gt;floppy drive sounds&lt;/em&gt; which is absolutely charming.&lt;/p&gt;
+&lt;p&gt;It supports a wide range of period-accurate peripherals such as sound, graphics and network cards.&lt;/p&gt;
+&lt;p&gt;Performance will suffer; my Ryzen 5950X has trouble running a 200MHz Pentium 2 at full speed. For that reason, 86Box is probably best reserved for older target machines. If you want a good host for your Windows 95 installation, 86Box is a good bet. If you want to play games that rely on specific hardware (say, Soundblaster Pro 2), that's also a point in favor of 86Box&lt;/p&gt;
+&lt;p&gt;Networking-wise, it supports both a nice transparent NAT (SLiRP) and connecting your VM to a bridge device which is useful for our endeavors.&lt;/p&gt;
+&lt;h2&gt;VirtualBox&lt;/h2&gt;
+&lt;p&gt;VirtualBox used to be the go-to for linux VMs, but it seems that our target period has fallen out of support.&lt;/p&gt;
+&lt;p&gt;For Win9x, &lt;a href="https://github.com/JHRobotics/softgpu"&gt;SoftGPU&lt;/a&gt; is reported to work with VirtualBox, but the official driver packs have dropped support for Windows XP and 2000. As far as I can tell, this means we can't get 3D acceleration on XP.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/guestadd-video.html"&gt;Rumor has it&lt;/a&gt; hardware 3D acceleration should work with VirtualBox 6.x, but I haven't dared to try it.&lt;/p&gt;
+&lt;h2&gt;VMware&lt;/h2&gt;
+&lt;p&gt;VMware Workstation is free for personal use these days, which makes it feasible for our purposes. Compatibility is pretty great, and most importantly: Windows XP graphics drivers are still officially supported. I tried installing windows XPSP3 in VMware Workstation 26 and it just &lt;em&gt;works&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Networking is a bit messier in VMware than in other solutions, but you can set up a bridge for your retro VMs to network them together without connecting them to the Internet.&lt;/p&gt;
+&lt;p&gt;Compared to something like libvirt, VMware is a bit less integrated into the standard Linux experience. It installs some of its own kernel modules, but if you're lucky there are packages for your distribution so you can neatly upgrade or uninstall.&lt;/p&gt;
+&lt;h2&gt;Choices, choices&lt;/h2&gt;
+&lt;p&gt;For the XP machine, VMware will be my choice of hypervisor entirely due to the great driver support.&lt;/p&gt;
+&lt;p&gt;As for Windows 98, I'll try both VMWare (which appears to work well) and 86Box (for the greater accuracy, perhaps).&lt;/p&gt;
+&lt;h1&gt;Installation&lt;/h1&gt;
+&lt;h2&gt;Windows 98SE&lt;/h2&gt;
+&lt;p&gt;In VMware, I'd recommend choosing hardware compatibility "VMware Workstation 5.x". One CPU, 256MB of RAM, 12GB of disk space, good to go.&lt;/p&gt;
+&lt;p&gt;In 86Box, you've got a lot more choices. I've settled on the following, which seems to work well:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Machine: [i440BX] ASUS P2B-LS&lt;/li&gt;
+&lt;li&gt;CPU: Pentium II (Deschutes) / 166MHz&lt;/li&gt;
+&lt;li&gt;Memory: 256MB&lt;/li&gt;
+&lt;li&gt;Video: [AGP] 3dfx Voodoo3 1000&lt;/li&gt;
+&lt;li&gt;Audio: [ISA16] Sound Blaster AWE32 PnP&lt;/li&gt;
+&lt;li&gt;NIC: [ISA] Novell NE2000 (TAP)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It's important to set memory ranges and IRQ numbers for each device, such that they do not collide with each other. The joys of old-timey computing.&lt;/p&gt;
+&lt;p&gt;For the OS, we'll use the excellent &lt;a href="https://github.com/oerg866/win98-quickinstall"&gt;Windows 98 Quick Install&lt;/a&gt;, which is a custom CD and installer for Windows 98 SE and a large set of drivers and fixes. Pop it into the VM's CD drive, add the boot floppy (if your BIOS can't boot from CD), and follow the installer steps.&lt;/p&gt;
+&lt;p&gt;This is roughly 300x faster than the official windows 98 installer. Absolutely stunning work.&lt;/p&gt;
+&lt;p&gt;Once inside, open Control Panel / System / Device Manager and make sure all your devices have drivers.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A device with no driver" src="../images/retrolan1/win98dev.png" /&gt;
+&lt;em&gt;We'll get to you.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;For VMware, start by installing "VMware tools" from the menu. This includes video drivers and better mousing support. The sound card is an es1371 and needs &lt;a href="https://archive.org/details/creativeensoniqaudiopciiso"&gt;Ensoniq drivers&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Pipes screensaver" src="../images/retrolan1/pipes.png" /&gt;
+&lt;em&gt;3D support working as intended&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;For 86Box, the devices above aren't Plug-n-Play, so you'll have to select the device type manually when installing drivers. Win98QI includes a lot of drivers for common devices such as Sound Blaster, Voodoo and NE2000.&lt;/p&gt;
+&lt;h2&gt;Windows XPSP3&lt;/h2&gt;
+&lt;p&gt;This process is quite streamlined. Use the latest machine compatibility settings, give the machine 4GB of RAM and a couple of processors, 120GB of disk or so.&lt;/p&gt;
+&lt;p&gt;Install XPSP3 as you normally would, and activate it &lt;a href="https://computernewb.com/wiki/QEMU/Guests/Windows_XP#Activation"&gt;&lt;em&gt;somehow&lt;/em&gt;&lt;/a&gt;. Install the VMware tools and presto!&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Windows XP running" src="../images/retrolan1/winxp.png" /&gt;
+&lt;em&gt;Sweet&lt;/em&gt;&lt;/p&gt;
+&lt;h1&gt;Final words&lt;/h1&gt;
+&lt;p&gt;OK, that's all it took to install some classic Windows OS versions on your fancy modern Linux machine.&lt;/p&gt;
+&lt;p&gt;There are benefits to using a single Hypervisor solution for all of your machines, but nothing prevents you from using linux Bridge devices to connect different ones together...&lt;/p&gt;
+&lt;p&gt;Next time: Connecting your little machines into a virtual LAN&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Coexisting 86Box and VMWare" src="../images/retrolan1/coexist.png" /&gt;
+&lt;em&gt;Coexist! It's possible to bridge networks between different Hypervisors.&lt;/em&gt;&lt;/p&gt;</content><category term="blog"/><category term="retrolan"/><category term="gaming"/></entry><entry><title>Replacement buttons for Logitech MX Master 3S</title><link href="https://eldstal.se/blog/mxmaster.html" rel="alternate"/><published>2026-05-06T00:00:00+02:00</published><updated>2026-05-06T00:00:00+02:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2026-05-06:/blog/mxmaster.html</id><summary type="html">&lt;p&gt;The left click button of my Logitech MX Master 3S started misbehaving after several years of heavy use. Click and drag became sporadic clicking, the occasional click turned into a double-click. Very annoying.&lt;/p&gt;
 &lt;p&gt;The following switches are suitable drop-in replacements:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Panasonic &lt;a href="https://mou.sr/3Pqzy5l"&gt;EVQ-P0D07K&lt;/a&gt;&lt;/li&gt;
@@ -191,12 +277,14 @@ ldr     x2, [x2, #0xf0]
 &lt;li&gt;The mesh on the front of the internal microphone itself&lt;/li&gt;
 &lt;li&gt;The rubber dome covering the microphone&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img alt="Disassembled left ear cup" src="../images/xm4noise/clean.jpeg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Disassembled left ear cup" src="../images/xm4noise/clean.jpeg" /&gt;
+&lt;em&gt;Look! It comes apart!&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;I used cotton swabs and isopropyl alcohol, gently rubbing and then letting the parts air dry&lt;/p&gt;
 &lt;p&gt;This cleaning on its own was not enough to solve the problem, so this probably wasn't the issue.&lt;/p&gt;
 &lt;h2&gt;Mounting the microphone firmly&lt;/h2&gt;
 &lt;p&gt;The internal microphone was noticably loose in its cradle, and could move a fraction of a mm when shaken/jostled. To prevent this, I cut a thin strip of tape and wrapped it around the edge of the microphone until it had a more snug fit in the plastic frame.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Wrapping tape around the microphone" src="../images/xm4noise/wrap.jpeg" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Wrapping tape around the microphone" src="../images/xm4noise/wrap.jpeg" /&gt;
+&lt;em&gt;A slight diameter enhancement&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Be very careful when handling the microphone&lt;/strong&gt;, as it is quite sensitive. Also make sure your tape doesn't reach in front of the microphone, as that can interfere with its operation.&lt;/p&gt;
 &lt;p&gt;In my case, 1.5 wraps of tape was enough to make it stop moving on its own.&lt;/p&gt;
 &lt;p&gt;After reassembling, the noise problem has been reduced. It still reoccurs on occasion, and appears to be related to movement of the headphones (typically synced with my footsteps).&lt;/p&gt;

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <title>Albin Eldstål-Ahrens - Retrolan 1: Virtual MMX</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+      <meta charset="utf-8" />
+      <meta name="generator" content="Pelican" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-colors.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-mobile.css" />
+        <!-- This CSS is slow due to cool SVG effects.
+             If JS is enabled we can load it asyncronously to get the page loaded first. -->
+        
+        <link rel="preload" as="style" href="/theme/css/eldstal-lcd.css" onload="this.onload=null;this.rel='stylesheet'"/>
+        <noscript>
+            <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-lcd.css" />
+        </noscript>
+
+        <link href="https://eldstal.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Full Atom Feed" />
+        <link href="https://eldstal.se/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Categories Atom Feed" />
+
+
+
+
+    <meta name="tags" content="retrolan" />
+    <meta name="tags" content="gaming" />
+
+  </head>
+
+  <body>
+      <div class="bleed">
+          <div class="bleed-splotches"></div>
+          <div class="bleed-neg"></div>
+      </div>
+      <div class="edge-bleed">
+          <div class="edge-bleed-t"></div>
+          <div class="edge-bleed-l"></div>
+          <div class="edge-bleed-t turn-around"></div>
+          <div class="edge-bleed-l turn-around"></div>
+      </div>
+      <header>
+          <nav><ul>
+<a href="https://eldstal.se/index.html" ><li>Albin Eldstål-Ahrens</li></a><a href="https://eldstal.se/category/advisories.html" ><li>advisories</li></a><a href="https://eldstal.se/category/blog.html"  aria-current="page" ><li>blog</li></a></ul></nav>
+      </header>
+      <main>
+  <article>
+    <div class="h3 article">
+    <header>
+      <h1>
+        <a href="https://eldstal.se/blog/retrolan1.html" rel="bookmark"
+           title="Permalink to Retrolan 1: Virtual MMX">Retrolan 1: Virtual MMX</a></h1>
+      
+    </header>
+    <p>One of the things you get for free while passing through your 30s is an
+increasing sense of nostalgia. I sincerely hope that you get only the harmless
+type and it doesn't turn you into an insufferable reactionary. If you were also
+shaped by computering in the Y2K era, chances are you have fond memories of
+floppy drive noises, LAN parties, NoCD cracktros and not-quite-effortless file
+sharing.</p>
+<p><img alt="Eye exam slide, circa 2078" src="../images/retrolan1/98ish.png" />
+<em>Eye exam slide, circa 2078</em></p>
+<p>OK, so computers these days are <em>faster</em>. Orders of magnitude faster. Operating
+systems are more convenient. Applications are more accesible. The web is
+always-on and far more useful than it used to be. And although hardware costs
+are through the roof at the moment, computing is more accessible now than it
+was 30 years ago at least.</p>
+<p>But we <em>miss</em> something, don't we? Well, let's build it! This is a series of posts
+about how to recreate some of that 2003 LAN party magic in the comfort of your
+2026 hardware. We'll walk through creating a sick gaming virtual machine, then move
+on to programs and games and stuff and finally: Global LAN connectivity to your friends!</p>
+<h1>Requirements</h1>
+<p>I'll assume you're just like me: Pining for the Windows 98-XP era of computer
+gaming, but well familiar with modern Linux and stuff. You'll need an OK modern
+machine, but this can probably be done on an i7 from 2015 if that's what you
+happen to have available to you. Everything will be done with free (as in beer)
+or abandoned software, and free (as in liberty) wherever possible. Sorry about
+the compromise, we'll see how far we get.</p>
+<h1>Selecting a Hypervisor</h1>
+<p>This is part 1: Virtual MMX. Our goal for today is to set up two virtual
+machines: one running Windows 98 and one running Windows XP. They will have
+both have working sound, graphics and network support.</p>
+<p>The first thing we need is a hypervisor. This is the virtualization host
+we'll use to run our bad-ass imaginary gaming rigs. Let's look at some contenders.</p>
+<h2>Libvirt (KVM/QEMU)</h2>
+<p>Libvirt has several strengths compared to the other alternatives. It's free and open-source, it's likely a first-rate member of your host distribution, and it rests on robust support in the mainline Linux kernel.</p>
+<p>What this means is, you can install and set up Libvirt and a nice graphical front-end like virt-manager and it won't require installing any third-party kernel modules and stuff that will pollute your otherwise neatly managed system. Excellent.</p>
+<p>For Windows 9x guests, Libvirt with QEMU supports the <a href="https://github.com/JHRobotics/softgpu">SoftGPU</a> drivers, which should give you OK graphics performance. If you get <code>qemu-3dfx</code> working, you can apparently even get hardware accelerated 3D!</p>
+<p>I haven't had much luck getting good graphics performance out of Windows XP under libvirt. It's possible that there's a solution out there, but I don't know how.</p>
+<h2>86Box</h2>
+<p>86Box is more of an emulator than a Hypervisor, really. It does a great job emulating all kinds of early to middle-age 8086, 286, 386, 486, Pentium and Pentium-2 machines. It's accurate all the way down to the BIOS, and it even allows you to add <em>floppy drive sounds</em> which is absolutely charming.</p>
+<p>It supports a wide range of period-accurate peripherals such as sound, graphics and network cards.</p>
+<p>Performance will suffer; my Ryzen 5950X has trouble running a 200MHz Pentium 2 at full speed. For that reason, 86Box is probably best reserved for older target machines. If you want a good host for your Windows 95 installation, 86Box is a good bet. If you want to play games that rely on specific hardware (say, Soundblaster Pro 2), that's also a point in favor of 86Box</p>
+<p>Networking-wise, it supports both a nice transparent NAT (SLiRP) and connecting your VM to a bridge device which is useful for our endeavors.</p>
+<h2>VirtualBox</h2>
+<p>VirtualBox used to be the go-to for linux VMs, but it seems that our target period has fallen out of support.</p>
+<p>For Win9x, <a href="https://github.com/JHRobotics/softgpu">SoftGPU</a> is reported to work with VirtualBox, but the official driver packs have dropped support for Windows XP and 2000. As far as I can tell, this means we can't get 3D acceleration on XP.</p>
+<p><a href="https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/guestadd-video.html">Rumor has it</a> hardware 3D acceleration should work with VirtualBox 6.x, but I haven't dared to try it.</p>
+<h2>VMware</h2>
+<p>VMware Workstation is free for personal use these days, which makes it feasible for our purposes. Compatibility is pretty great, and most importantly: Windows XP graphics drivers are still officially supported. I tried installing windows XPSP3 in VMware Workstation 26 and it just <em>works</em>.</p>
+<p>Networking is a bit messier in VMware than in other solutions, but you can set up a bridge for your retro VMs to network them together without connecting them to the Internet.</p>
+<p>Compared to something like libvirt, VMware is a bit less integrated into the standard Linux experience. It installs some of its own kernel modules, but if you're lucky there are packages for your distribution so you can neatly upgrade or uninstall.</p>
+<h2>Choices, choices</h2>
+<p>For the XP machine, VMware will be my choice of hypervisor entirely due to the great driver support.</p>
+<p>As for Windows 98, I'll try both VMWare (which appears to work well) and 86Box (for the greater accuracy, perhaps).</p>
+<h1>Installation</h1>
+<h2>Windows 98SE</h2>
+<p>In VMware, I'd recommend choosing hardware compatibility "VMware Workstation 5.x". One CPU, 256MB of RAM, 12GB of disk space, good to go.</p>
+<p>In 86Box, you've got a lot more choices. I've settled on the following, which seems to work well:</p>
+<ul>
+<li>Machine: [i440BX] ASUS P2B-LS</li>
+<li>CPU: Pentium II (Deschutes) / 166MHz</li>
+<li>Memory: 256MB</li>
+<li>Video: [AGP] 3dfx Voodoo3 1000</li>
+<li>Audio: [ISA16] Sound Blaster AWE32 PnP</li>
+<li>NIC: [ISA] Novell NE2000 (TAP)</li>
+</ul>
+<p>It's important to set memory ranges and IRQ numbers for each device, such that they do not collide with each other. The joys of old-timey computing.</p>
+<p>For the OS, we'll use the excellent <a href="https://github.com/oerg866/win98-quickinstall">Windows 98 Quick Install</a>, which is a custom CD and installer for Windows 98 SE and a large set of drivers and fixes. Pop it into the VM's CD drive, add the boot floppy (if your BIOS can't boot from CD), and follow the installer steps.</p>
+<p>This is roughly 300x faster than the official windows 98 installer. Absolutely stunning work.</p>
+<p>Once inside, open Control Panel / System / Device Manager and make sure all your devices have drivers.</p>
+<p><img alt="A device with no driver" src="../images/retrolan1/win98dev.png" />
+<em>We'll get to you.</em></p>
+<p>For VMware, start by installing "VMware tools" from the menu. This includes video drivers and better mousing support. The sound card is an es1371 and needs <a href="https://archive.org/details/creativeensoniqaudiopciiso">Ensoniq drivers</a>.</p>
+<p><img alt="Pipes screensaver" src="../images/retrolan1/pipes.png" />
+<em>3D support working as intended</em></p>
+<p>For 86Box, the devices above aren't Plug-n-Play, so you'll have to select the device type manually when installing drivers. Win98QI includes a lot of drivers for common devices such as Sound Blaster, Voodoo and NE2000.</p>
+<h2>Windows XPSP3</h2>
+<p>This process is quite streamlined. Use the latest machine compatibility settings, give the machine 4GB of RAM and a couple of processors, 120GB of disk or so.</p>
+<p>Install XPSP3 as you normally would, and activate it <a href="https://computernewb.com/wiki/QEMU/Guests/Windows_XP#Activation"><em>somehow</em></a>. Install the VMware tools and presto!</p>
+<p><img alt="Windows XP running" src="../images/retrolan1/winxp.png" />
+<em>Sweet</em></p>
+<h1>Final words</h1>
+<p>OK, that's all it took to install some classic Windows OS versions on your fancy modern Linux machine.</p>
+<p>There are benefits to using a single Hypervisor solution for all of your machines, but nothing prevents you from using linux Bridge devices to connect different ones together...</p>
+<p>Next time: Connecting your little machines into a virtual LAN</p>
+<p><img alt="Coexisting 86Box and VMWare" src="../images/retrolan1/coexist.png" />
+<em>Coexist! It's possible to bridge networks between different Hypervisors.</em></p>
+    </div>
+    <div class="h1">
+    <footer>
+      <p>Published: <time datetime="2026-09-07T00:00:00+02:00">
+        mån 07 september 2026
+      </time></p>
+        <address>
+          By           <span>Albin Eldstål-Ahrens</span>
+        </address>
+        <p>
+          Category: <a href="https://eldstal.se/category/blog.html">blog</a>
+        </p>
+        <p>
+          Tags:
+            <a href="https://eldstal.se/tag/retrolan.html">retrolan</a>
+            <a href="https://eldstal.se/tag/gaming.html">gaming</a>
+        </p>
+    </footer>
+    </div>
+  </article>
+          <div class="h1">
+          <footer>
+              <address>
+                Powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>,
+                and generously hosted by <a rel="nofollow" href="https://docs.github.com/en/pages">Github pages</a>.
+              </address>
+          </footer>
+          </div>
+      </main>
+  </body>
+</html>
