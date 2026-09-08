@@ -11,15 +11,14 @@ Y2K era, chances are you have fond memories of floppy drive noises, LAN
 parties, NoCD cracktros and not-quite-effortless file sharing.
 
 ![Eye exam slide, circa 2078](../images/retrolan1/98ish.png)
-*Eye exam slide, circa 2078*
 
 Computers these days are *faster*. Orders of magnitude faster. Operating
 systems are more convenient. Applications are more accesible. The web is
-always-on and far more useful than it used to be. And although hardware costs
+always-on and far more useful than it used to be. Although hardware costs
 are through the roof at the moment, computing is more accessible now than it
 was 30 years ago at least.
 
-OK, but we *miss* something from back then, don't we? Well, let's build it!
+OK, great, but we *miss* something from back then, don't we? Well, let's build it!
 This is a series of posts about how to recreate some of that 2003 LAN party
 magic in the comfort of your 2026 hardware. We'll walk through creating a sick
 gaming virtual machine, then move on to programs and games and stuff and
@@ -101,7 +100,7 @@ to try it.
 
 VMware Workstation is free for personal use these days, which makes it feasible
 for our purposes. Compatibility is pretty great, and most importantly: Windows
-XP graphics drivers are still officially supported. I tried installing windows
+XP graphics drivers are still officially supported. I tried installing Windows
 XPSP3 in VMware Workstation 26 and it just *works*.
 
 Networking is a bit messier in VMware than in other solutions, but you can set
