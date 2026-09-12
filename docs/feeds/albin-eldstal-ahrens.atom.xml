@@ -1,5 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Albin Eldstål-Ahrens - Albin Eldstål-Ahrens</title><link href="https://eldstal.se/" rel="alternate"/><link href="https://eldstal.se/feeds/albin-eldstal-ahrens.atom.xml" rel="self"/><id>https://eldstal.se/</id><updated>2026-09-07T00:00:00+02:00</updated><entry><title>Retrolan 1: Virtual MMX</title><link href="https://eldstal.se/blog/retrolan1.html" rel="alternate"/><published>2026-09-07T00:00:00+02:00</published><updated>2026-09-07T00:00:00+02:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2026-09-07:/blog/retrolan1.html</id><summary type="html">&lt;p&gt;One of the things you get for free while passing through your 30s is an
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Albin Eldstål-Ahrens - Albin Eldstål-Ahrens</title><link href="https://eldstal.se/" rel="alternate"/><link href="https://eldstal.se/feeds/albin-eldstal-ahrens.atom.xml" rel="self"/><id>https://eldstal.se/</id><updated>2026-09-12T00:00:00+02:00</updated><entry><title>Retrolan 2: Virtual Network</title><link href="https://eldstal.se/blog/retrolan2.html" rel="alternate"/><published>2026-09-12T00:00:00+02:00</published><updated>2026-09-12T00:00:00+02:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2026-09-12:/blog/retrolan2.html</id><summary type="html">&lt;p&gt;So you've got a cool retro gaming VM, and so do your friends. And you want to
+connect them to each other. Let's look at some options for connecting them
+together.&lt;/p&gt;
+&lt;h2&gt;Option 1: Local bridge&lt;/h2&gt;
+&lt;p&gt;The simplest way to connect two or more VMs is to run them all on …&lt;/p&gt;</summary><content type="html">&lt;p&gt;So you've got a cool retro gaming VM, and so do your friends. And you want to
+connect them to each other. Let's look at some options for connecting them
+together.&lt;/p&gt;
+&lt;h2&gt;Option 1: Local bridge&lt;/h2&gt;
+&lt;p&gt;The simplest way to connect two or more VMs is to run them all on the same host and set up a bridged network for them.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Bridged sibling VMs" src="../images/retrolan2/bridged-vms.png" /&gt;
+&lt;em&gt;Bridged sibling VMs&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This is usually an option right in your virtualization solution, typically
+called a "Private network", "Host-only network" or "Bridged network".&lt;/p&gt;
+&lt;p&gt;In 86Box, you do this by selecting &lt;code&gt;Mode: TAP&lt;/code&gt; and giving your bridge a
+descriptive name. All VMs with the same "TAP bridge name" configured will become
+connected to the same virtual network.&lt;/p&gt;
+&lt;p&gt;In VMware, select (counter-intuitively) "Host-only network" or create a new
+virtual network with that mode. Again, every VM set to the same network will be
+connected.&lt;/p&gt;
+&lt;h3&gt;Why not?&lt;/h3&gt;
+&lt;p&gt;The big shortcoming of this is pretty obvious: the VMs have to run on the same
+host. Maybe your friends can remote in via SPICE or VNC or something, but
+performance will suffer for it.&lt;/p&gt;
+&lt;h2&gt;Option 2: Physical LAN&lt;/h2&gt;
+&lt;p&gt;If you've got your friends in the same room (LAN party! Woo!), you've got the
+option to connect your VMs to a physical network via bridges. This can also be
+useful if you want to connect your VMs with your friends who brought real
+iron to the party.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="VMs bridged to a physical LAN" src="../images/retrolan2/lan-vms.png" /&gt;
+&lt;em&gt;VMs bridged to a physical LAN&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;If you're using 86Box or libvirt, this requires you to create a bridge
+interface manually. Other interfaces can then be added to the bridge as
+"ports", each acting as a port on a physical switch would.&lt;/p&gt;
+&lt;p&gt;If the host has an ethernet interface &lt;code&gt;eth1&lt;/code&gt; which is connected to the physical
+LAN, leave it unconfigured and do the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nx"&gt;ip&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;link&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;add&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;bridge&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;retrolan&lt;/span&gt;
+&lt;span class="nx"&gt;ip&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;link&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;eth1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;master&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;retrolan&lt;/span&gt;
+&lt;span class="nx"&gt;ip&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;link&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;retrolan&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;up&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now you've got a bridge device called &lt;code&gt;retrolan&lt;/code&gt; and you can use that as the
+bridge name in 86Box or libvirt to connect one or more VMs to it. The VMs will
+see your physical network!&lt;/p&gt;
+&lt;p&gt;Some systems allow you to configure a "Bridged network" and hook
+your VMs up to an existing interface, automatically creating the bridge for
+you. I find that this doesn't always work reliably, and it's probably more
+robust to create the bridge yourself and attach VMs to it.&lt;/p&gt;
+&lt;p&gt;Note that if your host needs to use the same LAN as well (for example, it's your
+connection to the internet), that can be done by configuring the bridge interface
+instead of &lt;code&gt;eth0&lt;/code&gt;. Assign an IP address to it, start a DHCP client, whatever
+you would normally do with your ethernet interface.&lt;/p&gt;
+&lt;h3&gt;Why not?&lt;/h3&gt;
+&lt;p&gt;This will work great, as long as your friends are on the same physical LAN as you are. Over the internet, this won't work.&lt;/p&gt;
+&lt;h2&gt;Option 3: VPN&lt;/h2&gt;
+&lt;p&gt;The obvious answer to the internet question is a VPN such as OpenVPN or
+WireGuard. If you connect the host to a VPN and then bridge your VMs to the VPN
+interface, they'll be able to communicate across the distances.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="A VPN server bridges the gap" src="../images/retrolan2/internet-vpn.png" /&gt;
+&lt;em&gt;A VPN server bridges the gap&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This requires a server on the internet for everyone to connect to. That can be
+one of the player host machines, if you have a public IP and can forward the
+VPN service port to the proper machine.&lt;/p&gt;
+&lt;p&gt;I won't cover the details of setting up a VPN here, but if you want something quick
+and relatively simple I definitely recommend WireGuard and the &lt;code&gt;wg-quick&lt;/code&gt; utility
+to configure it.&lt;/p&gt;
+&lt;h3&gt;Why not?&lt;/h3&gt;
+&lt;p&gt;If your VPN tunnel doesn't support Layer2 traffic, you'll find this solution
+lacking. OpenVPN and friends typically work on Layer3 (the IP layer), but won't
+forward packets which lack Layer 3. This is fine for the vast majority of traffic,
+but if you're trying to play old games which make assumptions about the LAN, perform
+funky broadcasts or maybe even use IPX instead of IP... it probably won't work.&lt;/p&gt;
+&lt;h2&gt;Option 4: GRE over VPN&lt;/h2&gt;
+&lt;p&gt;But there's a solution! The GRE protocol allows you to tunnel Layer2 over IP,
+which means you can set up a link between machines which looks like IP traffic
+(will pass through your VPN without issue!) but actually carries Layer2
+traffic.&lt;/p&gt;
+&lt;p&gt;GRE tunneling support is built into Linux, and requires no special software to set up.&lt;/p&gt;
+&lt;p&gt;If you've got a working VPN such that Host A at 10.0.0.1 can reach Host B at 10.0.0.2,
+it's pretty straight-forward to set up a GRE tunnel between the two:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;On&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;A&lt;/span&gt;
+&lt;span class="nx"&gt;ip&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;link&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;add&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;my_gre_tunnel&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;gretap&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;local&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m m-Double"&gt;10.0.0.1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;remote&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m m-Double"&gt;10.0.0.2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ttl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;255&lt;/span&gt;
+&lt;span class="nx"&gt;ip&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;link&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;my_gre_tunnel&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;up&lt;/span&gt;
+
+&lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;On&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;host&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;B&lt;/span&gt;
+&lt;span class="nx"&gt;ip&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;link&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;add&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;my_gre_tunnel&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;type&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;gretap&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;local&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m m-Double"&gt;10.0.0.2&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;remote&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m m-Double"&gt;10.0.0.1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;ttl&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;255&lt;/span&gt;
+&lt;span class="nx"&gt;ip&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;link&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;set&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;my_gre_tunnel&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;up&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This will create a GRE tunnel interface named &lt;code&gt;my_gre_tunnel&lt;/code&gt; on both hosts,
+and any traffic you pass to that device will come out the other end. If you add
+that GRE tunnel to your local VM bridge network on both ends, VMs on host A will
+be able to communicate with VMs on bost B!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="gh"&gt;#&lt;/span&gt; Add the tunnel to the bridge we created before
+ip link set my_gre_tunnel master retrolan
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This is a point-to-point tunnel, which is fine if there are only two of you.
+For multier players, one solution is to set up a central server (the VPN server
+is the natural choice!), let everyone GRE tunnel to that server and then bridge
+all the GRE interfaces. The server will act as a hub in a star topology network,
+and is the only machine in the setup that needs a public IP address.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="GRE tunneled over VPN" src="../images/retrolan2/gre-vpn.png" /&gt;
+&lt;em&gt;A GRE tunnel over a VPN tunnel&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;With this setup all gaming VMs of all players will see each other. Each player
+can connect an arbitrary number of devices which will share the same VPN
+connection and GRE tunnel. &lt;strong&gt;Nothing&lt;/strong&gt; needs to be installed inside the VMs,
+which means it will work on any guest machine/OS that has a network interface.&lt;/p&gt;
+&lt;h1&gt;Simplify&lt;/h1&gt;
+&lt;p&gt;The solution above can be a bit daunting, and herding all your friends into successfully
+connecting may be a bit of a challenge. I've created &lt;a href="https://gitlab.com/eldstal/widelan"&gt;WideLAN&lt;/a&gt;,
+a set of helper scripts to make the setup both easier (just send a config file to your friend)
+and less error-prone. If you don't want to set up bridges and stuff on the host machine, you can
+even run the VPN client and GRE tunnels in a VM!&lt;/p&gt;
+&lt;p&gt;I've tried setting up a free-tier EC2 instance to serve as the Hub server, and the tunneling introduces
+negligible latency. Be aware though, that you want a server placed where it has the minimum ping
+to your host systems! Your in-game ping will be the sum of the latencies to the server.&lt;/p&gt;</content><category term="blog"/><category term="retrolan"/><category term="gaming"/></entry><entry><title>Retrolan 1: Virtual MMX</title><link href="https://eldstal.se/blog/retrolan1.html" rel="alternate"/><published>2026-09-07T00:00:00+02:00</published><updated>2026-09-07T00:00:00+02:00</updated><author><name>Albin Eldstål-Ahrens</name></author><id>tag:eldstal.se,2026-09-07:/blog/retrolan1.html</id><summary type="html">&lt;p&gt;One of the things you get for free while passing through your 30s is an
 increasing sense of nostalgia. If you were also shaped by computering in the
 Y2K era, chances are you have fond memories of floppy drive noises, LAN
 parties, NoCD cracktros and not-quite-effortless file sharing.&lt;/p&gt;

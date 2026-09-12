@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1000"
+   height="300"
+   viewBox="0 0 264.58333 79.375"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   sodipodi:docname="lan-vms.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showguides="true"
+     inkscape:zoom="1.5156072"
+     inkscape:cx="459.55179"
+     inkscape:cy="161.98128"
+     inkscape:window-width="3370"
+     inkscape:window-height="1412"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g18">
+    <sodipodi:guide
+       position="3.96875,16.478715"
+       orientation="-1,0"
+       id="guide5"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="108.98718,75.40625"
+       orientation="0,1"
+       id="guide6"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="63.384263,3.96875"
+       orientation="0,1"
+       id="guide7"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="260.61027,57.02972"
+       orientation="-1,0"
+       id="guide8"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="203.69117,72.258494"
+       orientation="0,-1"
+       id="guide9"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="215.68796,63.925334"
+       orientation="1,0"
+       id="guide11"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="7.9375,30.870728"
+       orientation="-1,0"
+       id="guide21"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="199.72241,49.106302"
+       orientation="-1,0"
+       id="guide22"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="15.548794,7.9375"
+       orientation="0,1"
+       id="guide23"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="199.32553,30.095232"
+       orientation="0,-1"
+       id="guide24"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="214.62856,40.029291"
+       orientation="0,-1"
+       id="guide35"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#0066ff;stroke:none;stroke-width:0.79375;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
+       id="rect8"
+       width="264.58334"
+       height="79.375"
+       x="7.1054274e-15"
+       y="0" />
+    <g
+       id="g3"
+       transform="translate(-1.0657968,-0.38686941)">
+      <rect
+         style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:0.79375;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="rect1"
+         width="67.966362"
+         height="67.892876"
+         x="5.4314218"
+         y="7.9002495" />
+      <g
+         id="g2"
+         transform="translate(-4.4079555,4.7524939)">
+        <rect
+           style="fill:#0066ff;stroke:#e6e6e6;stroke-width:0.79375;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill;fill-opacity:1"
+           id="rect2"
+           width="41.476307"
+           height="6.2955112"
+           x="13.948878"
+           y="0" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#ececec;stroke:none;stroke-width:0.79375;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
+           x="34.625916"
+           y="4.2404861"
+           id="text1"><tspan
+             sodipodi:role="line"
+             id="tspan1"
+             style="font-size:3.70417px;fill:#ececec;stroke:none;stroke-width:0.79375"
+             x="34.625916"
+             y="4.2404861">Player 1 Host machine</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g38">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         x="223.07899"
+         y="15.87858"
+         id="text10"><tspan
+           sodipodi:role="line"
+           id="tspan10"
+           style="stroke-width:1.5875"
+           x="223.07899"
+           y="15.87858">Bridge device</tspan></text>
+      <g
+         id="g9"
+         transform="translate(6.2445979,12.962008)">
+        <circle
+           style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           id="path9"
+           cx="209.44336"
+           cy="1.5275083"
+           r="3.1859481" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           x="208.16727"
+           y="2.9165721"
+           id="text9"><tspan
+             sodipodi:role="line"
+             id="tspan9"
+             style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875"
+             x="208.16727"
+             y="2.9165721">B</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           x="208.16727"
+           y="2.9165721"
+           id="text11"><tspan
+             sodipodi:role="line"
+             id="tspan11"
+             style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875"
+             x="208.16727"
+             y="2.9165721">B</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g37"
+       transform="translate(0,0.06057967)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         x="223.07899"
+         y="26.745718"
+         id="text12"><tspan
+           sodipodi:role="line"
+           id="tspan12"
+           style="stroke-width:1.5875"
+           x="223.07899"
+           y="26.745718">Network interface</tspan></text>
+      <g
+         id="g11"
+         transform="translate(3.668268,12.962008)">
+        <rect
+           style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           id="rect10"
+           width="8.5174561"
+           height="6.7892771"
+           x="207.76096"
+           y="9.1231909"
+           rx="0.79374999"
+           ry="0.79374999" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           x="210.76398"
+           y="13.905042"
+           id="text11-1"><tspan
+             sodipodi:role="line"
+             id="tspan11-5"
+             style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875"
+             x="210.76398"
+             y="13.905042">N</tspan></text>
+      </g>
+    </g>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#f9f9f9;stroke-width:1.05833;stroke-linecap:butt;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       d="m 77.671614,49.279768 17.781281,0"
+       id="path24"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g7"
+       transform="translate(124.49968,-0.38686941)">
+      <rect
+         style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:0.79375;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="rect5"
+         width="69.791306"
+         height="67.892876"
+         x="5.4314218"
+         y="7.9002495" />
+      <g
+         id="g6"
+         transform="translate(-4.4079555,4.7524939)">
+        <rect
+           style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:0.79375;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
+           id="rect6"
+           width="41.476307"
+           height="6.2955112"
+           x="13.948878"
+           y="0" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#ececec;stroke:none;stroke-width:0.79375;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;paint-order:markers stroke fill"
+           x="34.625916"
+           y="4.2404861"
+           id="text6"><tspan
+             sodipodi:role="line"
+             id="tspan6"
+             style="font-size:3.70417px;fill:#ececec;stroke:none;stroke-width:0.79375"
+             x="34.625916"
+             y="4.2404861">Player 2 Host machine</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g21"
+       transform="translate(164.18079,19.221786)">
+      <g
+         id="g19">
+        <rect
+           style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:0.79375;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           id="rect7"
+           width="25.05772"
+           height="19.750626"
+           x="5.4314218"
+           y="7.9002495" />
+        <g
+           id="g18"
+           transform="translate(-4.4079555,4.7524939)"
+           style="fill:#0066ff;fill-opacity:1;stroke:#cccccc;stroke-opacity:1">
+          <rect
+             style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:0.79375;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+             id="rect9"
+             width="16.687014"
+             height="6.2955112"
+             x="13.948878"
+             y="0" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+             x="22.297939"
+             y="4.5368195"
+             id="text16"><tspan
+               sodipodi:role="line"
+               id="tspan16"
+               style="font-size:3.70417px;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-opacity:1"
+               x="22.297939"
+               y="4.5368195">VM G-Q</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g22"
+       transform="translate(-82.200801,36.761938)">
+      <rect
+         style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="rect21"
+         width="8.5174561"
+         height="6.7892771"
+         x="207.76096"
+         y="9.1231909"
+         rx="0.79374999"
+         ry="0.79374999" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         x="210.76398"
+         y="13.905042"
+         id="text21"><tspan
+           sodipodi:role="line"
+           id="tspan21"
+           style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875"
+           x="210.76398"
+           y="13.905042">N</tspan></text>
+    </g>
+    <g
+       id="g24"
+       transform="translate(-52.927868,47.752259)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         x="208.16727"
+         y="2.9165721"
+         id="text22"><tspan
+           sodipodi:role="line"
+           id="tspan22"
+           style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875"
+           x="208.16727"
+           y="2.9165721">B</tspan></text>
+      <g
+         id="g23">
+        <circle
+           style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           id="circle22"
+           cx="209.44336"
+           cy="1.5275083"
+           r="6.6145835" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           x="208.16727"
+           y="2.9165721"
+           id="text23"><tspan
+             sodipodi:role="line"
+             id="tspan23"
+             style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875"
+             x="208.16727"
+             y="2.9165721">B</tspan></text>
+      </g>
+    </g>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#f9f9f9;stroke-width:1.05833;stroke-linecap:butt;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       d="m 135.21477,49.279768 h 13.53176"
+       id="path25"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#f9f9f9;stroke-width:1.05833;stroke-linecap:butt;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       d="m 164.23326,49.279768 h 12.45006"
+       id="path26"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g20"
+       transform="translate(-30.01282,36.761938)">
+      <rect
+         style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="rect19"
+         width="8.5174561"
+         height="6.7892771"
+         x="207.76096"
+         y="9.1231909"
+         rx="0.79374999"
+         ry="0.79374999" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         x="210.76398"
+         y="13.905042"
+         id="text19"><tspan
+           sodipodi:role="line"
+           id="tspan19"
+           style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875"
+           x="210.76398"
+           y="13.905042">N</tspan></text>
+    </g>
+    <g
+       id="g29"
+       transform="translate(2.5060782,19.221786)">
+      <g
+         id="g28">
+        <rect
+           style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:0.79375;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           id="rect26"
+           width="25.05772"
+           height="19.750626"
+           x="5.4314218"
+           y="7.9002495" />
+        <g
+           id="g27"
+           transform="translate(-4.4079555,4.7524939)"
+           style="fill:#0066ff;fill-opacity:1;stroke:#cccccc;stroke-opacity:1">
+          <rect
+             style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:0.79375;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+             id="rect27"
+             width="16.687014"
+             height="6.2955112"
+             x="13.948878"
+             y="0" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+             x="22.297939"
+             y="4.5368195"
+             id="text27"><tspan
+               sodipodi:role="line"
+               id="tspan27"
+               style="font-size:3.70417px;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:0.79375;stroke-opacity:1"
+               x="22.297939"
+               y="4.5368195">VM A-F</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g30"
+       transform="translate(-139.63123,36.761938)">
+      <rect
+         style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="rect29"
+         width="8.5174561"
+         height="6.7892771"
+         x="207.76096"
+         y="9.1231909"
+         rx="0.79374999"
+         ry="0.79374999" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         x="210.76398"
+         y="13.905042"
+         id="text29"><tspan
+           sodipodi:role="line"
+           id="tspan29"
+           style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875"
+           x="210.76398"
+           y="13.905042">N</tspan></text>
+    </g>
+    <g
+       id="g32"
+       transform="translate(-162.61071,47.752259)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         x="208.16727"
+         y="2.9165721"
+         id="text30"><tspan
+           sodipodi:role="line"
+           id="tspan30"
+           style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875"
+           x="208.16727"
+           y="2.9165721">B</tspan></text>
+      <g
+         id="g31">
+        <circle
+           style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           id="circle30"
+           cx="209.44336"
+           cy="1.5275083"
+           r="6.6145835" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+           x="208.16727"
+           y="2.9165721"
+           id="text31"><tspan
+             sodipodi:role="line"
+             id="tspan31"
+             style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875"
+             x="208.16727"
+             y="2.9165721">B</tspan></text>
+      </g>
+    </g>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#f9f9f9;stroke-width:1.05833;stroke-linecap:butt;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       d="m 25.531928,49.279768 h 13.53176"
+       id="path32"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#f9f9f9;stroke-width:1.05833;stroke-linecap:butt;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       d="M 54.550419,49.279768 H 67.000478"
+       id="path33"
+       sodipodi:nodetypes="cc" />
+    <g
+       id="g33"
+       transform="translate(-191.68753,36.761938)">
+      <rect
+         style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         id="rect33"
+         width="8.5174561"
+         height="6.7892771"
+         x="207.76096"
+         y="9.1231909"
+         rx="0.79374999"
+         ry="0.79374999" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         x="210.76398"
+         y="13.905042"
+         id="text33"><tspan
+           sodipodi:role="line"
+           id="tspan33"
+           style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875"
+           x="210.76398"
+           y="13.905042">N</tspan></text>
+    </g>
+    <g
+       id="g36">
+      <g
+         id="g34"
+         transform="translate(3.668268,24.134648)">
+        <g
+           id="g35"
+           transform="translate(0,1.2652743)">
+          <rect
+             style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+             id="rect34"
+             width="6.7892084"
+             height="6.7892771"
+             x="137.67503"
+             y="155.37691"
+             rx="0.63269293"
+             ry="0.79374999"
+             transform="rotate(-44.999811)" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+             x="210.76398"
+             y="13.905042"
+             id="text34"><tspan
+               sodipodi:role="line"
+               id="tspan34"
+               style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875"
+               x="210.76398"
+               y="13.905042">S</tspan></text>
+        </g>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+         x="223.07899"
+         y="39.345707"
+         id="text35"><tspan
+           sodipodi:role="line"
+           id="tspan35"
+           style="stroke-width:1.5875"
+           x="223.07899"
+           y="39.345707">Physical switch/LAN</tspan></text>
+    </g>
+    <g
+       id="g41"
+       transform="translate(-114.58429,11.362009)">
+      <g
+         id="g40"
+         transform="translate(3.668268,24.134648)">
+        <g
+           id="g39"
+           transform="translate(0,1.2652743)">
+          <rect
+             style="fill:#0066ff;fill-opacity:1;stroke:#e6e6e6;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+             id="rect38"
+             width="6.7892084"
+             height="6.7892771"
+             x="137.67503"
+             y="155.37691"
+             rx="0.63269293"
+             ry="0.79374999"
+             transform="rotate(-44.999811)" />
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.70417px;line-height:1.02;font-family:Farro;-inkscape-font-specification:Farro;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875;stroke-linecap:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+             x="210.76398"
+             y="13.905042"
+             id="text38"><tspan
+               sodipodi:role="line"
+               id="tspan38"
+               style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:1.5875"
+               x="210.76398"
+               y="13.905042">S</tspan></text>
+        </g>
+      </g>
+    </g>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#f9f9f9;stroke-width:1.05833;stroke-linecap:butt;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       d="m 106.64566,49.279768 h 17.78128"
+       id="path41"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

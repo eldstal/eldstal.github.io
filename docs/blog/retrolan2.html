@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <title>Albin Eldstål-Ahrens - Retrolan 2: Virtual Network</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+      <meta charset="utf-8" />
+      <meta name="generator" content="Pelican" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-colors.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-mobile.css" />
+        <!-- This CSS is slow due to cool SVG effects.
+             If JS is enabled we can load it asyncronously to get the page loaded first. -->
+        
+        <link rel="preload" as="style" href="/theme/css/eldstal-lcd.css" onload="this.onload=null;this.rel='stylesheet'"/>
+        <noscript>
+            <link rel="stylesheet" type="text/css" href="/theme/css/eldstal-lcd.css" />
+        </noscript>
+
+        <link href="https://eldstal.se/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Full Atom Feed" />
+        <link href="https://eldstal.se/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate" title="Albin Eldstål-Ahrens Categories Atom Feed" />
+
+
+
+
+    <meta name="tags" content="retrolan" />
+    <meta name="tags" content="gaming" />
+
+  </head>
+
+  <body>
+      <div class="bleed">
+          <div class="bleed-splotches"></div>
+          <div class="bleed-neg"></div>
+      </div>
+      <div class="edge-bleed">
+          <div class="edge-bleed-t"></div>
+          <div class="edge-bleed-l"></div>
+          <div class="edge-bleed-t turn-around"></div>
+          <div class="edge-bleed-l turn-around"></div>
+      </div>
+      <header>
+          <nav><ul>
+<a href="https://eldstal.se/index.html" ><li>Albin Eldstål-Ahrens</li></a><a href="https://eldstal.se/category/advisories.html" ><li>advisories</li></a><a href="https://eldstal.se/category/blog.html"  aria-current="page" ><li>blog</li></a></ul></nav>
+      </header>
+      <main>
+  <article>
+    <div class="h3 article">
+    <header>
+      <h1>
+        <a href="https://eldstal.se/blog/retrolan2.html" rel="bookmark"
+           title="Permalink to Retrolan 2: Virtual Network">Retrolan 2: Virtual Network</a></h1>
+      
+    </header>
+    <p>So you've got a cool retro gaming VM, and so do your friends. And you want to
+connect them to each other. Let's look at some options for connecting them
+together.</p>
+<h2>Option 1: Local bridge</h2>
+<p>The simplest way to connect two or more VMs is to run them all on the same host and set up a bridged network for them.</p>
+<p><img alt="Bridged sibling VMs" src="../images/retrolan2/bridged-vms.png" />
+<em>Bridged sibling VMs</em></p>
+<p>This is usually an option right in your virtualization solution, typically
+called a "Private network", "Host-only network" or "Bridged network".</p>
+<p>In 86Box, you do this by selecting <code>Mode: TAP</code> and giving your bridge a
+descriptive name. All VMs with the same "TAP bridge name" configured will become
+connected to the same virtual network.</p>
+<p>In VMware, select (counter-intuitively) "Host-only network" or create a new
+virtual network with that mode. Again, every VM set to the same network will be
+connected.</p>
+<h3>Why not?</h3>
+<p>The big shortcoming of this is pretty obvious: the VMs have to run on the same
+host. Maybe your friends can remote in via SPICE or VNC or something, but
+performance will suffer for it.</p>
+<h2>Option 2: Physical LAN</h2>
+<p>If you've got your friends in the same room (LAN party! Woo!), you've got the
+option to connect your VMs to a physical network via bridges. This can also be
+useful if you want to connect your VMs with your friends who brought real
+iron to the party.</p>
+<p><img alt="VMs bridged to a physical LAN" src="../images/retrolan2/lan-vms.png" />
+<em>VMs bridged to a physical LAN</em></p>
+<p>If you're using 86Box or libvirt, this requires you to create a bridge
+interface manually. Other interfaces can then be added to the bridge as
+"ports", each acting as a port on a physical switch would.</p>
+<p>If the host has an ethernet interface <code>eth1</code> which is connected to the physical
+LAN, leave it unconfigured and do the following:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">ip</span><span class="w"> </span><span class="nx">link</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">bridge</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="nx">retrolan</span>
+<span class="nx">ip</span><span class="w"> </span><span class="nx">link</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="nx">eth1</span><span class="w"> </span><span class="nx">master</span><span class="w"> </span><span class="nx">retrolan</span>
+<span class="nx">ip</span><span class="w"> </span><span class="nx">link</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="nx">retrolan</span><span class="w"> </span><span class="nx">up</span>
+</code></pre></div>
+
+<p>Now you've got a bridge device called <code>retrolan</code> and you can use that as the
+bridge name in 86Box or libvirt to connect one or more VMs to it. The VMs will
+see your physical network!</p>
+<p>Some systems allow you to configure a "Bridged network" and hook
+your VMs up to an existing interface, automatically creating the bridge for
+you. I find that this doesn't always work reliably, and it's probably more
+robust to create the bridge yourself and attach VMs to it.</p>
+<p>Note that if your host needs to use the same LAN as well (for example, it's your
+connection to the internet), that can be done by configuring the bridge interface
+instead of <code>eth0</code>. Assign an IP address to it, start a DHCP client, whatever
+you would normally do with your ethernet interface.</p>
+<h3>Why not?</h3>
+<p>This will work great, as long as your friends are on the same physical LAN as you are. Over the internet, this won't work.</p>
+<h2>Option 3: VPN</h2>
+<p>The obvious answer to the internet question is a VPN such as OpenVPN or
+WireGuard. If you connect the host to a VPN and then bridge your VMs to the VPN
+interface, they'll be able to communicate across the distances.</p>
+<p><img alt="A VPN server bridges the gap" src="../images/retrolan2/internet-vpn.png" />
+<em>A VPN server bridges the gap</em></p>
+<p>This requires a server on the internet for everyone to connect to. That can be
+one of the player host machines, if you have a public IP and can forward the
+VPN service port to the proper machine.</p>
+<p>I won't cover the details of setting up a VPN here, but if you want something quick
+and relatively simple I definitely recommend WireGuard and the <code>wg-quick</code> utility
+to configure it.</p>
+<h3>Why not?</h3>
+<p>If your VPN tunnel doesn't support Layer2 traffic, you'll find this solution
+lacking. OpenVPN and friends typically work on Layer3 (the IP layer), but won't
+forward packets which lack Layer 3. This is fine for the vast majority of traffic,
+but if you're trying to play old games which make assumptions about the LAN, perform
+funky broadcasts or maybe even use IPX instead of IP... it probably won't work.</p>
+<h2>Option 4: GRE over VPN</h2>
+<p>But there's a solution! The GRE protocol allows you to tunnel Layer2 over IP,
+which means you can set up a link between machines which looks like IP traffic
+(will pass through your VPN without issue!) but actually carries Layer2
+traffic.</p>
+<p>GRE tunneling support is built into Linux, and requires no special software to set up.</p>
+<p>If you've got a working VPN such that Host A at 10.0.0.1 can reach Host B at 10.0.0.2,
+it's pretty straight-forward to set up a GRE tunnel between the two:</p>
+<div class="highlight"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="nx">On</span><span class="w"> </span><span class="nx">host</span><span class="w"> </span><span class="nx">A</span>
+<span class="nx">ip</span><span class="w"> </span><span class="nx">link</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nx">my_gre_tunnel</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">gretap</span><span class="w"> </span><span class="nx">local</span><span class="w"> </span><span class="m m-Double">10.0.0.1</span><span class="w"> </span><span class="nx">remote</span><span class="w"> </span><span class="m m-Double">10.0.0.2</span><span class="w"> </span><span class="nx">ttl</span><span class="w"> </span><span class="mi">255</span>
+<span class="nx">ip</span><span class="w"> </span><span class="nx">link</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="nx">my_gre_tunnel</span><span class="w"> </span><span class="nx">up</span>
+
+<span class="err">#</span><span class="w"> </span><span class="nx">On</span><span class="w"> </span><span class="nx">host</span><span class="w"> </span><span class="nx">B</span>
+<span class="nx">ip</span><span class="w"> </span><span class="nx">link</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nx">my_gre_tunnel</span><span class="w"> </span><span class="k">type</span><span class="w"> </span><span class="nx">gretap</span><span class="w"> </span><span class="nx">local</span><span class="w"> </span><span class="m m-Double">10.0.0.2</span><span class="w"> </span><span class="nx">remote</span><span class="w"> </span><span class="m m-Double">10.0.0.1</span><span class="w"> </span><span class="nx">ttl</span><span class="w"> </span><span class="mi">255</span>
+<span class="nx">ip</span><span class="w"> </span><span class="nx">link</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="nx">my_gre_tunnel</span><span class="w"> </span><span class="nx">up</span>
+</code></pre></div>
+
+<p>This will create a GRE tunnel interface named <code>my_gre_tunnel</code> on both hosts,
+and any traffic you pass to that device will come out the other end. If you add
+that GRE tunnel to your local VM bridge network on both ends, VMs on host A will
+be able to communicate with VMs on bost B!</p>
+<div class="highlight"><pre><span></span><code><span class="gh">#</span> Add the tunnel to the bridge we created before
+ip link set my_gre_tunnel master retrolan
+</code></pre></div>
+
+<p>This is a point-to-point tunnel, which is fine if there are only two of you.
+For multier players, one solution is to set up a central server (the VPN server
+is the natural choice!), let everyone GRE tunnel to that server and then bridge
+all the GRE interfaces. The server will act as a hub in a star topology network,
+and is the only machine in the setup that needs a public IP address.</p>
+<p><img alt="GRE tunneled over VPN" src="../images/retrolan2/gre-vpn.png" />
+<em>A GRE tunnel over a VPN tunnel</em></p>
+<p>With this setup all gaming VMs of all players will see each other. Each player
+can connect an arbitrary number of devices which will share the same VPN
+connection and GRE tunnel. <strong>Nothing</strong> needs to be installed inside the VMs,
+which means it will work on any guest machine/OS that has a network interface.</p>
+<h1>Simplify</h1>
+<p>The solution above can be a bit daunting, and herding all your friends into successfully
+connecting may be a bit of a challenge. I've created <a href="https://gitlab.com/eldstal/widelan">WideLAN</a>,
+a set of helper scripts to make the setup both easier (just send a config file to your friend)
+and less error-prone. If you don't want to set up bridges and stuff on the host machine, you can
+even run the VPN client and GRE tunnels in a VM!</p>
+<p>I've tried setting up a free-tier EC2 instance to serve as the Hub server, and the tunneling introduces
+negligible latency. Be aware though, that you want a server placed where it has the minimum ping
+to your host systems! Your in-game ping will be the sum of the latencies to the server.</p>
+    </div>
+    <div class="h1">
+    <footer>
+      <p>Published: <time datetime="2026-09-12T00:00:00+02:00">
+        lör 12 september 2026
+      </time></p>
+        <address>
+          By           <span>Albin Eldstål-Ahrens</span>
+        </address>
+        <p>
+          Category: <a href="https://eldstal.se/category/blog.html">blog</a>
+        </p>
+        <p>
+          Tags:
+            <a href="https://eldstal.se/tag/retrolan.html">retrolan</a>
+            <a href="https://eldstal.se/tag/gaming.html">gaming</a>
+        </p>
+    </footer>
+    </div>
+  </article>
+          <div class="h1">
+          <footer>
+              <address>
+                Powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>,
+                and generously hosted by <a rel="nofollow" href="https://docs.github.com/en/pages">Github pages</a>.
+              </address>
+          </footer>
+          </div>
+      </main>
+  </body>
+</html>

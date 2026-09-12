@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Albin Eldstål-Ahrens - Albin Eldstål-Ahrens</title><link>https://eldstal.se/</link><description/><atom:link href="https://eldstal.se/feeds/albin-eldstal-ahrens.rss.xml" rel="self"/><lastBuildDate>Mon, 07 Sep 2026 00:00:00 +0200</lastBuildDate><item><title>Retrolan 1: Virtual MMX</title><link>https://eldstal.se/blog/retrolan1.html</link><description>&lt;p&gt;One of the things you get for free while passing through your 30s is an
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Albin Eldstål-Ahrens - Albin Eldstål-Ahrens</title><link>https://eldstal.se/</link><description/><atom:link href="https://eldstal.se/feeds/albin-eldstal-ahrens.rss.xml" rel="self"/><lastBuildDate>Sat, 12 Sep 2026 00:00:00 +0200</lastBuildDate><item><title>Retrolan 2: Virtual Network</title><link>https://eldstal.se/blog/retrolan2.html</link><description>&lt;p&gt;So you've got a cool retro gaming VM, and so do your friends. And you want to
+connect them to each other. Let's look at some options for connecting them
+together.&lt;/p&gt;
+&lt;h2&gt;Option 1: Local bridge&lt;/h2&gt;
+&lt;p&gt;The simplest way to connect two or more VMs is to run them all on …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Albin Eldstål-Ahrens</dc:creator><pubDate>Sat, 12 Sep 2026 00:00:00 +0200</pubDate><guid>tag:eldstal.se,2026-09-12:/blog/retrolan2.html</guid><category>blog</category><category>retrolan</category><category>gaming</category></item><item><title>Retrolan 1: Virtual MMX</title><link>https://eldstal.se/blog/retrolan1.html</link><description>&lt;p&gt;One of the things you get for free while passing through your 30s is an
 increasing sense of nostalgia. If you were also shaped by computering in the
 Y2K era, chances are you have fond memories of floppy drive noises, LAN
 parties, NoCD cracktros and not-quite-effortless file sharing.&lt;/p&gt;
