@@ -57,12 +57,10 @@ system. Excellent.
 
 For Windows 9x guests, Libvirt with QEMU supports the
 [SoftGPU](https://github.com/JHRobotics/softgpu) drivers, which should give you
-OK graphics performance. If you get `qemu-3dfx` working, you can apparently
-even get hardware accelerated 3D!
+OK graphics performance.
 
-I haven't had much luck getting good graphics performance out of Windows XP
-under libvirt. It's possible that there's a solution out there, but I don't
-know how.
+[qemu-3dfx](https://github.com/kjliew/qemu-3dfx) is a set of patches and support drivers for QEMU which adds passthrough of GLIDE and OpenGL to the host for better 3D performance. I haven't been able to build it, but it seems like a good option. Be aware that there's some licensing drama in the project at the moment.
+
 
 ## 86Box
 86Box is more of an emulator than a Hypervisor, really. It does a great job
