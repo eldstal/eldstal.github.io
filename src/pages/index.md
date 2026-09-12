@@ -115,6 +115,22 @@ Running notes on CTF techniques, methodology, little tricks we've learned along 
 
 </div>
 
+
+<div class="h2" markdown="1">
+## Nostalgica
+
+<div class="h3 project" markdown="1">
+### ![widelan](/images/widelan.png) [WideLAN](https://gitlab.com/eldstal/widelan)
+"Clientless" LAN over the Internet
+
+WideLAN is a set of scripts that make it easy to set up bridging and tunneling over WireGuard
+to connect your cool retro gaming VMs to your friends. Crucially, nothing needs to be installed
+inside the VMs - all of the tunneling magic is handled by the host system.
+</div>
+
+</div>
+
+
 <div class="h2" markdown="1">
 ## Other
 
