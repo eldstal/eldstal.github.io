@@ -12,7 +12,8 @@ together.
 
 
 ## Option 1: Local bridge
-The simplest way to connect two or more VMs is to run them all on the same host and set up a bridged network for them.
+The simplest way to connect two or more VMs is to run them all on the same host
+and set up a bridged network for them.
 
 ![Bridged sibling VMs](../images/retrolan2/bridged-vms.png)
 *Bridged sibling VMs*
@@ -67,12 +68,13 @@ robust to create the bridge yourself and attach VMs to it.
 
 Note that if your host needs to use the same LAN as well (for example, it's your
 connection to the internet), that can be done by configuring the bridge interface
-instead of `eth0`. Assign an IP address to it, start a DHCP client, whatever
+instead of `eth1`. Assign an IP address to it, start a DHCP client, whatever
 you would normally do with your ethernet interface.
 
 
 ### Why not?
-This will work great, as long as your friends are on the same physical LAN as you are. Over the internet, this won't work.
+This will work great, as long as your friends are on the same physical LAN as
+you are. It won't work over the internet.
 
 
 ## Option 3: VPN
@@ -128,6 +130,7 @@ that GRE tunnel to your local VM bridge network on both ends, VMs on host A will
 be able to communicate with VMs on bost B!
 
 ```
+# On host A and on host B
 # Add the tunnel to the bridge we created before
 ip link set my_gre_tunnel master retrolan
 ```
@@ -151,14 +154,18 @@ which means it will work on any guest machine/OS that has a network interface.
 
 
 # Simplify
-The solution above can be a bit daunting, and herding all your friends into successfully
+The solution above can be a bit daunting, and herding all your friends into
+successfully
 connecting may be a bit of a challenge. I've created [WideLAN](https://gitlab.com/eldstal/widelan),
-a set of helper scripts to make the setup both easier (just send a config file to your friend)
-and less error-prone. If you don't want to set up bridges and stuff on the host machine, you can
-even run the VPN client and GRE tunnels in a VM!
+a set of helper scripts to make the setup both easier (just send a config file
+to your friend) and less error-prone. If you don't want to set up bridges and
+stuff on the host machine, you can even run the VPN client and GRE tunnels in a
+VM!
 
-I've tried setting up a free-tier EC2 instance to serve as the Hub server, and the tunneling introduces
-negligible latency. Be aware though, that you want a server placed where it has the minimum ping
-to your host systems! Your in-game ping will be the sum of the latencies to the server.
+I've tried setting up a free-tier EC2 instance to serve as the Hub server, and
+the tunneling introduces negligible latency. Be aware though, that you want a
+server placed where it has the minimum ping to your host systems! Your in-game
+ping will be the sum of the latencies to the server.
 
 
+Next time: We look at things to do with your cool new Retrolan setup.
