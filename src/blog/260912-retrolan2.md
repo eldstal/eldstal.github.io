@@ -153,6 +153,15 @@ connection and GRE tunnel. **Nothing** needs to be installed inside the VMs,
 which means it will work on any guest machine/OS that has a network interface.
 
 
+## Bonus
+If you run the VPN client and GRE tunnel endpoint on a modern machine and bridge
+the GRE tunnel to a physical interface, you can even use this setup as a gateway
+for *real* gaming machines. This is basically a hybrid with Option 2 above.
+
+![Bonus hybrid GRE+VPN+physical LAN](../images/retrolan2/gre-vpn-physical.png)
+*Bonus: Connect physical gaming computers*
+
+
 # Simplify
 The solution above can be a bit daunting, and herding all your friends into
 successfully
