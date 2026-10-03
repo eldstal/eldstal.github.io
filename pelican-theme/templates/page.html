@@ -3,6 +3,7 @@
 
 {% block title %}{{ SITENAME|striptags }} - {{ page.title|striptags }}{%endblock%}
 
+
 {% block head %}
   {{ super() }}
 
@@ -31,3 +32,7 @@
     {% endif %}
   </article>
 {% endblock %}
+
+{% block counter %}
+<img class="counter" alt="hit counter" src="https://counter.eldstal.se/png?tag={{page.slug}}"></img>
+{% endblock counter %}

@@ -42,7 +42,12 @@ footer {
     padding: 1ex;
     box-sizing: border-box;
     width: min(100%, 45em);
+
+    display: flex;
+    gap: 14px;
+    align-items: center;
 }
+
 
 a {
     color: var(--lcdpx13);
